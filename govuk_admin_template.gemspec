@@ -12,8 +12,9 @@ Gem::Specification.new do |gem|
   gem.summary       = gem.description
   gem.homepage      = "https://github.com/alphagov/govuk_admin_template"
 
-  gem.files         = `git ls-files`.split($/)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
+  gem.files         = Dir["{app,lib}/**/*"] + ["LICENCE.txt", "README.md"]
   gem.require_paths = ["lib"]
+
+  gem.add_dependency 'rails', '>= 3.1'
+
 end
