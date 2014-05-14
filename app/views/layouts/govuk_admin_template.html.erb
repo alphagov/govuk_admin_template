@@ -3,7 +3,7 @@
 <!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
   <head>
     <meta charset="utf-8">
-    <title>Title</title>
+    <title><%= content_for?(:page_title) ? yield(:page_title) : "GOV.UK" %></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>(function(d){d.className=d.className.replace(/^no-js\b/,'js');}(document.documentElement));</script>
@@ -11,7 +11,10 @@
     <!--[if lte IE 8]>
       <script src="<%= asset_path "lte-ie8.js" %>"></script>
     <![endif]-->
+
+    <%= yield :head %>
   </head>
   <body>
+    <%= content_for?(:content) ? yield(:content) : yield %>
   </body>
 </html>
