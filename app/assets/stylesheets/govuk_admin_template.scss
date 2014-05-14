@@ -1,1 +1,8 @@
 @import 'bootstrap';
+@import 'buttons'; // overrides bootstrap buttons
+@import 'theme';
+@import 'base';
+
+// Components
+@import 'toggles';
+@import 'navbar';

@@ -1,0 +1,355 @@
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+/* Force vertical scrolling and prevent jumps when hiding/showing content
+   specifically with modals and when filtering */
+html {
+  overflow-y: scroll;
+}
+
+label {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Helpers
+   ========================================================================== */
+
+.relative {
+  position: relative;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.normal {
+  font-weight: normal;
+}
+
+.bookmarklet {
+  cursor: move;
+}
+
+a.inherit,
+a.inherit:visited,
+.inherit {
+  color: inherit;
+}
+
+/* Form helpers
+   ========================================================================== */
+
+/* Reset the default bootstrap legend styles, eg for use with radio buttons
+   See http://csswizardry.com/2014/01/extending-silent-classes-in-sass/ for % syntax */
+.legend-reset,
+%legend-reset {
+  font-size: 1em;
+  border: none;
+  margin-bottom: 0;
+  width: auto;
+}
+
+.legend-inline {
+  @extend %legend-reset;
+  float: left;
+  margin-top: 1px;
+  margin-right: 10px;
+}
+
+/* Margin helpers
+   ========================================================================== */
+
+.add-vertical-margins {
+  margin-top: $default-vertical-margin !important;
+  margin-bottom: $default-vertical-margin !important;
+}
+
+%add-top-margin,
+.add-top-margin {
+  margin-top: $default-vertical-margin !important;
+}
+
+%remove-top-margin,
+.remove-top-margin {
+  margin-top: 0 !important;
+}
+
+%add-bottom-margin,
+.add-bottom-margin {
+  margin-bottom: $default-vertical-margin !important;
+}
+
+.add-big-bottom-margin {
+  margin-bottom: $default-vertical-margin * 2 !important;
+}
+
+%remove-bottom-margin,
+.remove-bottom-margin {
+  margin-bottom: 0 !important;
+}
+
+%add-right-margin,
+.add-right-margin {
+  margin-right: $grid-gutter-width / 3 !important;
+}
+
+%add-left-margin,
+.add-left-margin {
+  margin-left: $grid-gutter-width / 3 !important;
+}
+
+.dl-spaced dd {
+  margin-bottom: $default-vertical-margin;
+}
+
+/* Simulate the margin bootstrap puts on its labels (no built-in variable for this) */
+.add-label-margin {
+  margin-bottom: 5px;
+}
+
+/* Padding helpers
+   ========================================================================== */
+
+.remove-padding {
+  padding: 0 !important;
+}
+
+.remove-bottom-padding {
+  padding-bottom: 0 !important;
+}
+
+/* Icon helpers
+   ========================================================================== */
+
+// Vanilla glyphicons when alongside text can appear too large
+// this is a helper to consistently downscale them
+%glyphicon-smaller-than-text,
+.glyphicon-smaller-than-text {
+  font-size: 80%;
+}
+
+.glyphicon-alert-success {
+  @extend %glyphicon-smaller-than-text;
+  @extend .text-success;
+  @extend %add-right-margin;
+}
+
+/* ==========================================================================
+   Bootstrap modal overrides
+   ========================================================================== */
+
+.modal-footer {
+  background: #eee;
+  border-radius: 0 0 $border-radius-base $border-radius-base;
+}
+
+/* ==========================================================================
+   Bootstrap link overrides
+   ========================================================================== */
+
+main a {
+  &:visited {
+    color: $link-color-visited;
+  }
+
+  &.no-visit:visited {
+    color: $link-color;
+  }
+
+  // Don't give visited links that are buttons
+  // the visited link colour
+
+  &.btn:visited {
+    color: $default-button-color;
+  }
+
+  &.btn-primary:visited {
+    color: $primary-button-color;
+  }
+
+  &.btn-info:visited {
+    color: $info-button-color;
+  }
+
+  &.btn-success:visited {
+    color: $success-button-color;
+  }
+
+  &.btn-warning:visited {
+    color: $warning-button-color;
+  }
+
+  &.btn-danger:visited {
+    color: $danger-button-color;
+  }
+
+  &.btn-inverse:visited {
+    color: $inverse-button-color;
+  }
+
+  &.btn-link:visited {
+    color: $link-color;
+  }
+
+}
+
+.link-muted,
+.link-muted:visited {
+  color: $gray-light;
+  text-decoration: underline;
+}
+
+.link-muted:hover,
+.link-muted:focus {
+  color: $gray;
+}
+
+// Force long URLs to break
+.breakable {
+  word-break: break-all;
+  display: inline-block;
+}
+
+.glossary-link,
+.glossary-link:visited {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Page headers
+   ========================================================================== */
+
+.page-title {
+  padding-bottom: 9px;
+  margin: 20px 0 10px;
+}
+
+.page-title .small {
+  font-size: 65%;
+  font-weight: normal;
+  line-height: 1.5;
+  color: $gray-light;
+  display: block;
+}
+
+.page-title-with-border {
+  @extend .page-title;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 30px;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.page-footer {
+ clear: left;
+ margin: $default-vertical-margin 0 $default-vertical-margin;
+}
+
+/* ==========================================================================
+   Common content patterns
+   ========================================================================== */
+
+.subtitle {
+  margin: -$default-vertical-margin 0 $default-vertical-margin;
+  font-size: $font-size-large;
+}
+
+.big-message {
+  font-size: $font-size-h1;
+  font-weight: bold;
+}
+
+.big-number {
+  font-size: $font-size-h1 * 1.5;
+  font-weight: bold;
+}
+
+.list-group-item {
+  padding-top:    $default-vertical-margin;
+  padding-bottom: $default-vertical-margin;
+}
+
+a.list-group-item {
+
+  &:hover .list-group-item-heading {
+    text-decoration: underline;
+  }
+
+  .list-group-item-heading {
+    color: $link-color;
+  }
+
+}
+
+/* No content
+   ========================================================================== */
+
+%large-and-spaced,
+.large-and-spaced {
+  font-size: $font-size-base * 2;
+  line-height: $default-vertical-margin * 2;
+  text-align: center;
+  padding: ($default-vertical-margin * 4) 0;
+}
+
+.no-content {
+  color: lighten($gray-light, 20%); // Large text needs a lighter colour for balance
+  @extend %large-and-spaced;
+}
+
+.no-content-bordered {
+  border: 1px solid $table-border-color;
+  border-radius: $border-radius-base;
+}
+
+.error-page {
+  @extend %large-and-spaced;
+}
+
+/* Highlights
+   ========================================================================== */
+
+.highlight {
+  background: #aaa;
+  text-align: center;
+  padding: 2 * $default-vertical-margin;
+  color: #fff;
+  font-size: $font-size-base * 1.5;
+  border-radius: $border-radius-base;
+}
+
+.highlight > p:last-child {
+  margin-bottom: 0;
+}
+
+.highlight-turquoise,
+.highlight-live {
+  background-color: $turquoise;
+}
+
+.highlight-orange,
+.highlight-pre-transition {
+  background-color: $orange;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+/* Use an error style that matches bootstrap style guide
+http://getbootstrap.com/css/#forms */
+form .field_with_errors input,
+form .field_with_errors textarea {
+  border-color: $state-danger-text;
+}
+
+form .field_with_errors label {
+  color: $state-danger-text;
+  display: block;
+}

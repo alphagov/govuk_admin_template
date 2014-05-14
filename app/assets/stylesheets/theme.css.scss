@@ -1,0 +1,20 @@
+$font-family-gill-sans: "GillSans", "Gill Sans", "Helvetica Neue", Arial, sans-serif;
+$default-vertical-margin: $line-height-computed;
+
+// Colours
+$link-color-visited       : #609; /* Purple */
+
+// From https://www.gov.uk/service-manual/user-centered-design/resources/colour-palettes
+$turquoise                : #28a197;
+$orange                   : #f47738;
+
+// Buttons
+$default-btn-height       : 30px;
+
+$primary-button-color     : #fff; /* White */
+$success-button-color     : #fff;
+$info-button-color        : #fff;
+$inverse-button-color     : #fff;
+$danger-button-color      : #fff;
+$warning-button-color     : #fff;
+$default-button-color     : #333; /* Dark grey */

@@ -1,0 +1,36 @@
+/* ==========================================================================
+   Toggle content
+   ========================================================================== */
+
+.hide {
+  display: none;
+}
+
+// Hide JavaScript content when JavaScript disabled
+.no-js .if-no-js-hide {
+  @extend .hide;
+}
+
+// Hide JavaScript fallback content when JavaScript enabled
+.js .if-js-hide {
+  @extend .hide;
+}
+
+// Hide visually, but keep available for screenreaders, by Jon Neal
+// www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden  &  h5bp.com/v
+.rm {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  z-index: -1;
+}
+
+// Hide visually when JavaScript enabled
+.js .if-js-rm {
+  @extend .rm;
+}

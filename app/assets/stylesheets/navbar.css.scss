@@ -1,0 +1,46 @@
+/* ==========================================================================
+   Navbar
+   ========================================================================== */
+
+.navbar .container .navbar-brand {
+  background: url("/assets/header-crown.png") 0 0.67em no-repeat;
+  color: #fff;
+  font-family: $font-family-gill-sans;
+  font-size: 20px;
+  margin-left: 0;
+  padding-left: 2.3em;
+  min-height: 37px;
+
+  .lte-ie8 & {
+    min-height: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar .container .navbar-brand {
+    margin-left: 15px;
+  }
+}
+
+.navbar .navbar-brand:hover,
+.navbar .navbar-brand:focus {
+  text-decoration: underline;
+}
+
+.navbar-text a {
+  color: $gray-light;
+  text-decoration: underline;
+}
+
+// Let's make these more specific to add the intended white colour
+.navbar-inverse .nav-collapse .nav a:hover,
+.navbar-inverse .nav-collapse .nav .active a,
+.navbar-inverse .nav-collapse .nav .active a:hover,
+.navbar-inverse .nav-collapse .nav .active a:focus {
+  color: #fff;
+}
+
+.lte-ie8 .navbar .container {
+  padding-left: 30px;
+  padding-right: 0;
+}

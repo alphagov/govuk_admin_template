@@ -11,10 +11,36 @@
     <!--[if lte IE 8]>
       <script src="<%= asset_path "lte-ie8.js" %>"></script>
     <![endif]-->
-
     <%= yield :head %>
   </head>
   <body>
-    <%= content_for?(:content) ? yield(:content) : yield %>
+    <header class="
+      navbar
+      navbar-default
+      navbar-inverse
+      navbar-static-top
+      add-bottom-margin" role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <%# Bootstrap toggle for collapsed navbar content, used at smaller widths %>
+          <a class="navbar-toggle" data-toggle="collapse" data-target="header .navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <%= link_to 'GOV.UK', root_path, :class => 'navbar-brand' %>
+        </div>
+        <nav role="navigation" class="collapse navbar-collapse"></nav>
+      </div>
+    </header>
+    <section class="container">
+      <main role="main">
+        <%= content_for?(:content) ? yield(:content) : yield %>
+      </main>
+      <footer class="page-footer">
+        <a class="inherit" href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">&copy; Crown Copyright</a>
+      </footer>
+    </section>
   </body>
 </html>
