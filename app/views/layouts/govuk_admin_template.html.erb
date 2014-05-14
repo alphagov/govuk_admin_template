@@ -31,7 +31,18 @@
           </a>
           <%= link_to 'GOV.UK', root_path, :class => 'navbar-brand' %>
         </div>
-        <nav role="navigation" class="collapse navbar-collapse"></nav>
+        <nav role="navigation" class="collapse navbar-collapse">
+          <% if content_for?(:navbar_items) %>
+            <ul class="nav navbar-nav">
+              <%= yield :navbar_items %>
+            </ul>
+          <% end %>
+          <% if content_for?(:navbar_right) %>
+            <div class="navbar-text pull-right">
+              <%= yield :navbar_right %>
+            </div>
+          <% end %>
+        </nav>
       </div>
     </header>
     <section class="container">
@@ -40,6 +51,10 @@
       </main>
       <footer class="page-footer">
         <a class="inherit" href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">&copy; Crown Copyright</a>
+        <% if content_for?(:footer_version) %>
+          <span class="pull-right">Version: <%= yield :footer_version %></span>
+          </ul>
+        <% end %>
       </footer>
     </section>
   </body>
