@@ -4,4 +4,4 @@ source 'https://rubygems.org'
 gemspec
 
 # Dummy application dependencies
-# gem "jquery-rails"
+gem "jquery-rails"
