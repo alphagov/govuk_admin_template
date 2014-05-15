@@ -20,4 +20,5 @@ Gem::Specification.new do |gem|
 
   gem.add_development_dependency 'rspec-rails'
   gem.add_development_dependency 'sass-rails'
+  gem.add_development_dependency 'jasmine', '2.0.0'
 end
