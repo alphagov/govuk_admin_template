@@ -1,0 +1,216 @@
+<% content_for(:page_title, 'Admin template style guide') %>
+
+<div class="page-title">
+  <h1>
+    Admin template style guide
+  </h1>
+</div>
+
+<p class="lead">Admin app UIs are powered by <a href="http://getbootstrap.com/css/">bootstrap 3.1</a>, using <a href="https://github.com/twbs/bootstrap-sass/tree/v3.1.0">bootstrap SASS</a> v3.1.0 (<a href="https://github.com/twbs/bootstrap-sass/blob/v3.1.0/vendor/assets/stylesheets/bootstrap/_mixins.scss">mixins</a>), but maintaining bootstrap 2 button styles. This guide documents how we use bootstrap, where the apps have diverged from default styles and any custom styles needed to fill in the gaps.</p>
+
+<h2>Grid</h2>
+<p class="lead">Apps use the <a href="http://getbootstrap.com/css/#grid">default bootstrap</a> <strong>12 column scaleable responsive grid</strong>.</p>
+<div class="row add-bottom-margin">
+  <div class="grid-example col-md-2">col-md-2</div>
+  <div class="grid-example col-md-4">col-md-4</div>
+  <div class="grid-example col-md-6">col-md-6</div>
+</div>
+<div class="row">
+  <div class="grid-example col-md-12">col-md-12</div>
+</div>
+<hr>
+
+<h2>Buttons</h2>
+<div class="row">
+  <p class="col-md-6 lead">Despite using bootstrap 3 apps use the classic bootstrap button styles — the buttons have better affordance and clearer focus and active states. The source to override the buttons with the originals is from <a href="https://gist.github.com/Erve1879/6167373">https://gist.github.com/Erve1879/6167373</a>.</p>
+  <div class="col-md-6">
+    <a href="#" class="btn btn-default">Default</a>
+    <a href="#" class="btn btn-primary">Primary</a>
+    <a href="#" class="btn btn-success">Success</a>
+    <a href="#" class="btn btn-info">Info</a>
+    <a href="#" class="btn btn-warning">Warning</a>
+    <a href="#" class="btn btn-danger">Danger</a>
+    <a href="#" class="btn btn-link">Link</a>
+  </div>
+</div>
+<div class="row">
+  <p class="col-md-6 lead">Create and success actions use <code>btn-success</code>.</p>
+  <div class="col-md-6">
+    <a href="#" class="btn btn-success">
+      Save mapping
+    </a>
+  </div>
+</div>
+<div class="row">
+  <p class="col-md-6 lead">When adding an item include an <code>icon-plus</code> icon.</p>
+  <div class="col-md-6">
+    <a href="#" class="btn btn-default">
+      <i class="glyphicon glyphicon-plus"></i> Add mapping
+    </a>
+  </div>
+</div>
+<hr>
+
+<h2>Page headers with subtitles</h2>
+<div class="row">
+  <p class="col-md-6 lead">Page headers have a single pixel bottom-border. Subtitles - if used - run underneath this.</p>
+  <section class="headers col-md-6">
+    <header>
+      <div class="page-title">
+        <h1>
+          <span class="small">www.ukspaceagency.com</span>
+          UK Space Agency
+        </h1>
+      </div>
+      <p class="subtitle">UKSA is an executive agency of <a href="#">BIS</a></p>
+
+      <div class="page-title with-border">
+        <h1>
+          <span class="small">www.ukspaceagency.com</span>
+          UK Space Agency
+        </h1>
+      </div>
+      <p class="subtitle">UKSA is an executive agency of <a href="#">BIS</a></p>
+
+    </header>
+  </section>
+</div>
+<hr>
+
+<h2>Tables</h2>
+<div class="row">
+  <div class="col-md-6 lead">
+    <p>When using a table with two layers of headings, usually for interacting with table content, <code>table-header</code> and <code>table-header-secondary</code> classes are used.</p>
+
+    <p>The second example shows a table with selectable rows. Selected rows highlight in yellow. The checkbox in the header selects all rows.</p>
+  </div>
+  <ul class="col-md-6">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr class="table-header">
+          <th>Primary header</th>
+        </tr>
+        <tr class="table-header-secondary">
+          <th>Secondary header</th>
+        </tr>
+      </thead>
+    <tbody>
+      <tr>
+        <td>Typical row</td>
+      </tr>
+      <tr>
+        <td>Typical row</td>
+      </tr>
+    </tbody>
+    </table>
+
+    <table class="table table-bordered table-hover" data-module="selectable-table">
+      <thead>
+        <tr class="table-header">
+          <th></th>
+          <th>Primary header</th>
+        </tr>
+        <tr class="table-header-secondary">
+          <th class="selectable-row">
+            <div class="relative">
+              <label>
+                <input type="checkbox" class="js-toggle-all" />
+              </label>
+            </div>
+          </th>
+          <th><a href="#" class="btn btn-default">Action</a></th>
+        </tr>
+      </thead>
+    <tbody>
+      <tr class="selected-row">
+        <td class="selectable-row">
+          <div class="relative">
+            <label>
+              <input type="checkbox" checked="checked" class="js-toggle-row" />
+            </label>
+          </div>
+        </td>
+        <td>Selected row</td>
+      </tr>
+      <tr>
+        <td class="selectable-row">
+          <div class="relative">
+            <label>
+              <input type="checkbox" />
+            </label>
+          </div>
+        </td>
+        <td>Typical row</td>
+      </tr>
+    </tbody>
+    </table>
+  </ul>
+</div>
+<hr>
+
+<h2>Links</h2>
+<div class="row">
+  <div class="col-md-6 lead">
+    <p>To match bootstrap’s muted text, a muted link class is available.</p>
+    <p>Purple <code>:visited</code> styles have been added. These apply to the main content but not to buttons.</p>
+  </div>
+  <div class="col-md-6">
+    <a href="/style" class="link-muted">Muted link</a><br><br>
+    <a href="/style">Visited link</a><br><br>
+    <a href="/style#<%= "#{Time.now.utc.to_i}" %>">Normal link</a><br><br>
+    <a href="/style" class="btn btn-default">Visited button link</a><br><br>
+    <a href="/style" class="btn btn-success">Another visited button link</a><br><br>
+  </div>
+</div>
+<hr>
+
+<h2>Big number</h2>
+<p class="big-number text-muted">100 hits</p>
+<hr>
+
+<h2>Big message</h2>
+<p class="big-message text-muted">A big message</p>
+<hr>
+
+<h2>Highlights</h2>
+<div class="row add-bottom-margin">
+  <p class="col-md-6 lead">Highlights are a reproduction of the <a href="https://www.gov.uk/vat-rates">GOV.UK answer style</a> and use colours from the <a href="https://www.gov.uk/service-manual/user-centered-design/resources/colour-palettes">style guide palette</a>. They are predominantly used on dashboards (see transition).</p>
+  <div class="col-md-6">
+    <div class="highlight add-bottom-margin">
+      <p>Some highlighted text</p>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="highlight add-bottom-margin">
+      <span class="big-number">140 days</span>
+      <p>since transition<br />on 14 January 2013</p>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="highlight">
+      <p class="big-message">A big message in a highlight</p>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="highlight highlight-turquoise">
+      <p class="big-message">Turquoise &amp; Live</p>
+    </div>
+    <div class="highlight highlight-orange">
+      <p class="big-message">Orange &amp; Pre-transition</p>
+    </div>
+  </div>
+</div>
+<hr>
+
+<h2>No content</h2>
+<div class="row">
+  <p class="col-md-6 lead">A large but light style which applies to the empty state, eg when there are no mappings or hits. The bordered version mimics bootstrap table styles.</p>
+  <div class="col-md-6">
+    <p class="no-content">No mappings available</p>
+    <p class="no-content no-content-bordered">Bordered message</p>
+    <p class="no-content">A longer, multi-line no content message. Do labore et <a href="#">dolore magna aliqua</a>.</p>
+  </div>
+</div>
+<hr>
