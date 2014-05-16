@@ -6,16 +6,10 @@ require "bundler/gem_tasks"
 # Running jasmine from root prevents the spec files
 # from being compiled through the asset pipeline
 #
-# Emulate API from here
+# Import all dummy app rake tasks under a namespace
 
-desc 'Run specs via dummy app and server:ci'
-task :jasmine do
-  `bundle exec rake -f spec/dummy/Rakefile jasmine`
+namespace :dummy_app do
+  require File.expand_path('../spec/dummy/config/application', __FILE__)
+  Dummy::Application.load_tasks
 end
 
-namespace :jasmine do
-  desc 'Run continuous integration tests via dummy app'
-  task :ci do
-    `bundle exec rake -f spec/dummy/Rakefile jasmine:ci`
-  end
-end
