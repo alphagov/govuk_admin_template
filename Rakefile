@@ -15,3 +15,5 @@ namespace :dummy_app do
   Dummy::Application.load_tasks
 end
 
+task(:default).clear
+task :default => [:spec, 'dummy_app:jasmine:ci']
