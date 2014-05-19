@@ -10,7 +10,7 @@ describe 'Assets' do
 
   describe 'Compiling javascript' do
     it 'compiles library code' do
-      visit '/assets/govuk_admin_template.js'
+      visit '/assets/govuk-admin-template.js'
       expect(asset).to include('Bootstrap')
       expect(asset).to include('jQuery')
     end
