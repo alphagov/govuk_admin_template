@@ -4,7 +4,7 @@ module GovukAdminTemplate
     require 'jquery-rails'
 
     initializer 'govuk_admin_template.assets.precompile' do |app|
-      app.config.assets.precompile += %w(lte-ie8.js)
+      app.config.assets.precompile += %w(lte-ie8.js govuk-admin-template.js)
     end
   end
 end
