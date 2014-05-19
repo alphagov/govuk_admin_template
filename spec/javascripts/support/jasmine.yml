@@ -11,6 +11,7 @@
 #   - dist/**/*.js
 #
 src_files:
+  - assets/govuk_admin_template.js
   - assets/application.js
 
 # stylesheets
@@ -109,4 +110,3 @@ boot_dir:
 #   - '**/*.js'
 #
 boot_files:
-
