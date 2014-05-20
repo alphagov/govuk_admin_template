@@ -9,8 +9,11 @@
     <script>(function(d){d.className=d.className.replace(/^no-js\b/,'js');}(document.documentElement));</script>
     <% # HTML5 and bootstrap shims, for <= IE8 support of HTML5 elements %>
     <!--[if lte IE 8]>
-      <script src="<%= asset_path "lte-ie8.js" %>"></script>
+      <%= javascript_include_tag "lte-ie8" %>
     <![endif]-->
+    <% # jQuery and Bootstrap %>
+    <%= javascript_include_tag "govuk-admin-template" %>
+
     <%= yield :head %>
   </head>
   <body>
