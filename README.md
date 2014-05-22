@@ -6,6 +6,7 @@ This gem provides (via a Rails engine):
 * jQuery
 * Bootstrap 3 standard styles and javascript — including HTML5 and respond.js shims necessary for IE <= IE8
 * An admin layout with header and footer
+* A [lightweight javascript framework](JAVASCRIPT.md)
 * Admin design patterns available from __/style-guide__
 * SASS variables for the admin theme
 
@@ -33,6 +34,8 @@ You will also need to include your styles within the `<head>` of your HTML, do t
 ```
 
 The gem source includes a [dummy app](spec/dummy) configured to behave like an app using the gem. If you have the gem checked out it can be run from the `spec\dummy` directory using `rails s`.
+
+For Javascript usage, available modules and writing modules, see the [Javascript guide](JAVASCRIPT.md).
 
 ### Content blocks
 
