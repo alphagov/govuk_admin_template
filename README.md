@@ -90,4 +90,4 @@ bundle exec rake dummy_app:jasmine:ci
 
 ## Publishing
 
-There is no automatic compilation and publish step yet.
+Version bumps will automatically update RubyGems.org.
