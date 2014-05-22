@@ -1,4 +1,3 @@
-require 'bundler/gem_tasks'
 require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new(:spec)
 
@@ -17,3 +16,11 @@ end
 
 task(:default).clear
 task :default => [:spec, 'dummy_app:jasmine:ci']
+
+require "gem_publisher"
+
+desc "Publish gem to RubyGems.org"
+task :publish_gem do |t|
+  gem = GemPublisher.publish_if_updated("govuk_admin_template.gemspec", :rubygems)
+  puts "Published #{gem}" if gem
+end
