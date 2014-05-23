@@ -1,3 +1,7 @@
+# 0.0.3
+
+* Make style guide available as a mounted route
+
 # 0.0.2
 
 * Add lightweight Javascript framework and modules, ported from Transition
