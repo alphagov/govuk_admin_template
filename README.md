@@ -7,7 +7,7 @@ This gem provides (via a Rails engine):
 * Bootstrap 3 standard styles and javascript — including HTML5 and respond.js shims necessary for IE <= IE8
 * An admin layout with header and footer
 * A [lightweight javascript framework](JAVASCRIPT.md)
-* Admin design patterns available from __/style-guide__
+* Admin design patterns available from `/style-guide` (when routes are mounted)
 * SASS variables for the admin theme
 
 ## Usage
@@ -31,6 +31,12 @@ You will also need to include your styles within the `<head>` of your HTML, do t
 <% content_for :head do %>
   <%= stylesheet_link_tag "application", :media => "all" %>
 <% end %>
+```
+
+It is recommended that the style guide is also made available within your app at the route `/style-guide`. Add this to your `config/routes.rb` file:
+
+```ruby
+mount GovukAdminTemplate::Engine, at: "/style-guide"
 ```
 
 The gem source includes a [dummy app](spec/dummy) configured to behave like an app using the gem. If you have the gem checked out it can be run from the `spec\dummy` directory using `rails s`.
