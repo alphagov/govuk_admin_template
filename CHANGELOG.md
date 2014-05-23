@@ -1,3 +1,7 @@
+# 0.0.4
+
+* Put style guide through parent application controller for accurate rendering
+
 # 0.0.3
 
 * Make style guide available as a mounted route
