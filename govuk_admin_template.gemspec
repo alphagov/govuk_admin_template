@@ -12,7 +12,7 @@ Gem::Specification.new do |gem|
   gem.summary       = gem.description
   gem.homepage      = "https://github.com/alphagov/govuk_admin_template"
 
-  gem.files         = Dir["{app,lib}/**/*"] + ["LICENCE.txt", "README.md"]
+  gem.files         = Dir["{app,config,lib}/**/*"] + Dir["*.md"] + ["LICENCE.txt"]
   gem.require_paths = ["lib"]
 
   gem.add_dependency 'rails', '>= 3.2.0'
