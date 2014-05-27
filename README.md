@@ -9,6 +9,7 @@ This gem provides (via a Rails engine):
 * A [lightweight javascript framework](JAVASCRIPT.md)
 * Admin design patterns available from `/style-guide` (when routes are mounted)
 * SASS variables for the admin theme
+* GOV.UK user friendly date formats
 
 ## Usage
 
@@ -64,6 +65,18 @@ Example navbar_items:
     <a href="#">navbar_item</a>
   </li>
 <% end %>
+```
+
+### Date formats
+
+The [gem includes](lib/govuk_admin_template/engine.rb) `:govuk_date` date and time formats which match the [recommended style](https://www.gov.uk/design-principles/style-guide/style-points#style-dates-and-times).
+
+```ruby
+# 1 January 2013
+date.to_s(:govuk_date)
+
+# 1:15pm, 1 January 2013
+time.to_s(:govuk_date)
 ```
 
 ## Development
