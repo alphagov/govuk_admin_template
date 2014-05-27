@@ -1,3 +1,7 @@
+# 0.0.5
+
+* Fix gem.files to include all needed files (routes)
+
 # 0.0.4
 
 * Put style guide through parent application controller for accurate rendering
