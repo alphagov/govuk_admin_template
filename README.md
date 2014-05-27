@@ -23,10 +23,19 @@ At the top of `application.scss` include the styles (this provides all the mixin
 @import 'govuk_admin_template';
 ```
 
-The base template includes Bootstrap and jQuery javascript, IE shims, header HTML and footer HTML. In `application.html.erb` after any content blocks you want to include, render the base template:
+In `application.html.erb` after any content blocks you want to include, render the base template:
 ```erb
 <%= render :template => 'layouts/govuk_admin_template' %>
 ```
+
+The [base template](app/views/layouts/govuk_admin_template.html.erb) includes:
+* Javascript and non-Javascript classes
+* Mobile friendly viewport
+* Bootstrap and jQuery javascript
+* IE HTML5 and respondjs shims, and HTML classes
+* header HTML
+* footer HTML
+
 You will also need to include your styles within the `<head>` of your HTML, do this using nested layouts:
 ```erb
 <% content_for :head do %>
