@@ -1,2 +1,2 @@
-//= require vendor/html5
-//= require vendor/respond.min
+//= require govuk-admin-template/vendor/html5
+//= require govuk-admin-template/vendor/respond.min
