@@ -1,3 +1,8 @@
+# 0.0.6
+
+* Add `:govuk_date` date format
+* Fix broken footer HTML
+
 # 0.0.5
 
 * Fix gem.files to include all needed files (routes)
