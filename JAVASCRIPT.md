@@ -12,7 +12,7 @@ Javascript modules are specified in markup using `data-` attributes:
 </div>
 ```
 
-When javascript runs on the page the framework will look for a module at `GOVUKAdmin.Modules.SomeModule`. Note the value of the data attribute has been converted to _camelCase_.
+When javascript runs on the page the framework will look for a module at `GOVUKAdmin.Modules.SomeModule`. Note the value of the data attribute has been converted to _PascalCase_.
 
 The module will first be instantiated and then will automatically call the module’s `start` method, passing it the element the `data` attribute is on:
 
