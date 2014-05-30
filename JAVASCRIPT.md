@@ -103,4 +103,4 @@ auto_track_event.js | `AutoTrackEvent` | `auto-track-event` | Use data attribute
 filterable_table.js | `FilterableTable` | `filterable-table` | Filter the contents of a table, showing only matching rows
 fixed_table_header.js | `FixedTableHeader` | `fixed-table-header` | Fix the `<thead>` portion of a table when scrolling offscreen
 selectable_table.js | `SelectableTable` | `selectable-table` | Select rows in a table and perform an action on them
-toggle.js | Toggle | toggle | A simple toggle
+toggle.js | `Toggle` | `toggle` | A simple toggle
