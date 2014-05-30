@@ -1,10 +1,10 @@
 @import 'bootstrap';
-@import 'buttons'; // overrides bootstrap buttons
-@import 'theme';
-@import 'base';
+@import 'govuk_admin_template/buttons'; // overrides bootstrap buttons
+@import 'govuk_admin_template/theme';
+@import 'govuk_admin_template/base';
 
 // Components
-@import 'toggles';
-@import 'navbar';
-@import 'tables';
-@import 'style_guide';
+@import 'govuk_admin_template/toggles';
+@import 'govuk_admin_template/navbar';
+@import 'govuk_admin_template/tables';
+@import 'govuk_admin_template/style_guide';
