@@ -51,6 +51,26 @@
 </div>
 <hr>
 
+<h2>Dates</h2>
+<div class="row">
+  <p class="col-md-6 lead">
+    The gem includes <code>:govuk_date</code> date and time formats which match the <a href="https://www.gov.uk/design-principles/style-guide/style-points#style-dates-and-times">recommended style</a>.
+  </p>
+  <section class="col-md-6">
+    <h2 class="remove-top-margin">Default</h2>
+    <% halloween = Date.new(2013, 10, 31) %>
+    <blockquote><%= halloween %><br />
+      <%= halloween.to_time %>
+    </blockquote>
+
+    <h2>Friendly</h2>
+    <blockquote><%= halloween.to_s(:govuk_date) %><br />
+      <%= halloween.to_time.to_s(:govuk_date) %>
+    </blockquote>
+  </section>
+</div>
+<hr>
+
 <h2>Page headers with subtitles</h2>
 <div class="row">
   <p class="col-md-6 lead">Page headers have a single pixel bottom-border. Subtitles - if used - run underneath this.</p>
