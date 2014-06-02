@@ -196,6 +196,60 @@ main a {
 
 }
 
+/* Visited links in Bootstrap component overrides
+   ========================================================================== */
+
+/* Navigation pills */
+
+.nav-pills a:visited {
+  color: $link-color;
+}
+
+.nav-pills a:visited:hover {
+  color: $link-hover-color;
+}
+
+/* Dropdown menu */
+
+.dropdown-menu a:visited {
+  color: $text-color;
+}
+
+/* List groups */
+
+.list-group a.list-group-item:visited {
+  color: $list-group-link-color;
+}
+
+.list-group a.list-group-item:visited:hover {
+  color: $list-group-link-color;
+}
+
+.list-group a.list-group-item.active:visited {
+  color: $list-group-active-text-color;
+}
+
+.list-group a.list-group-item.active:visited:hover {
+  color: $list-group-active-text-color;
+}
+
+/* List groups with content  */
+
+a.list-group-item {
+
+  &:hover .list-group-item-heading {
+    text-decoration: underline;
+  }
+
+  .list-group-item-heading {
+    color: $link-color;
+  }
+
+}
+
+/* Further link types
+   ========================================================================== */
+
 .link-muted,
 .link-muted:visited {
   color: $gray-light;
@@ -207,14 +261,8 @@ main a {
   color: $gray;
 }
 
-// Force long URLs to break
-.breakable {
-  word-break: break-all;
-  display: inline-block;
-}
-
-.glossary-link,
-.glossary-link:visited {
+.link-inherit,
+.link-inherit:visited {
   color: inherit;
   text-decoration: underline;
 }
@@ -255,6 +303,12 @@ main a {
    Common content patterns
    ========================================================================== */
 
+// Force long URLs to break
+.breakable {
+  word-break: break-all;
+  display: inline-block;
+}
+
 .subtitle {
   margin: -$default-vertical-margin 0 $default-vertical-margin;
   font-size: $font-size-large;
@@ -273,18 +327,6 @@ main a {
 .list-group-item {
   padding-top:    $default-vertical-margin;
   padding-bottom: $default-vertical-margin;
-}
-
-a.list-group-item {
-
-  &:hover .list-group-item-heading {
-    text-decoration: underline;
-  }
-
-  .list-group-item-heading {
-    color: $link-color;
-  }
-
 }
 
 /* No content

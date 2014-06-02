@@ -155,11 +155,64 @@
     <p>Purple <code>:visited</code> styles have been added. These apply to the main content but not to buttons.</p>
   </div>
   <div class="col-md-6">
-    <a href="/style" class="link-muted">Muted link</a><br><br>
-    <a href="/style">Visited link</a><br><br>
-    <a href="/style#<%= "#{Time.now.utc.to_i}" %>">Normal link</a><br><br>
-    <a href="/style" class="btn btn-default">Visited button link</a><br><br>
-    <a href="/style" class="btn btn-success">Another visited button link</a><br><br>
+    <a href="/style-guide" class="link-muted">Muted link</a><br><br>
+    <a href="/style-guide">Visited link</a><br><br>
+    <a href="/style-guide#<%= "#{Time.now.utc.to_i}" %>">Normal link</a><br><br>
+    An <a href="/style-guide" class="link-inherit">underlined link</a> that inherits its colour<br><br>
+    <a href="/style-guide" class="btn btn-default">Visited button link</a><br><br>
+    <a href="/style-guide" class="btn btn-success">Another visited button link</a><br><br>
+  </div>
+</div>
+
+<h3>Links in Bootstrap components</h3>
+<div class="row">
+  <div class="col-md-3">
+    <h4 class="add-bottom-margin">List group with content</h4>
+    <div class="list-group">
+      <a href="/style-guide" class="list-group-item active">
+        <h4 class="list-group-item-heading">Active visited link</h4>
+        <p class="list-group-item-text">Active visited link</p>
+      </a>
+      <a href="/style-guide" class="list-group-item">
+        <h4 class="list-group-item-heading">Visited link</h4>
+        <p class="list-group-item-text">Visited link</p>
+      </a>
+      <a href="/style-guide#<%= "#{Time.now.utc.to_i}" %>" class="list-group-item">
+        <h4 class="list-group-item-heading">Normal link</h4>
+        <p class="list-group-item-text">Normal link</p>
+      </a>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <h4 class="add-bottom-margin">List group</h4>
+    <div class="list-group">
+      <a href="/style-guide" class="list-group-item active">
+        Active visited link style
+      </a>
+      <a href="/style-guide" class="list-group-item">Visited link</a>
+      <a href="/style-guide#<%= "#{Time.now.utc.to_i}" %>" class="list-group-item">Normal link</a>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <h4 class="add-bottom-margin">Navigation pills</h4>
+    <ul class="nav nav-pills nav-stacked">
+      <li class="active"><a href="/style-guide">Active visited link</a></li>
+      <li><a href="/style-guide">Visited link</a></li>
+      <li><a href="/style-guide#<%= "#{Time.now.utc.to_i}" %>">Normal link</a></li>
+    </ul>
+  </div>
+  <div class="col-md-3">
+    <h4 class="add-bottom-margin">Dropdowns</h4>
+    <!-- Single button -->
+    <div class="btn-group open">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        Action <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="/style-guide">Visited link</a></li>
+        <li><a href="/style-guide#<%= "#{Time.now.utc.to_i}" %>">Normal link</a></li>
+      </ul>
+    </div>
   </div>
 </div>
 <hr>
