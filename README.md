@@ -61,11 +61,13 @@ content_for    | Description
 -------------  | -------------
 app_title      | Name of your admin application
 content        | Main content
-footer_version (optional) | Text indicating the release, eg commit SHA
 head           | HTML to include in the <head> of your application
+page_title     | Page title
 navbar_items   | A set of HTML list items (`<li>`) forming the primary navigation
 navbar_right   | Text to the right of the nav bar. Logged in user, sign out link, etc
-page_title     | Page title
+footer_top (optional) | Footer content before copyright text
+footer_version (optional) | Text indicating the release, eg commit SHA
+body_end (optional) | Just before the `</body>` tag
 
 Example navbar_items:
 ```erb
