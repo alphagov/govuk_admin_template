@@ -1,3 +1,9 @@
+# 0.0.7
+
+* Fix visited link styles on bootstrap components
+* Allow content in footer and bottom of page
+* Namespace CSS and Javascript files
+
 # 0.0.6
 
 * Add `:govuk_date` date format
