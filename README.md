@@ -8,7 +8,7 @@ This gem provides (via a Rails engine):
 * An admin layout with header and footer
 * A [lightweight javascript framework](JAVASCRIPT.md)
 * Admin design patterns available from `/style-guide` (when routes are mounted)
-* SASS variables for the admin theme
+* [CSS helpers and SASS variables](CSS.md) for the admin theme
 * GOV.UK user friendly date formats
 
 ## Usage
