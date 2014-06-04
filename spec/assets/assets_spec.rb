@@ -4,7 +4,7 @@ describe 'Assets' do
   subject(:asset) { page.body }
 
   it 'serves images, eg the crown header' do
-    visit '/assets/header-crown.png'
+    visit '/assets/govuk_admin_template/header-crown.png'
     asset.should_not be_empty
   end
 
