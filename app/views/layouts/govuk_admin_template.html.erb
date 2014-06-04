@@ -17,7 +17,11 @@
     <![endif]-->
     <% # jQuery and Bootstrap %>
     <%= javascript_include_tag "govuk-admin-template" %>
-    <%= favicon_link_tag environment_style ? "favicon-#{environment_style}.png" : "favicon.png" %>
+    <% if content_for?(:favicon) %>
+      <%= yield :favicon %>
+    <% else %>
+      <%= favicon_link_tag environment_style ? "favicon-#{environment_style}.png" : "favicon.png" %>
+    <% end %>
     <%= yield :head %>
   </head>
   <body<% if environment_style %> class="environment-<%= environment_style %>"<% end %>>
