@@ -90,6 +90,20 @@ date.to_s(:govuk_date)
 time.to_s(:govuk_date)
 ```
 
+### Environment indicators
+
+The gem includes default styles for development, preview and production. This includes a coloured environment label, a coloured strip beneath the main navigation and a coloured favicon. They are based on two variables that are set at deploy time (if they aren’t set no indicator will be shown).
+
+The following should be set within an initializer:
+
+```ruby
+# used for the classname and favicon
+GovukAdminTemplate.environment_style = [preview|production|development]
+
+# used for the human readable label
+GovukAdminTemplate.environment_label = [Preview|Staging|Production|Development]
+```
+
 ## Development
 
 Clone the repository and run `bundle`.
