@@ -14,6 +14,25 @@ describe 'Layout' do
     expect(page).to have_title 'page_title'
   end
 
+  context 'no environment set' do
+    it 'defaults to not showing any environment details' do
+      visit '/'
+      expect(page).not_to have_selector('.environment-label')
+      expect(page).not_to have_selector('.environment-message')
+      expect(page.body).to include("favicon.png")
+    end
+  end
+
+  context 'in a development environment' do
+    it 'includes details about the current environment' do
+      GovukAdminTemplate.environment_style = "development"
+      visit '/'
+      expect(page).to have_selector('.environment-label', text: 'Development')
+      expect(page).to have_selector('.environment-development')
+      expect(page.body).to include("favicon-development.png")
+    end
+  end
+
   it 'renders a bootstrap header' do
     visit '/'
     within '.navbar' do
