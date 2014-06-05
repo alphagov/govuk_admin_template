@@ -16,6 +16,7 @@ describe 'Layout' do
 
   context 'no environment set' do
     it 'defaults to not showing any environment details' do
+      GovukAdminTemplate.environment_style = nil
       visit '/'
       expect(page).not_to have_selector('.environment-label')
       expect(page).not_to have_selector('.environment-message')
