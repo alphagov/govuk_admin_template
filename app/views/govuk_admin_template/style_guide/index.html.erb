@@ -193,6 +193,10 @@
         <h4 class="list-group-item-heading">Active visited link</h4>
         <p class="list-group-item-text">Active visited link</p>
       </a>
+      <a href="/style-guide#<%= "#{Time.now.utc.to_i}" %>" class="list-group-item active">
+        <h4 class="list-group-item-heading">Active normal link</h4>
+        <p class="list-group-item-text">Active normal link</p>
+      </a>
       <a href="/style-guide" class="list-group-item">
         <h4 class="list-group-item-heading">Visited link</h4>
         <p class="list-group-item-text">Visited link</p>
@@ -209,6 +213,9 @@
       <a href="/style-guide" class="list-group-item active">
         Active visited link style
       </a>
+      <a href="/style-guide#<%= "#{Time.now.utc.to_i}" %>" class="list-group-item active">
+        Active normal link style
+      </a>
       <a href="/style-guide" class="list-group-item">Visited link</a>
       <a href="/style-guide#<%= "#{Time.now.utc.to_i}" %>" class="list-group-item">Normal link</a>
     </div>
@@ -217,8 +224,20 @@
     <h4 class="add-bottom-margin">Navigation pills</h4>
     <ul class="nav nav-pills nav-stacked">
       <li class="active"><a href="/style-guide">Active visited link</a></li>
+      <li class="active"><a href="/style-guide#<%= "#{Time.now.utc.to_i}" %>">Active normal link</a></li>
       <li><a href="/style-guide">Visited link</a></li>
       <li><a href="/style-guide#<%= "#{Time.now.utc.to_i}" %>">Normal link</a></li>
+      <li>
+        <div class="btn-group open">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            Dropdown in navigation pill <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/style-guide">Visited link</a></li>
+            <li><a href="/style-guide#<%= "#{Time.now.utc.to_i}" %>">Normal link</a></li>
+          </ul>
+        </div>
+      </li>
     </ul>
   </div>
   <div class="col-md-3">
@@ -229,6 +248,8 @@
         Action <span class="caret"></span>
       </button>
       <ul class="dropdown-menu" role="menu">
+        <li class="active"><a href="/style-guide">Active visited link</a></li>
+        <li class="active"><a href="/style-guide#<%= "#{Time.now.utc.to_i}" %>">Active normal link</a></li>
         <li><a href="/style-guide">Visited link</a></li>
         <li><a href="/style-guide#<%= "#{Time.now.utc.to_i}" %>">Normal link</a></li>
       </ul>

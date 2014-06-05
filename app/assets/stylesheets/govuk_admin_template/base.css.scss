@@ -205,18 +205,29 @@ main a {
 
 /* Navigation pills */
 
-.nav-pills a:visited {
+.nav-pills > li > a:visited {
   color: $link-color;
 }
 
-.nav-pills a:visited:hover {
+.nav-pills > li > a:visited:hover {
   color: $link-hover-color;
+}
+
+.nav-pills > li.active > a:visited,
+.nav-pills > li.active > a:visited:hover {
+  color: $component-active-color;
 }
 
 /* Dropdown menu */
 
-.dropdown-menu a:visited {
+.dropdown-menu > li > a:visited,
+.dropdown-menu > li > a:hover:visited {
   color: $text-color;
+}
+
+.dropdown-menu > li.active > a:visited,
+.dropdown-menu > li.active > a:hover:visited {
+  color: $component-active-color
 }
 
 /* List groups */
@@ -229,12 +240,9 @@ main a {
   color: $list-group-link-color;
 }
 
-.list-group a.list-group-item.active:visited {
-  color: $list-group-active-text-color;
-}
-
+.list-group a.list-group-item.active:visited,
 .list-group a.list-group-item.active:visited:hover {
-  color: $list-group-active-text-color;
+  color: $component-active-color;
 }
 
 /* List groups with content  */
