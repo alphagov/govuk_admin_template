@@ -1,3 +1,7 @@
+<%
+  environment_style = GovukAdminTemplate.environment_style
+  environment_label = GovukAdminTemplate.environment_label
+%>
 <!DOCTYPE html>
 <!--[if lt IE 9]><html class="no-js lte-ie8" lang="en"><![endif]-->
 <!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
@@ -13,15 +17,22 @@
     <![endif]-->
     <% # jQuery and Bootstrap %>
     <%= javascript_include_tag "govuk-admin-template" %>
-
+    <% if content_for?(:favicon) %>
+      <%= yield :favicon %>
+    <% else %>
+      <%= favicon_link_tag environment_style ?
+        "govuk_admin_template/favicon-#{environment_style}.png" : "govuk_admin_template/favicon.png"
+      %>
+    <% end %>
     <%= yield :head %>
   </head>
-  <body>
+  <body<% if environment_style %> class="environment-<%= environment_style %>"<% end %>>
     <header class="
       navbar
       navbar-default
       navbar-inverse
       navbar-static-top
+      <% if environment_style %>environment-indicator<% end %>
       add-bottom-margin" role="banner">
       <div class="container">
         <div class="navbar-header">
@@ -33,6 +44,11 @@
             <span class="icon-bar"></span>
           </a>
           <%= link_to content_for?(:app_title) ? yield(:app_title) : "GOV.UK", root_path, :class => 'navbar-brand' %>
+          <% if environment_label %>
+            <div class="environment-label">
+              <%= environment_label %>
+            </div>
+          <% end %>
         </div>
         <nav role="navigation" class="collapse navbar-collapse">
           <% if content_for?(:navbar_items) %>
