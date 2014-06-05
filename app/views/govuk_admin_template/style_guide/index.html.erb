@@ -219,6 +219,17 @@
       <li class="active"><a href="/style-guide">Active visited link</a></li>
       <li><a href="/style-guide">Visited link</a></li>
       <li><a href="/style-guide#<%= "#{Time.now.utc.to_i}" %>">Normal link</a></li>
+      <li>
+        <div class="btn-group open">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            Dropdown in navigation pill <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/style-guide">Visited link</a></li>
+            <li><a href="/style-guide#<%= "#{Time.now.utc.to_i}" %>">Normal link</a></li>
+          </ul>
+        </div>
+      </li>
     </ul>
   </div>
   <div class="col-md-3">

@@ -205,17 +205,23 @@ main a {
 
 /* Navigation pills */
 
-.nav-pills a:visited {
+.nav-pills > li > a:visited {
   color: $link-color;
 }
 
-.nav-pills a:visited:hover {
+.nav-pills > li > a:visited:hover {
   color: $link-hover-color;
+}
+
+.nav-pills > li.active > a:visited,
+.nav-pills > li.active > a:visited:hover {
+  color: $component-active-color;
 }
 
 /* Dropdown menu */
 
-.dropdown-menu a:visited {
+.dropdown-menu > li > a:visited,
+.dropdown-menu > li > a:hover:visited {
   color: $text-color;
 }
 
