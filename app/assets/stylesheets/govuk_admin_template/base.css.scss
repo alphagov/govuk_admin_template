@@ -240,12 +240,9 @@ main a {
   color: $list-group-link-color;
 }
 
-.list-group a.list-group-item.active:visited {
-  color: $list-group-active-text-color;
-}
-
+.list-group a.list-group-item.active:visited,
 .list-group a.list-group-item.active:visited:hover {
-  color: $list-group-active-text-color;
+  color: $component-active-color;
 }
 
 /* List groups with content  */
