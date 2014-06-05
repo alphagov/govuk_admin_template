@@ -1,3 +1,8 @@
+# 0.1.0
+
+* Environment indicators
+* Apps upgrading will need to change how they use favicons
+
 # 0.0.7
 
 * Fix visited link styles on bootstrap components
