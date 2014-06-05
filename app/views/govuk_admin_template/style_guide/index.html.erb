@@ -240,6 +240,8 @@
         Action <span class="caret"></span>
       </button>
       <ul class="dropdown-menu" role="menu">
+        <li class="active"><a href="/style-guide">Active visited link</a></li>
+        <li class="active"><a href="/style-guide#<%= "#{Time.now.utc.to_i}" %>">Active normal link</a></li>
         <li><a href="/style-guide">Visited link</a></li>
         <li><a href="/style-guide#<%= "#{Time.now.utc.to_i}" %>">Normal link</a></li>
       </ul>

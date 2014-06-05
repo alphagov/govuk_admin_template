@@ -225,6 +225,11 @@ main a {
   color: $text-color;
 }
 
+.dropdown-menu > li.active > a:visited,
+.dropdown-menu > li.active > a:hover:visited {
+  color: $component-active-color
+}
+
 /* List groups */
 
 .list-group a.list-group-item:visited {
