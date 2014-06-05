@@ -1,3 +1,8 @@
+# 0.1.1
+
+* Fix active visited link styles on bootstrap components
+* Fix visited link styles on nested bootstrap components
+
 # 0.1.0
 
 * Environment indicators
