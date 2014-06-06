@@ -88,20 +88,19 @@ a.inherit:visited,
 }
 
 .add-right-margin {
-  margin-right: $grid-gutter-width / 3 !important;
+  margin-right: $default-horizontal-margin !important;
 }
 
 .add-left-margin {
-  margin-left: $grid-gutter-width / 3 !important;
+  margin-left: $default-horizontal-margin !important;
 }
 
 .dl-spaced dd {
   margin-bottom: $default-vertical-margin;
 }
 
-/* Simulate the margin bootstrap puts on its labels (no built-in variable for this) */
 .add-label-margin {
-  margin-bottom: 5px;
+  margin-bottom: $default-label-margin;
 }
 
 /* Padding helpers
