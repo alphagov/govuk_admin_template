@@ -1,0 +1,11 @@
+@import 'govuk_admin_template/buttons'; // overrides bootstrap buttons
+
+/*
+  The admin gem's navbar has a bottom margin, for correct spacing
+  when the page-header class isn't used. To account for this reduce
+  the top margin from 40px to 20px, keeping the space effectively
+  the same.
+*/
+.page-header {
+  margin-top: $default-vertical-margin;
+}
