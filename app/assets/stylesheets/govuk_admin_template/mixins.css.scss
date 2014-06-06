@@ -1,0 +1,38 @@
+@mixin add-vertical-margins {
+  @include add-top-margin;
+  @include add-bottom-margin;
+}
+
+@mixin add-top-margin {
+  margin-top: $default-vertical-margin !important;
+}
+
+@mixin remove-top-margin {
+  margin-top: 0 !important;
+}
+
+@mixin add-bottom-margin {
+  margin-bottom: $default-vertical-margin !important;
+}
+
+@mixin remove-bottom-margin {
+  margin-bottom: 0 !important;
+}
+
+@mixin add-right-margin {
+  margin-right: $default-horizontal-margin !important;
+}
+
+@mixin add-left-margin {
+  margin-left: $default-horizontal-margin !important;
+}
+
+@mixin add-label-margin {
+  margin-bottom: $default-label-margin;
+}
+
+@mixin box-sizing {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}

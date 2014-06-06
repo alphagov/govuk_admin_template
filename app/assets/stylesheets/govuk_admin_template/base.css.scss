@@ -63,20 +63,19 @@ a.inherit:visited,
    ========================================================================== */
 
 .add-vertical-margins {
-  margin-top: $default-vertical-margin !important;
-  margin-bottom: $default-vertical-margin !important;
+  @include add-vertical-margins;
 }
 
 .add-top-margin {
-  margin-top: $default-vertical-margin !important;
+  @include add-top-margin;
 }
 
 .remove-top-margin {
-  margin-top: 0 !important;
+  @include remove-top-margin;
 }
 
 .add-bottom-margin {
-  margin-bottom: $default-vertical-margin !important;
+  @include add-bottom-margin;
 }
 
 .add-big-bottom-margin {
@@ -84,15 +83,15 @@ a.inherit:visited,
 }
 
 .remove-bottom-margin {
-  margin-bottom: 0 !important;
+  @include remove-bottom-margin;
 }
 
 .add-right-margin {
-  margin-right: $default-horizontal-margin !important;
+  @include add-right-margin;
 }
 
 .add-left-margin {
-  margin-left: $default-horizontal-margin !important;
+  @include add-left-margin;
 }
 
 .dl-spaced dd {
@@ -100,7 +99,7 @@ a.inherit:visited,
 }
 
 .add-label-margin {
-  margin-bottom: $default-label-margin;
+  @include add-label-margin;
 }
 
 /* Padding helpers
@@ -131,7 +130,7 @@ a.inherit:visited,
 .glyphicon-alert-success {
   @extend %glyphicon-smaller-than-text;
   @extend .text-success;
-  @extend %add-right-margin;
+  @include add-right-margin;
 }
 
 /* ==========================================================================
