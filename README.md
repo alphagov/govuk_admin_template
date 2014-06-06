@@ -57,17 +57,17 @@ For Javascript usage, available modules and writing modules, see the [Javascript
 
 The gem [uses nested layouts](http://guides.rubyonrails.org/layouts_and_rendering.html#using-nested-layouts) for customisation.
 
-content_for    | Description
--------------  | -------------
-app_title      | Name of your admin application
-content        | Main content
-head           | HTML to include in the <head> of your application
-page_title     | Page title
-navbar_items   | A set of HTML list items (`<li>`) forming the primary navigation
-navbar_right   | Text to the right of the nav bar. Logged in user, sign out link, etc
-footer_top (optional) | Footer content before copyright text
-footer_version (optional) | Text indicating the release, eg commit SHA
-body_end (optional) | Just before the `</body>` tag
+`content_for`     | Description
+---------------   | -------------
+`:app_title`      | Name of your admin application
+`:content`        | Main content
+`:head`           | HTML to include in the <head> of your application
+`:page_title`     | Page title
+`:navbar_items`   | A set of HTML list items (`<li>`) forming the primary navigation
+`:navbar_right`   | Text to the right of the nav bar. Logged in user, sign out link, etc
+`:footer_top` (optional) | Footer content before copyright text
+`:footer_version` (optional) | Text indicating the release, eg commit SHA
+`:body_end` (optional) | Just before the `</body>` tag
 
 Example navbar_items:
 ```erb
