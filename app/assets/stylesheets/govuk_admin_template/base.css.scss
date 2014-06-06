@@ -67,17 +67,14 @@ a.inherit:visited,
   margin-bottom: $default-vertical-margin !important;
 }
 
-%add-top-margin,
 .add-top-margin {
   margin-top: $default-vertical-margin !important;
 }
 
-%remove-top-margin,
 .remove-top-margin {
   margin-top: 0 !important;
 }
 
-%add-bottom-margin,
 .add-bottom-margin {
   margin-bottom: $default-vertical-margin !important;
 }
@@ -86,17 +83,14 @@ a.inherit:visited,
   margin-bottom: $default-vertical-margin * 2 !important;
 }
 
-%remove-bottom-margin,
 .remove-bottom-margin {
   margin-bottom: 0 !important;
 }
 
-%add-right-margin,
 .add-right-margin {
   margin-right: $grid-gutter-width / 3 !important;
 }
 
-%add-left-margin,
 .add-left-margin {
   margin-left: $grid-gutter-width / 3 !important;
 }
