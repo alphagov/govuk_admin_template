@@ -63,19 +63,19 @@ a.inherit:visited,
    ========================================================================== */
 
 .add-vertical-margins {
-  @include add-vertical-margins;
+  @include add-vertical-margins('!important');
 }
 
 .add-top-margin {
-  @include add-top-margin;
+  @include add-top-margin('!important');
 }
 
 .remove-top-margin {
-  @include remove-top-margin;
+  @include remove-top-margin('!important');
 }
 
 .add-bottom-margin {
-  @include add-bottom-margin;
+  @include add-bottom-margin('!important');
 }
 
 .add-big-bottom-margin {
@@ -83,15 +83,15 @@ a.inherit:visited,
 }
 
 .remove-bottom-margin {
-  @include remove-bottom-margin;
+  @include remove-bottom-margin('!important');
 }
 
 .add-right-margin {
-  @include add-right-margin;
+  @include add-right-margin('!important');
 }
 
 .add-left-margin {
-  @include add-left-margin;
+  @include add-left-margin('!important');
 }
 
 .dl-spaced dd {
