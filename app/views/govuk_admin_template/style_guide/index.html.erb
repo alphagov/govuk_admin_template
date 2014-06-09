@@ -260,10 +260,44 @@
 
 <h2>Nav lists</h2>
 <div class="row">
-  <p class="col-md-6 lead">
+  <p class="col-md-4 lead">
     <a href="http://stackoverflow.com/questions/18281636/what-replaces-nav-lists-in-bootstrap-3">Bootstrap 3 removed</a> the <code>nav-list</code> classes and <a href="http://getbootstrap.com/2.3.2/components.html#navs">design pattern</a>. For backwards compatibility these styles have been put back, but it’s advised to avoid this pattern.
   </p>
-  <section class="col-md-6">
+  <div class="col-md-4">
+    <div class="well sidebar-nav">
+      <ul class="nav nav-list">
+        <li class="nav-header">Filter by Status</li>
+        <li class="active status-option drafts">
+          <a href="#">Drafts <span class="badge pull-right">80</span></a>
+        </li>
+        <li class="status-option in_review">
+          <a href="#">In review <span class="badge pull-right">19</span></a>
+        </li>
+        <li class="status-option amends_needed">
+          <a href="#">Amends needed <span class="badge pull-right">33</span></a>
+        </li>
+        <li class="status-option out_for_fact_check">
+          <a href="#">Out for fact check <span class="badge pull-right">71</span></a>
+        </li>
+        <li class="status-option fact_check_received">
+          <a href="#">Fact check received <span class="badge pull-right">15</span></a>
+        </li>
+        <li class="status-option ready">
+          <a href="#">Ready <span class="badge pull-right">89</span></a>
+        </li>
+        <li class="status-option scheduled_for_publishing">
+          <a href="#">Scheduled <span class="badge pull-right">3</span></a>
+        </li>
+        <li class="status-option published">
+          <a href="#">Published <span class="badge pull-right">3161</span></a>
+        </li>
+        <li class="status-option archived">
+          <a href="#">Archived <span class="badge pull-right">12583</span></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-4">
     <div class="well">
       <ul class="nav nav-list">
         <li class="nav-header">List header</li>
@@ -273,11 +307,12 @@
         <li class="nav-header">Another list header</li>
         <li><a href="#">Profile</a></li>
         <li><a href="#">Settings</a></li>
+        <li><a href="#">Drafts</a></li>
         <li class="divider"></li>
         <li><a href="#">Help</a></li>
       </ul>
     </div>
-  </section>
+  </div>
 </div>
 <hr>
 
