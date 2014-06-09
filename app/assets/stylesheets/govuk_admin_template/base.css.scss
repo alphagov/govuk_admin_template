@@ -105,12 +105,24 @@ a.inherit:visited,
 /* Padding helpers
    ========================================================================== */
 
+.add-vertical-padding {
+  @include add-vertical-padding('!important');
+}
+
 .remove-padding {
   padding: 0 !important;
 }
 
+.add-top-padding {
+  @include add-top-padding('!important');
+}
+
 .remove-top-padding {
   padding-top: 0 !important;
+}
+
+.add-bottom-padding {
+  @include add-bottom-padding('!important');
 }
 
 .remove-bottom-padding {
