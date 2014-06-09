@@ -268,16 +268,16 @@
       <ul class="nav nav-list">
         <li class="nav-header">Filter by Status</li>
         <li class="active status-option drafts">
-          <a href="<%= @normal_link_href %>">Drafts <span class="badge pull-right">80</span></a>
-        </li>
-        <li class="status-option in_review">
-          <a href="<%= @normal_link_href %>">In review <span class="badge pull-right">19</span></a>
+          <a href="<%= @normal_link_href %>">Normal active <span class="badge pull-right">80</span></a>
         </li>
         <li class="status-option amends_needed">
-          <a href="<%= @normal_link_href %>">Amends needed <span class="badge pull-right">33</span></a>
+          <a href="<%= @normal_link_href %>">Normal link <span class="badge pull-right">33</span></a>
+        </li>
+        <li class="active status-option in_review">
+          <a href="<%= @visited_link_href %>">Visited active <span class="badge pull-right">19</span></a>
         </li>
         <li class="status-option out_for_fact_check">
-          <a href="<%= @normal_link_href %>">Out for fact check <span class="badge pull-right">71</span></a>
+          <a href="<%= @visited_link_href %>">Visited link <span class="badge pull-right">71</span></a>
         </li>
         <li class="status-option fact_check_received">
           <a href="<%= @normal_link_href %>">Fact check received <span class="badge pull-right">15</span></a>
