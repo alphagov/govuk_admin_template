@@ -1,6 +1,6 @@
 @import 'bootstrap';
-@import 'govuk_admin_template/buttons'; // overrides bootstrap buttons
 @import 'govuk_admin_template/theme';
+@import 'govuk_admin_template/bootstrap_overrides';
 @import 'govuk_admin_template/base';
 
 // Components
