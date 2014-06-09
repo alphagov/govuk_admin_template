@@ -31,6 +31,19 @@
   margin-bottom: $default-label-margin;
 }
 
+@mixin add-vertical-padding($important: "") {
+  @include add-top-padding($important);
+  @include add-bottom-padding($important);
+}
+
+@mixin add-top-padding($important: "") {
+  padding-top: $default-vertical-padding #{$important};
+}
+
+@mixin add-bottom-padding($important: "") {
+  padding-bottom: $default-vertical-padding #{$important};
+}
+
 @mixin box-sizing {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

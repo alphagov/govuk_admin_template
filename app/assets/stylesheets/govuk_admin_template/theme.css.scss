@@ -9,6 +9,7 @@ $font-family-gill-sans: "GillSans", "Gill Sans", "Helvetica Neue", Arial, sans-s
    ========================================================================== */
 
 $default-vertical-margin:   $line-height-computed;
+$default-vertical-padding:  $default-vertical-margin;
 $default-horizontal-margin: $grid-gutter-width / 3;
 
 // Simulate bootstrap labels spacing (no built-in variable for this)
