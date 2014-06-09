@@ -82,7 +82,7 @@
           UK Space Agency
         </h1>
       </div>
-      <p class="subtitle">UKSA is an executive agency of <a href="#">BIS</a></p>
+      <p class="subtitle">UKSA is an executive agency of <a href="<%= @normal_link_href %>">BIS</a></p>
 
       <div class="page-title with-border">
         <h1>
@@ -90,7 +90,7 @@
           UK Space Agency
         </h1>
       </div>
-      <p class="subtitle">UKSA is an executive agency of <a href="#">BIS</a></p>
+      <p class="subtitle">UKSA is an executive agency of <a href="<%= @normal_link_href %>">BIS</a></p>
 
     </header>
   </section>
@@ -138,7 +138,7 @@
               </label>
             </div>
           </th>
-          <th><a href="#" class="btn btn-default">Action</a></th>
+          <th><a href="<%= @normal_link_href %>" class="btn btn-default">Action</a></th>
         </tr>
       </thead>
     <tbody>
@@ -175,12 +175,12 @@
     <p>Purple <code>:visited</code> styles have been added. These apply to the main content but not to buttons.</p>
   </div>
   <div class="col-md-6">
-    <a href="/style-guide" class="link-muted">Muted link</a><br><br>
-    <a href="/style-guide">Visited link</a><br><br>
-    <a href="/style-guide#<%= "#{Time.now.utc.to_i}" %>">Normal link</a><br><br>
-    An <a href="/style-guide" class="link-inherit">underlined link</a> that inherits its colour<br><br>
-    <a href="/style-guide" class="btn btn-default">Visited button link</a><br><br>
-    <a href="/style-guide" class="btn btn-success">Another visited button link</a><br><br>
+    <a href="<%= @normal_link_href %>" class="link-muted">Muted link</a><br><br>
+    <a href="<%= @visited_link_href %>">Visited link</a><br><br>
+    <a href="<%= @normal_link_href %>">Normal link</a><br><br>
+    An <a href="<%= @visited_link_href %>" class="link-inherit">underlined link</a> that inherits its colour<br><br>
+    <a href="<%= @visited_link_href %>" class="btn btn-default">Visited button link</a><br><br>
+    <a href="<%= @visited_link_href %>" class="btn btn-success">Another visited button link</a><br><br>
   </div>
 </div>
 
@@ -189,19 +189,19 @@
   <div class="col-md-3">
     <h4 class="add-bottom-margin">List group with content</h4>
     <div class="list-group">
-      <a href="/style-guide" class="list-group-item active">
+      <a href="<%= @visited_link_href %>" class="list-group-item active">
         <h4 class="list-group-item-heading">Active visited link</h4>
         <p class="list-group-item-text">Active visited link</p>
       </a>
-      <a href="/style-guide#<%= "#{Time.now.utc.to_i}" %>" class="list-group-item active">
+      <a href="<%= @normal_link_href %>" class="list-group-item active">
         <h4 class="list-group-item-heading">Active normal link</h4>
         <p class="list-group-item-text">Active normal link</p>
       </a>
-      <a href="/style-guide" class="list-group-item">
+      <a href="<%= @visited_link_href %>" class="list-group-item">
         <h4 class="list-group-item-heading">Visited link</h4>
         <p class="list-group-item-text">Visited link</p>
       </a>
-      <a href="/style-guide#<%= "#{Time.now.utc.to_i}" %>" class="list-group-item">
+      <a href="<%= @normal_link_href %>" class="list-group-item">
         <h4 class="list-group-item-heading">Normal link</h4>
         <p class="list-group-item-text">Normal link</p>
       </a>
@@ -210,31 +210,31 @@
   <div class="col-md-3">
     <h4 class="add-bottom-margin">List group</h4>
     <div class="list-group">
-      <a href="/style-guide" class="list-group-item active">
+      <a href="<%= @visited_link_href %>" class="list-group-item active">
         Active visited link style
       </a>
-      <a href="/style-guide#<%= "#{Time.now.utc.to_i}" %>" class="list-group-item active">
+      <a href="<%= @normal_link_href %>" class="list-group-item active">
         Active normal link style
       </a>
-      <a href="/style-guide" class="list-group-item">Visited link</a>
-      <a href="/style-guide#<%= "#{Time.now.utc.to_i}" %>" class="list-group-item">Normal link</a>
+      <a href="<%= @visited_link_href %>" class="list-group-item">Visited link</a>
+      <a href="<%= @normal_link_href %>" class="list-group-item">Normal link</a>
     </div>
   </div>
   <div class="col-md-3">
     <h4 class="add-bottom-margin">Navigation pills</h4>
     <ul class="nav nav-pills nav-stacked">
-      <li class="active"><a href="/style-guide">Active visited link</a></li>
-      <li class="active"><a href="/style-guide#<%= "#{Time.now.utc.to_i}" %>">Active normal link</a></li>
-      <li><a href="/style-guide">Visited link</a></li>
-      <li><a href="/style-guide#<%= "#{Time.now.utc.to_i}" %>">Normal link</a></li>
+      <li class="active"><a href="<%= @visited_link_href %>">Active visited link</a></li>
+      <li class="active"><a href="<%= @normal_link_href %>">Active normal link</a></li>
+      <li><a href="<%= @visited_link_href %>">Visited link</a></li>
+      <li><a href="<%= @normal_link_href %>">Normal link</a></li>
       <li>
         <div class="btn-group open">
           <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
             Dropdown in navigation pill <span class="caret"></span>
           </button>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="/style-guide">Visited link</a></li>
-            <li><a href="/style-guide#<%= "#{Time.now.utc.to_i}" %>">Normal link</a></li>
+            <li><a href="<%= @visited_link_href %>">Visited link</a></li>
+            <li><a href="<%= @normal_link_href %>">Normal link</a></li>
           </ul>
         </div>
       </li>
@@ -248,10 +248,10 @@
         Action <span class="caret"></span>
       </button>
       <ul class="dropdown-menu" role="menu">
-        <li class="active"><a href="/style-guide">Active visited link</a></li>
-        <li class="active"><a href="/style-guide#<%= "#{Time.now.utc.to_i}" %>">Active normal link</a></li>
-        <li><a href="/style-guide">Visited link</a></li>
-        <li><a href="/style-guide#<%= "#{Time.now.utc.to_i}" %>">Normal link</a></li>
+        <li class="active"><a href="<%= @visited_link_href %>">Active visited link</a></li>
+        <li class="active"><a href="<%= @normal_link_href %>">Active normal link</a></li>
+        <li><a href="<%= @visited_link_href %>">Visited link</a></li>
+        <li><a href="<%= @normal_link_href %>">Normal link</a></li>
       </ul>
     </div>
   </div>
@@ -268,31 +268,31 @@
       <ul class="nav nav-list">
         <li class="nav-header">Filter by Status</li>
         <li class="active status-option drafts">
-          <a href="#">Drafts <span class="badge pull-right">80</span></a>
+          <a href="<%= @normal_link_href %>">Drafts <span class="badge pull-right">80</span></a>
         </li>
         <li class="status-option in_review">
-          <a href="#">In review <span class="badge pull-right">19</span></a>
+          <a href="<%= @normal_link_href %>">In review <span class="badge pull-right">19</span></a>
         </li>
         <li class="status-option amends_needed">
-          <a href="#">Amends needed <span class="badge pull-right">33</span></a>
+          <a href="<%= @normal_link_href %>">Amends needed <span class="badge pull-right">33</span></a>
         </li>
         <li class="status-option out_for_fact_check">
-          <a href="#">Out for fact check <span class="badge pull-right">71</span></a>
+          <a href="<%= @normal_link_href %>">Out for fact check <span class="badge pull-right">71</span></a>
         </li>
         <li class="status-option fact_check_received">
-          <a href="#">Fact check received <span class="badge pull-right">15</span></a>
+          <a href="<%= @normal_link_href %>">Fact check received <span class="badge pull-right">15</span></a>
         </li>
         <li class="status-option ready">
-          <a href="#">Ready <span class="badge pull-right">89</span></a>
+          <a href="<%= @normal_link_href %>">Ready <span class="badge pull-right">89</span></a>
         </li>
         <li class="status-option scheduled_for_publishing">
-          <a href="#">Scheduled <span class="badge pull-right">3</span></a>
+          <a href="<%= @normal_link_href %>">Scheduled <span class="badge pull-right">3</span></a>
         </li>
         <li class="status-option published">
-          <a href="#">Published <span class="badge pull-right">3161</span></a>
+          <a href="<%= @normal_link_href %>">Published <span class="badge pull-right">3161</span></a>
         </li>
         <li class="status-option archived">
-          <a href="#">Archived <span class="badge pull-right">12583</span></a>
+          <a href="<%= @normal_link_href %>">Archived <span class="badge pull-right">12583</span></a>
         </li>
       </ul>
     </div>
@@ -301,15 +301,15 @@
     <div class="well">
       <ul class="nav nav-list">
         <li class="nav-header">List header</li>
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Library</a></li>
-        <li><a href="#">Applications</a></li>
+        <li class="active"><a href="<%= @normal_link_href %>">Home</a></li>
+        <li><a href="<%= @normal_link_href %>">Library</a></li>
+        <li><a href="<%= @normal_link_href %>">Applications</a></li>
         <li class="nav-header">Another list header</li>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Settings</a></li>
-        <li><a href="#">Drafts</a></li>
+        <li><a href="<%= @normal_link_href %>">Profile</a></li>
+        <li><a href="<%= @normal_link_href %>">Settings</a></li>
+        <li><a href="<%= @normal_link_href %>">Drafts</a></li>
         <li class="divider"></li>
-        <li><a href="#">Help</a></li>
+        <li><a href="<%= @normal_link_href %>">Help</a></li>
       </ul>
     </div>
   </div>
@@ -362,7 +362,7 @@
   <div class="col-md-6">
     <p class="no-content">No mappings available</p>
     <p class="no-content no-content-bordered">Bordered message</p>
-    <p class="no-content">A longer, multi-line no content message. Do labore et <a href="#">dolore magna aliqua</a>.</p>
+    <p class="no-content">A longer, multi-line no content message. Do labore et <a href="<%= @normal_link_href %>">dolore magna aliqua</a>.</p>
   </div>
 </div>
 <hr>
