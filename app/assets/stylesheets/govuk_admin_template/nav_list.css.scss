@@ -1,0 +1,59 @@
+/* ==========================================================================
+   Bootstrap 2 navigation list (removed from Bootstrap 3)
+   http://getbootstrap.com/2.3.2/components.html#navs
+   Ported from http://bit.ly/1pbZRYA, variable names updated
+   ========================================================================== */
+
+.nav-list {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 0;
+
+  .well & {
+    margin: -11px -20px;
+  }
+
+  // Nav headers (for dropdowns and lists)
+  .nav-header {
+    display: block;
+    padding: 3px 15px;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: $line-height-computed;
+    color: $gray-light;
+    text-transform: uppercase;
+  }
+
+  // Space them out when they follow another list item (link)
+  li + .nav-header {
+    margin-top: 9px;
+  }
+}
+
+.nav-list > li > a,
+.nav-list .nav-header {
+  margin-left:  -15px;
+  margin-right: -15px;
+}
+
+.nav-list > li > a {
+  padding: 3px 15px;
+}
+
+.nav-list > .active > a,
+.nav-list > .active > a:visited,
+.nav-list > .active > a:hover,
+.nav-list > .active > a:focus {
+  color: #fff;
+  background-color: $link-color;
+}
+
+.nav-list [class^="glyphicon-"],
+.nav-list [class*=" glyphicon-"] {
+  margin-right: 2px;
+}
+
+// Dividers (basically an hr) within the dropdown
+.nav-list .divider {
+  @include nav-divider();
+}
