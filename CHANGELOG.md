@@ -1,3 +1,9 @@
+# 1.0.0
+
+* Create padding and margin mixins, remove silent classes
+* Add Bootstrap 2 nav list component
+* Correct spacing when using `page-header` class
+
 # 0.1.1
 
 * Fix active visited link styles on bootstrap components
