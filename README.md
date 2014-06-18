@@ -19,19 +19,6 @@ This gem provides (via a Rails engine):
 * [Specialist publisher](https://github.com/alphagov/specialist-publisher)
 * [Search admin](https://github.com/alphagov/search-admin)
 
-Apps that will use this gem:
-* (Mainstream) Publisher
-* Imminence
-* Panopticon
-* Sign on
-
-Other admin apps that may use this gem:
-* HMRC contacts
-* Trade tariff backend/admin
-* Content planner
-* Whitehall
-* Fact cave
-
 ## Usage
 
 Firstly, include the gem in your Gemfile, pinned to the appropriate version and run ```bundle```:
