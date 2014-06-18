@@ -11,6 +11,14 @@ This gem provides (via a Rails engine):
 * [CSS helpers and SASS variables](CSS.md) for the admin theme
 * GOV.UK user friendly date formats
 
+[Apps using this gem](https://github.com/search?q=govuk_admin_template+path%3AGemfile&type=Code&ref=advsearch&l=) include:
+* [Transition](https://github.com/alphagov/transition)
+* [Maslow](https://github.com/alphagov/maslow)
+* [Support](https://github.com/alphagov/support)
+* [Travel advice publisher](https://github.com/alphagov/travel-advice-publisher)
+* [Specialist publisher](https://github.com/alphagov/specialist-publisher)
+* [Search admin](https://github.com/alphagov/search-admin)
+
 ## Usage
 
 Firstly, include the gem in your Gemfile, pinned to the appropriate version and run ```bundle```:
