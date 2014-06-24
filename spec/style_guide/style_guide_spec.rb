@@ -8,9 +8,12 @@ describe 'Style guide' do
     expect(body).to include('Admin template style guide')
   end
 
-  it 'includes a formatted date' do
+  it 'includes formatted dates' do
     visit '/style-guide'
     expect(body).to include('31 October 2013')
     expect(body).to include('12:00am, 31 October 2013')
+
+    expect(body).to include('31 Oct 2013')
+    expect(body).to include('12:00am, 31 Oct 2013')
   end
 end

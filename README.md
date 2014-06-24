@@ -88,7 +88,7 @@ Example navbar_items:
 
 ### Date formats
 
-The [gem includes](lib/govuk_admin_template/engine.rb) `:govuk_date` date and time formats which match the [recommended style](https://www.gov.uk/design-principles/style-guide/style-points#style-dates-and-times).
+The [gem includes](lib/govuk_admin_template/engine.rb) date and time formats which match the [recommended style](https://www.gov.uk/design-principles/style-guide/style-points#style-dates-and-times).
 
 ```ruby
 # 1 January 2013
@@ -96,6 +96,15 @@ date.to_s(:govuk_date)
 
 # 1:15pm, 1 January 2013
 time.to_s(:govuk_date)
+
+# 1 Jan 2013
+date.to_s(:govuk_date_short)
+
+# 1:15pm, 1 Jan 2013
+time.to_s(:govuk_date_short)
+
+# 1:15pm
+time.to_s(:govuk_time)
 ```
 
 ### Environment indicators

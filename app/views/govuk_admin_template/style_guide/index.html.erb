@@ -54,7 +54,7 @@
 <h2>Dates</h2>
 <div class="row">
   <p class="col-md-6 lead">
-    The gem includes <code>:govuk_date</code> date and time formats which match the <a href="https://www.gov.uk/design-principles/style-guide/style-points#style-dates-and-times">recommended style</a>.
+    The gem includes date and time formats which match the <a href="https://www.gov.uk/design-principles/style-guide/style-points#style-dates-and-times">recommended style</a>.
   </p>
   <section class="col-md-6">
     <h2 class="remove-top-margin">Default</h2>
@@ -64,8 +64,17 @@
     </blockquote>
 
     <h2>Friendly</h2>
-    <blockquote><%= halloween.to_s(:govuk_date) %><br />
-      <%= halloween.to_time.to_s(:govuk_date) %>
+    <blockquote>
+      <dl class="remove-bottom-margin">
+        <dt class="add-label-margin"><code>:govuk_date</code></dt>
+        <dd><%= halloween.to_s(:govuk_date) %><br />
+          <%= halloween.to_time.to_s(:govuk_date) %></dd>
+        <dt class="add-top-margin add-label-margin"><code>:govuk_date_short</code></dt>
+        <dd><%= halloween.to_s(:govuk_date_short) %><br />
+          <%= halloween.to_time.to_s(:govuk_date_short) %></dd>
+        <dt class="add-top-margin add-label-margin"><code>:govuk_time</code></dt>
+        <dd><%= halloween.to_time.to_s(:govuk_time) %></dd>
+      </dl>
     </blockquote>
   </section>
 </div>
