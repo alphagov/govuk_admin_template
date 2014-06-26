@@ -11,10 +11,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>(function(d){d.className=d.className.replace(/^no-js\b/,'js');}(document.documentElement));</script>
-    <% # HTML5 and bootstrap shims, for <= IE8 support of HTML5 elements %>
-    <!--[if lte IE 8]>
-      <%= javascript_include_tag "lte-ie8" %>
-    <![endif]-->
     <% # jQuery and Bootstrap %>
     <%= javascript_include_tag "govuk-admin-template" %>
     <% if content_for?(:favicon) %>
@@ -25,6 +21,14 @@
       %>
     <% end %>
     <%= yield :head %>
+    <%
+      # HTML5 and bootstrap shims, for <= IE8 support of HTML5 elements
+      # respond.js must come after CSS (from :head) and media queries so
+      # that rules and styles can be correctly calculated.
+    %>
+    <!--[if lte IE 8]>
+      <%= javascript_include_tag "lte-ie8" %>
+    <![endif]-->
   </head>
   <body<% if environment_style %> class="environment-<%= environment_style %>"<% end %>>
     <header class="
