@@ -1,3 +1,8 @@
+# 1.0.1
+
+* Fix rendering of media queries in <= IE8
+* Add short date and time formats
+
 # 1.0.0
 
 * Create padding and margin mixins, remove silent classes
