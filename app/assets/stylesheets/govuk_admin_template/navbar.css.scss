@@ -16,6 +16,12 @@
   }
 }
 
+// Prevent navbar height from collapsing when there's
+// no navbar_right or navbar_items
+header .navbar-header {
+  min-height: 50px;
+}
+
 @media (max-width: 768px) {
   .navbar .container .navbar-brand {
     margin-left: 15px;
