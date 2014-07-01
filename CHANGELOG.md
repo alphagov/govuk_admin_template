@@ -1,3 +1,7 @@
+# 1.0.2
+
+* Fix rendering of an empty navbar
+
 # 1.0.1
 
 * Fix rendering of media queries in <= IE8
