@@ -109,6 +109,14 @@ input[type="radio"] {
   width: 13px;
 }
 
+/* Bootstrap 3 text inputs have height that doesn't include
+   12px of padding due to border-box. Reduce height from 34px
+   to 22px to account for padding in IE7 */
+input[type="text"],
+input[type="password"] {
+  height: 22px;
+}
+
 .container,
 .container-fluid {
   zoom: 1;
