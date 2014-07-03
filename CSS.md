@@ -48,6 +48,12 @@ Class   | Purpose
 `remove-top-padding` | Remove top padding
 `remove-bottom-padding` | Remove bottom padding
 
+### Input helpers
+
+Class   | Purpose
+------  |--------
+`input-md-x` | Restrict the width of an input to a column size
+
 ### Icon helpers
 
 Class   | Purpose
