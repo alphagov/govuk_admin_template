@@ -1,3 +1,8 @@
+# 1.0.3
+
+* Improve Bootstrap 3 rendering in IE7
+* Add helper classes for input widths
+
 # 1.0.2
 
 * Fix rendering of an empty navbar
