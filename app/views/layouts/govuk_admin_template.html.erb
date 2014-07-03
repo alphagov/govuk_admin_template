@@ -3,7 +3,8 @@
   environment_label = GovukAdminTemplate.environment_label
 %>
 <!DOCTYPE html>
-<!--[if lt IE 9]><html class="no-js lte-ie8" lang="en"><![endif]-->
+<!--[if lte IE 7]><html class="no-js lte-ie7" lang="en"><![endif]-->
+<!--[if IE 8]><html class="no-js ie8" lang="en"><![endif]-->
 <!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
   <head>
     <meta charset="utf-8">
@@ -21,6 +22,12 @@
       %>
     <% end %>
     <%= yield :head %>
+    <%
+      # CSS resets and fixes for Bootstrap 3 in IE7
+    %>
+    <!--[if lte IE 7]>
+      <%= stylesheet_link_tag "govuk_admin_template/bootstrap-ie7" %>
+    <![endif]-->
     <%
       # HTML5 and bootstrap shims, for <= IE8 support of HTML5 elements
       # respond.js must come after CSS (from :head) and media queries so

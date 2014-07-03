@@ -11,7 +11,8 @@
   padding-left: 2.3em;
   min-height: 37px;
 
-  .lte-ie8 & {
+  .ie8 &,
+  .lte-ie7 & {
     min-height: 20px;
   }
 }
@@ -46,7 +47,8 @@ header .navbar-header {
   color: #fff;
 }
 
-.lte-ie8 .navbar .container {
+.ie8 .navbar .container,
+.lte-ie7 .navbar .container {
   padding-left: 30px;
   padding-right: 0;
 }
