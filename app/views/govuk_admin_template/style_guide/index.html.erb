@@ -20,6 +20,44 @@
 </div>
 <hr>
 
+<h2>Input widths</h2>
+<div class="row">
+  <div class="col-md-6 lead">
+    <p>Bootstrap 3 inputs always <a href="http://getbootstrap.com/css/#forms">extend to the size of their container</a>. The recommendation from Bootstrap is to wrap form elements with grid classes. Sometimes this isn’t suitable, for instance if a page isn’t using a grid.</p>
+    <p>The gem includes classes to restrict the width of inputs based on column sizes: <code>input-md-x</code> (1 — 11)</p>
+  </div>
+  <div class="col-md-6">
+    <div class="form-group">
+      <label>Default input</label>
+      <input class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>A short input</label>
+      <input class="input-md-2 form-control" value="input-md-2" />
+    </div>
+    <div class="form-group">
+      <label>A longer input</label>
+      <input class="input-md-4 form-control" value="input-md-4" />
+    </div>
+    <div class="form-group">
+      <label>Inputs too long will collapse</label>
+      <input class="input-md-11 form-control" value="input-md-11" />
+    </div>
+    <div class="form-group">
+      <label>A short select</label>
+      <select class="input-md-2 form-control" value="input-md-11">
+        <option>Option</option>
+      </select>
+    </div>
+    <div class="form-group form-inline">
+      <label>Inline inputs</label><br />
+      <input class="input-md-3 form-control add-right-margin" value="input-md-3" />
+      <input class="input-md-2 form-control" value="input-md-2" />
+    </div>
+  </div>
+</div>
+<hr>
+
 <h2>Buttons</h2>
 <div class="row">
   <p class="col-md-6 lead">Despite using bootstrap 3 apps use the classic bootstrap button styles — the buttons have better affordance and clearer focus and active states. The source to override the buttons with the originals is from <a href="https://gist.github.com/Erve1879/6167373">https://gist.github.com/Erve1879/6167373</a>.</p>

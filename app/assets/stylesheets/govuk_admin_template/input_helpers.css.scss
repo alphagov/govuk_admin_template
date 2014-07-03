@@ -1,0 +1,66 @@
+/* ==========================================================================
+   Input helpers
+   ========================================================================== */
+
+/* Input widths to match grid widths
+   ========================================================================== */
+
+.input-md-1 {
+  @include col-md-width(1);
+}
+
+.input-md-2 {
+  @include col-md-width(2);
+}
+
+.input-md-3 {
+  @include col-md-width(3);
+}
+
+.input-md-4 {
+  @include col-md-width(4);
+}
+
+.input-md-5 {
+  @include col-md-width(5);
+}
+
+.input-md-6 {
+  @include col-md-width(6);
+}
+
+.input-md-7 {
+  @include col-md-width(7);
+}
+
+.input-md-8 {
+  @include col-md-width(8);
+}
+
+.input-md-9 {
+  @include col-md-width(9);
+}
+
+.input-md-10 {
+  @include col-md-width(10);
+}
+
+.input-md-11 {
+  @include col-md-width(11);
+}
+
+.form-inline {
+  .input-md-1,
+  .input-md-2,
+  .input-md-3,
+  .input-md-4,
+  .input-md-5,
+  .input-md-6,
+  .input-md-7,
+  .input-md-8,
+  .input-md-9,
+  .input-md-10,
+  .input-md-11 {
+    width: 100%;
+  }
+}

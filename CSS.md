@@ -27,26 +27,61 @@ Class   | Purpose
 
 ### Margin helpers
 
-Rather than creating a class purely to remove or add margins (many Bootstrap styled elements come with margins), use these helpers which come bundled with the default margins necessary to keep a consistent vertical rhythm. This also avoids a specificity nightmare. (These classes use `!important` so that they’ll _almost_ always work)
+Rather than creating a class purely to remove or add margins (many Bootstrap styled elements come with margins), use these helpers which come bundled with the default margins necessary to keep a consistent vertical rhythm. This also avoids a specificity nightmare. (These classes use `!important` so that they’ll _almost_ always work).
 
-Class   | Purpose
-------  |--------
-`add-top-margin` | Add _default vertical margin_ to top of element
-`add-bottom-margin` | Add _default vertical margin_ to bottom of element
-`add-label-margin` | Simulates the vertical spacing between a Bootstrap label and an input element (5px)
-`add-vertical-margins` | Add _default vertical margin_ to top and bottom
-`remove-top-margin` | Remove all margins from top of element
-`remove-bottom-margin` | Remove all margins from bottom of element
-`add-right-margin` | Add margin to the right of element
-`add-left-margin` | Add margin to the left of element
+```html
+<h3 class="add-top-margin"></h3>
+```
+
+The mixins don’t include `!important` by default, but can be added as a parameter:
+
+```sass
+.class {
+  @include add-top-margin;
+  @include add-top-margin('!important');
+}
+```
+
+Class   | Mixin | Purpose
+------  | ----- | --------
+`add-top-margin` | `@include add-top-margin;` | Add _default vertical margin_ to top of element
+`add-bottom-margin` | `@include add-bottom-margin;` |  Add _default vertical margin_ to bottom of element
+`add-label-margin` | `@include add-label-margin;` | Simulates the vertical spacing between a Bootstrap label and an input element (5px)
+`add-vertical-margins` | `@include add-vertical-margins;` | Add _default vertical margin_ to top and bottom
+`remove-top-margin` || Remove all margins from top of element
+`remove-bottom-margin` || Remove all margins from bottom of element
+`add-right-margin` | `@include add-right-margin;` | Add margin to the right of element
+`add-left-margin` | `@include add-left-margin;` | Add margin to the left of element
 
 ### Padding helpers
 
+Like the margin helpers, the padding classes include `!important` so they’ll always work. The mixins default to not using `!important`, but this can be added with a parameter.
+
+```html
+<h3 class="add-bottom-padding"></h3>
+```
+
+```sass
+.class {
+  @include add-top-padding;
+  @include add-top-padding('!important');
+}
+```
+
+Class   | Mixin | Purpose
+------  |------ | -------
+`add-top-padding` |`@include add-top-padding;`| Add _default vertical padding_ to top of element
+`add-bottom-padding` |`@include add-bottom-padding;`| Add _default vertical padding_ to bottom of element
+`add-vertical-padding` |`@include add-vertical-padding;`| Add _default vertical padding_ to top and bottom
+`remove-padding` || Remove all padding from element
+`remove-top-padding` || Remove top padding
+`remove-bottom-padding` || Remove bottom padding
+
+### Input helpers
+
 Class   | Purpose
 ------  |--------
-`remove-padding` | Remove all padding from element
-`remove-top-padding` | Remove top padding
-`remove-bottom-padding` | Remove bottom padding
+`input-md-x` | Restrict the width of an input to a column size
 
 ### Icon helpers
 
