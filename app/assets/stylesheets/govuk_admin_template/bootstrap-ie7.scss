@@ -51,6 +51,11 @@
   float: none !important;
 }
 
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 audio,
 canvas,
 video {
@@ -125,6 +130,33 @@ ul .list-group-item {
   display: inline;
   zoom: 1;
 }
+
+/* Cleanup navigation tabs
+  * Clear container
+  * Give selected tab more contrast and hide faulty border-top
+*/
+
+.nav-tabs {
+  overflow: hidden;
+}
+
+.nav-tabs li.active a {
+  background: #ddd;
+  border: 1px solid #ddd;
+}
+
+/*
+  Cleanup breadcrumb
+  * Remove default indent for unordered list
+  * Display breadcrumbs inline with some margin, generated
+    content doesn't appear, so there's no divider.
+*/
+
+.breadcrumb > li {
+  display: inline;
+  margin-right: 10px;
+}
+
 
 /*
   Fix glyphicons via generated content fallback
