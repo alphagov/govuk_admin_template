@@ -1,3 +1,7 @@
+# 1.0.4
+
+* Fix precompile error with IE7 css
+
 # 1.0.3
 
 * Improve Bootstrap 3 rendering in IE7
