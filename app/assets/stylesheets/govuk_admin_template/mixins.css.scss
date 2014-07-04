@@ -50,6 +50,10 @@
   box-sizing: border-box;
 }
 
-@mixin col-md-width($x) {
-  max-width: ($container-md/$grid-columns) * $x;
+@mixin input-md-width($x) {
+  // Use a proportion of the widest desktop size. At smaller widths inputs
+  // will be constrained by their containers. Take into account padding
+  // from gutter
+  $single-column-width: $container-large-desktop/$grid-columns;
+  max-width: ($single-column-width * $x) - $grid-gutter-width;
 }
