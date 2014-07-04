@@ -1,3 +1,7 @@
+# 1.0.5
+
+* Tweak to size of inputs when using input helper classes
+
 # 1.0.4
 
 * Fix precompile error with IE7 css
