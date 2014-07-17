@@ -1,0 +1,8 @@
+/*
+  Bootstrap 3.2 made gray-light darker for accessibility and contrast:
+  https://github.com/twbs/bootstrap/releases/tag/v3.2.0
+
+  This assumed gray-light was on a light background. We aren't always
+  using it in that way. Reset to the original value #999.
+*/
+$gray-light: lighten(#000, 60%);
