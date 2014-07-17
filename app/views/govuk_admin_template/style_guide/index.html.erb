@@ -95,7 +95,7 @@
 </div>
 <h3 class="add-vertical-margins">Which button style should be used</h3>
 <div class="row">
-  <p class="col-md-6 lead">Start with <code>btn-default</code>. Buttons should always be the default grey unless their is a good reason otherwise. Buttons that initiate a user action (ie lead to a form, pop-up a modal) should be grey.</p>
+  <p class="col-md-6 lead">Start with <code>btn-default</code>. Buttons should always be the default grey unless there is a good reason otherwise. Buttons that initiate a user action (ie lead to a form, pop-up a modal) should be grey.</p>
   <div class="col-md-6">
     <a href="#" class="btn btn-default">
       Open modal
@@ -188,7 +188,7 @@
 
     <p>The second example shows a table with selectable rows. Selected rows highlight in yellow. The checkbox in the header selects all rows.</p>
   </div>
-  <ul class="col-md-6">
+  <div class="col-md-6">
     <table class="table table-bordered table-hover">
       <thead>
         <tr class="table-header">
@@ -198,17 +198,17 @@
           <th>Secondary header</th>
         </tr>
       </thead>
-    <tbody>
-      <tr>
-        <td>Typical row</td>
-      </tr>
-      <tr>
-        <td>Typical row</td>
-      </tr>
-    </tbody>
+      <tbody>
+        <tr>
+          <td>Typical row</td>
+        </tr>
+        <tr>
+          <td>Typical row</td>
+        </tr>
+      </tbody>
     </table>
 
-    <table class="table table-bordered table-hover" data-module="selectable-table">
+    <table class="table table-bordered" data-module="selectable-table">
       <thead>
         <tr class="table-header">
           <th></th>
@@ -240,7 +240,7 @@
         <td class="selectable-row">
           <div class="relative">
             <label>
-              <input type="checkbox" />
+              <input type="checkbox" class="js-toggle-row" />
             </label>
           </div>
         </td>
@@ -248,7 +248,44 @@
       </tr>
     </tbody>
     </table>
-  </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 lead">
+    <p>Using the <code>filterable-table</code> <a href="https://github.com/alphagov/govuk_admin_template/blob/master/app/assets/javascripts/govuk-admin-template/modules/filterable_table.js">module</a> table rows can be filtered. The module performs a simple match against the content of each row, if there’s no match the row is hidden.</p>
+  </div>
+  <div class="col-md-6">
+    <table class="table table-bordered table-hover" data-module="filterable-table">
+      <thead>
+        <tr class="table-header">
+          <th>Primary header</th>
+          <th style="width: 80px">Number</th>
+        </tr>
+        <tr class="if-no-js-hide table-header-secondary">
+          <td colspan="2">
+            <form>
+              <label for="table-filter" class="rm">Filter organisations</label>
+              <input id="table-filter" type="text" class="form-control normal js-filter-table-input" placeholder="Filter table">
+            </form>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Apples</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>Bananas</td>
+          <td>25</td>
+        </tr>
+        <tr>
+          <td>Peaches</td>
+          <td>13</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 <hr>
 
