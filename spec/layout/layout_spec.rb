@@ -8,6 +8,7 @@ describe 'Layout' do
     expect(body).to include('navbar_right')
     expect(body).to include('navbar_item')
     expect(body).to include('main_content')
+    expect(body).to include('before_content')
     expect(body).to include('footer_version')
     expect(body).to include('footer_top')
     expect(body).to include('body_end')
