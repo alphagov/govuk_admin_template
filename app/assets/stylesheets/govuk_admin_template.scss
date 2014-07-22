@@ -1,3 +1,4 @@
+@import 'govuk_admin_template/bootstrap_colour_overrides'; //Needs to be set before Bootstrap import
 @import 'bootstrap';
 @import 'govuk_admin_template/theme';
 @import 'govuk_admin_template/mixins';
