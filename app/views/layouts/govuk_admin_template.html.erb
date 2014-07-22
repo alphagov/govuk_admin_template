@@ -81,6 +81,7 @@
     </header>
     <section class="container">
       <main role="main">
+        <%= yield(:before_content) %>
         <%= content_for?(:content) ? yield(:content) : yield %>
       </main>
       <footer class="page-footer">
