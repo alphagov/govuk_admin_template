@@ -1,3 +1,8 @@
+# 1.1.0
+
+* Upgrade to JQuery 1.11.1
+* Upgrade to Bootstrap 3.2
+
 # 1.0.5
 
 * Tweak to size of inputs when using input helper classes
