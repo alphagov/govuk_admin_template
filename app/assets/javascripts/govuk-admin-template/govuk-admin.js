@@ -66,6 +66,10 @@
     $('[data-toggle="tooltip"]').tooltip();
   }
 
+  GOVUKAdmin.redirect = function(path) {
+    window.location.href = path;
+  }
+
   // Google Analytics event tracking
   // https://developers.google.com/analytics/devguides/collection/gajs/eventTrackerGuide
   // Label and value are optional
