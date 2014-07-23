@@ -10,6 +10,10 @@
 
       element.on('keyup change', '.js-filter-table-input', filterTableBasedOnInput);
 
+      if (element.find('a.js-open-on-submit').length > 0) {
+        element.on('submit', 'form', openFirstVisibleLink);
+      }
+
       function filterTableBasedOnInput(event) {
         var searchString = $.trim(tableInput.val()),
             regExp = new RegExp(searchString, 'i');
@@ -22,6 +26,12 @@
             row.hide();
           }
         });
+      }
+
+      function openFirstVisibleLink(evt) {
+        evt.preventDefault();
+        var link = element.find('a.js-open-on-submit:visible').first();
+        GOVUKAdmin.redirect(link.attr('href'));
       }
     }
   };

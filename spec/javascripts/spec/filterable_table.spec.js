@@ -6,21 +6,25 @@ describe('A filterable table module', function() {
       tableElement;
 
   beforeEach(function() {
-    tableElement = $('\
+    tableElement = $('<div>\
       <form>\
         <input type="text" class="js-filter-table-input">\
       </form>\
       <table>\
         <tbody>\
           <tr class="first">\
-            <td>something</td>\
+            <td>\
+              <a href="/first-link" class="js-open-on-submit">something</a>\
+            </td>\
           </tr>\
           <tr class="second">\
-            <td>another thing</td>\
+            <td>\
+              <a href="/second-link" class="js-open-on-submit">another thing</a>\
+            </td>\
           </tr>\
         </tbody>\
       </table>\
-    ');
+    </div>');
 
     $('body').append(tableElement);
     filterableTable = new GOVUKAdmin.Modules.FilterableTable();
@@ -54,6 +58,15 @@ describe('A filterable table module', function() {
     filterBy('');
     expect(tableElement.find('.first').is(':visible')).toBe(true);
     expect(tableElement.find('.second').is(':visible')).toBe(true);
+  });
+
+  describe('when the form is submitted', function() {
+    it('opens the first visible link', function() {
+      spyOn(GOVUKAdmin, 'redirect');
+      filterBy('another');
+      tableElement.find('form').trigger('submit');
+      expect(GOVUKAdmin.redirect).toHaveBeenCalledWith('/second-link');
+    });
   });
 
   function filterBy(value) {
