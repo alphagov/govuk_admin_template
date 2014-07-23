@@ -1,3 +1,7 @@
+# 1.1.1
+
+* When filtering tables, allow users to easily go to the first item
+
 # 1.1.0
 
 * Upgrade to JQuery 1.11.1
