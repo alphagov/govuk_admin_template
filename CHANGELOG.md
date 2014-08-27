@@ -1,3 +1,8 @@
+# 1.1.2
+
+* Add full width page option
+* Rename SASS partials to begin with underscores
+
 # 1.1.1
 
 * When filtering tables, allow users to easily go to the first item
