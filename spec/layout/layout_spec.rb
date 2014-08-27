@@ -51,6 +51,16 @@ describe 'Layout' do
     end
   end
 
+  it 'renders a fixed width container by default' do
+    visit '/'
+    expect(page).to have_selector('body > section.container')
+  end
+
+  it 'can render a full width page' do
+    visit '/full-width'
+    expect(page).to have_selector('body > section.container-fluid')
+  end
+
   it 'renders a footer' do
     visit '/'
     within 'footer' do

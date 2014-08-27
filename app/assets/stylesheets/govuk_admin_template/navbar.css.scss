@@ -2,7 +2,8 @@
    Navbar
    ========================================================================== */
 
-.navbar .container .navbar-brand {
+.navbar .container .navbar-brand,
+.navbar .container-fluid .navbar-brand {
   background: url("/assets/govuk_admin_template/header-crown.png") 0 0.67em no-repeat;
   color: #fff;
   font-family: $font-family-gill-sans;
@@ -24,6 +25,7 @@ header .navbar-header {
 }
 
 @media (max-width: 768px) {
+  .navbar .container-fluid .navbar-brand,
   .navbar .container .navbar-brand {
     margin-left: 15px;
   }
