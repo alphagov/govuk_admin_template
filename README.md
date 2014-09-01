@@ -73,7 +73,7 @@ The gem [uses nested layouts](http://guides.rubyonrails.org/layouts_and_renderin
 ---------------   | -------------
 `:app_title`      | Name of your admin application
 `:content`        | Main content
-`:head`           | HTML to include in the <head> of your application
+`:head`           | HTML to include in the `<head>` of your application
 `:page_title`     | Page title
 `:navbar_items`   | A set of HTML list items (`<li>`) forming the primary navigation
 `:navbar_right`   | Text to the right of the nav bar. Logged in user, sign out link, etc
