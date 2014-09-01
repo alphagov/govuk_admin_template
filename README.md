@@ -11,9 +11,13 @@ This gem provides (via a Rails engine):
 * [CSS helpers and SASS variables](CSS.md) for the admin theme
 * GOV.UK user friendly date formats
 
-[Apps using this gem](https://github.com/search?q=govuk_admin_template+path%3AGemfile&type=Code&ref=advsearch&l=) include:
+[Apps using this gem](https://github.com/search?q=govuk_admin_template+user%3Aalphagov+filename%3AGemfile) include:
 * [Transition](https://github.com/alphagov/transition)
 * [Maslow](https://github.com/alphagov/maslow)
+* [Publisher](https://github.com/alphagov/publisher)
+* [Sign on](https://github.com/alphagov/signonotron2)
+* [Panopticon](https://github.com/alphagov/panopticon)
+* [Imminence](https://github.com/alphagov/imminence)
 * [Support](https://github.com/alphagov/support)
 * [Travel advice publisher](https://github.com/alphagov/travel-advice-publisher)
 * [Specialist publisher](https://github.com/alphagov/specialist-publisher)
