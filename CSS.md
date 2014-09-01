@@ -15,7 +15,7 @@ Firstly, the admin styles are based on Bootstrap:
 For admin components, see the admin style guide (`/style-guide` in your app).
 
 ### Hide and show content
-[toggle.css.scss](app/assets/stylesheets/govuk_admin_template/toggles.css.scss)
+[toggle.css.scss](app/assets/stylesheets/govuk_admin_template/_toggles.css.scss)
 
 Class   | Purpose
 ------  |--------
@@ -98,7 +98,7 @@ Class   | Purpose
 `link-inherit` | Inherits its colour from surrounding text, gains an underline
 
 ### Tables
-[tables.css.scss](app/assets/stylesheets/govuk_admin_template/tables.css.scss)
+[tables.css.scss](app/assets/stylesheets/govuk_admin_template/_tables.css.scss)
 
 Class   | Purpose
 ------  |--------
@@ -107,7 +107,7 @@ Class   | Purpose
 
 ### SASS Variables
 
-Along with Bootstrap’s many [mixins](https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/_mixins.scss) and [variables](http://getbootstrap.com/customize/#less-variables), the admin gem comes with [some of its own](app/assets/stylesheets/govuk_admin_template/theme.css.scss).
+Along with Bootstrap’s many [mixins](https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/_mixins.scss) and [variables](http://getbootstrap.com/customize/#less-variables), the admin gem comes with [some of its own](app/assets/stylesheets/govuk_admin_template/_theme.css.scss).
 
 Class   | Purpose
 ------  |--------
