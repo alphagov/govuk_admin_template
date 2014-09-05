@@ -185,8 +185,6 @@
 <div class="row">
   <div class="col-md-6 lead">
     <p>When using a table with two layers of headings, usually for interacting with table content, <code>table-header</code> and <code>table-header-secondary</code> classes are used.</p>
-
-    <p>The second example shows a table with selectable rows. Selected rows highlight in yellow. The checkbox in the header selects all rows.</p>
   </div>
   <div class="col-md-6">
     <table class="table table-bordered table-hover">
@@ -206,47 +204,6 @@
           <td>Typical row</td>
         </tr>
       </tbody>
-    </table>
-
-    <table class="table table-bordered" data-module="selectable-table">
-      <thead>
-        <tr class="table-header">
-          <th></th>
-          <th>Primary header</th>
-        </tr>
-        <tr class="table-header-secondary">
-          <th class="selectable-row">
-            <div class="relative">
-              <label>
-                <input type="checkbox" class="js-toggle-all" />
-              </label>
-            </div>
-          </th>
-          <th><a href="<%= @normal_link_href %>" class="btn btn-default">Action</a></th>
-        </tr>
-      </thead>
-    <tbody>
-      <tr class="selected-row">
-        <td class="selectable-row">
-          <div class="relative">
-            <label>
-              <input type="checkbox" checked="checked" class="js-toggle-row" />
-            </label>
-          </div>
-        </td>
-        <td>Selected row</td>
-      </tr>
-      <tr>
-        <td class="selectable-row">
-          <div class="relative">
-            <label>
-              <input type="checkbox" class="js-toggle-row" />
-            </label>
-          </div>
-        </td>
-        <td>Typical row</td>
-      </tr>
-    </tbody>
     </table>
   </div>
 </div>
