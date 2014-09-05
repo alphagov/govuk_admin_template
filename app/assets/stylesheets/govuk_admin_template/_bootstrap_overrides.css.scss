@@ -9,3 +9,14 @@
 .page-header {
   margin-top: $default-vertical-margin;
 }
+
+/*
+  Bootstrap uses a lighter font weight for text using the lead
+  class. This lighter text is harder to read and looks out of place
+  with all of GOV.UK’s font rendering. Reset back to normal and
+  lighten text colour to maintain balance.
+*/
+.lead {
+  font-weight: normal;
+  color: #555;
+}
