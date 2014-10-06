@@ -1,3 +1,8 @@
+# 1.1.3
+
+* Fix GillSans font stack for IE and Chrome on Windows
+* Tweak Bootstrap’s default `lead` styles to be stronger
+
 # 1.1.2
 
 * Add full width page option
