@@ -16,8 +16,8 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.add_dependency 'rails', '>= 3.2.0'
-  gem.add_dependency 'bootstrap-sass', '3.2.0.0'
-  gem.add_dependency 'jquery-rails', '3.1.1'
+  gem.add_dependency 'bootstrap-sass', '~> 3.2.0.2'
+  gem.add_dependency 'jquery-rails', '~> 3.1.1'
 
   gem.add_development_dependency 'sass-rails', '3.2.6'
   gem.add_development_dependency 'rspec-rails', '2.14.2'
