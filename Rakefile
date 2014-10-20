@@ -18,5 +18,5 @@ end
 Dir['lib/tasks/**/*.rake'].each { |file| load file }
 
 task(:default).clear
-task :default => [:spec, 'dummy_app:jasmine:ci']
+task :default => [:spec, 'dummy_app:jasmine:ci', 'sass:check']
 
