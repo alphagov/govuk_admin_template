@@ -1,3 +1,7 @@
+# 1.1.6
+
+* Really fix the crown this time (`image-url` requires a gem-relative path)
+
 # 1.1.5
 
 * Move gem management-related rake tasks to ./tasks to avoid breaking consuming
