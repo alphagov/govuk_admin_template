@@ -15,7 +15,7 @@ namespace :dummy_app do
 end
 
 # Load local tasks
-Dir['lib/tasks/**/*.rake'].each { |file| load file }
+Dir['tasks/**/*.rake'].each { |file| load file }
 
 task(:default).clear
 task :default => [:spec, 'dummy_app:jasmine:ci', 'sass:check']
