@@ -14,13 +14,9 @@ namespace :dummy_app do
   Dummy::Application.load_tasks
 end
 
+# Load local tasks
+Dir['lib/tasks/**/*.rake'].each { |file| load file }
+
 task(:default).clear
-task :default => [:spec, 'dummy_app:jasmine:ci']
+task :default => [:spec, 'dummy_app:jasmine:ci', 'sass:check']
 
-require "gem_publisher"
-
-desc "Publish gem to RubyGems.org"
-task :publish_gem do |t|
-  gem = GemPublisher.publish_if_updated("govuk_admin_template.gemspec", :rubygems)
-  puts "Published #{gem}" if gem
-end
