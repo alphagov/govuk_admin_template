@@ -1,3 +1,8 @@
+# 1.1.5
+
+* Move gem management-related rake tasks to ./tasks to avoid breaking consuming
+  apps that auto-load tasks from lib/tasks
+
 # 1.1.4
 
 * Fix missing assets in production Rails 4 apps, both our own (header-crown.png)
