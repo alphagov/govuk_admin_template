@@ -1,3 +1,8 @@
+# 1.1.4
+
+* Fix missing assets in production Rails 4 apps, both our own (header-crown.png)
+  and Bootstrap's glyphicon font-using bits
+
 # 1.1.3
 
 * Fix GillSans font stack for IE and Chrome on Windows
