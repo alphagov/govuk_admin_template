@@ -1,3 +1,8 @@
+# 1.1.7
+
+* Fix display of `lead` styles when using `text-muted` class
+* Add display inline class helpers
+
 # 1.1.6
 
 * Really fix the crown this time (`image-url` requires a gem-relative path)
