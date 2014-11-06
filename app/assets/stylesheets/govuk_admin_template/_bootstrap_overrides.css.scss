@@ -19,4 +19,8 @@
 .lead {
   font-weight: normal;
   color: #555;
+
+  &.text-muted {
+    color: $gray-light;
+  }
 }

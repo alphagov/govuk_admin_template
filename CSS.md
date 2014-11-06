@@ -97,6 +97,13 @@ Class   | Purpose
 `link-muted` | Like Bootstrap’s `text-muted`, but for links. Makes them a matching grey and underlined.
 `link-inherit` | Inherits its colour from surrounding text, gains an underline
 
+### Display helpers
+
+Class   | Purpose
+------  |--------
+`inline` | Display inline, useful if the semantic element has the wrong display style by default
+`inline-block` | Display inline-block
+
 ### Tables
 [tables.css.scss](app/assets/stylesheets/govuk_admin_template/_tables.css.scss)
 

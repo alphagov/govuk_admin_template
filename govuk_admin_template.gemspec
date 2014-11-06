@@ -25,5 +25,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rspec-rails', '2.14.2'
   gem.add_development_dependency 'capybara', '2.2.1'
   gem.add_development_dependency 'gem_publisher', '1.3.1'
-  gem.add_development_dependency 'jasmine', '2.0.2'
+  gem.add_development_dependency 'jasmine', '2.0.3'
 end
