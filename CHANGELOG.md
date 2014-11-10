@@ -1,3 +1,7 @@
+# 1.2.0
+
+* Remove selectable table javascript module
+
 # 1.1.7
 
 * Fix display of `lead` styles when using `text-muted` class
