@@ -400,6 +400,57 @@ a.list-group-item {
 }
 
 /* ==========================================================================
+   Callouts
+   ========================================================================== */
+
+.callout {
+  border: 1px solid $table-border-color;
+  border-radius: $border-radius-small;
+  padding: $default-vertical-padding;
+
+  .callout-title {
+    margin-top: 0;
+    font-size: $font-size-h4;
+  }
+
+  .callout-body {
+    font-size: $font-size-h3;
+  }
+}
+
+.callout-danger {
+  border-left: 5px solid #d9534f;
+
+  .callout-title {
+    color: $state-danger-text;
+  }
+}
+
+.callout-warning {
+  border-left: 5px solid #f0ad4e;
+
+  .callout-title {
+    color: $state-warning-text;
+  }
+}
+
+.callout-info {
+  border-left: 5px solid #5bc0de;
+
+  .callout-title {
+    color: $state-info-text;
+  }
+}
+
+.callout-success {
+  border-left: 5px solid #53ad53;
+
+  .callout-title {
+    color: $state-success-text;
+  }
+}
+
+/* ==========================================================================
    Forms
    ========================================================================== */
 
