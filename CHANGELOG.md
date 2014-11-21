@@ -1,3 +1,7 @@
+# 1.3.0
+
+* Add 'callout' component
+
 # 1.2.0
 
 * Remove selectable table javascript module
