@@ -1,3 +1,7 @@
+# 1.4.0
+
+* Upgrade to Bootstrap 3.3
+
 # 1.3.0
 
 * Add 'callout' component
