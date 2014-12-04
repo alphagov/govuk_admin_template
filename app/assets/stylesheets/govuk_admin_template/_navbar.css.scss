@@ -11,11 +11,21 @@
   margin-left: 0;
   padding-left: 2.3em;
   min-height: 37px;
+  display: inline-block;
+  float: none;
 
   .ie8 &,
   .lte-ie7 & {
     min-height: 20px;
   }
+
+  .lte-ie7 & {
+    display: inline;
+    padding-left: 60px;
+    background-position: 15px 0.67em;
+    height: auto;
+  }
+
 }
 
 // Prevent navbar height from collapsing when there's
@@ -49,8 +59,7 @@ header .navbar-header {
   color: #fff;
 }
 
-.ie8 .navbar .container,
-.lte-ie7 .navbar .container {
+.ie8 .navbar .container {
   padding-left: 30px;
   padding-right: 0;
 }
@@ -81,7 +90,12 @@ header .navbar-header {
   font-weight: bold;
   margin-top: 13px;
   margin-right: 10px;
-  float: left;
+  display: inline-block;
+
+  .lte-ie7 & {
+    display: inline;
+    margin-bottom: 13px;
+  }
 }
 
 .environment-production .environment-label {
