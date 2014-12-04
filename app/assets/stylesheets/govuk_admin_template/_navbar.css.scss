@@ -12,6 +12,7 @@
   padding-left: 2.3em;
   min-height: 37px;
   display: inline-block;
+  vertical-align: top;
   float: none;
 
   .ie8 &,
@@ -31,7 +32,7 @@
 // Prevent navbar height from collapsing when there's
 // no navbar_right or navbar_items
 header .navbar-header {
-  min-height: 50px;
+  min-height: 52px;
 }
 
 @media (max-width: 768px) {
