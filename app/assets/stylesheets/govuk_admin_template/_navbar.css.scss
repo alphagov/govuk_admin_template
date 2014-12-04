@@ -99,6 +99,12 @@ header .navbar-header {
   }
 }
 
+@media (max-width: 500px) {
+  .environment-label {
+    display: none;
+  }
+}
+
 .environment-production .environment-label {
   background-color: $production-color;
   color: #fff;
