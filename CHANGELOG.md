@@ -1,3 +1,7 @@
+# 1.4.1
+
+* Prevent wrapping of environment label
+
 # 1.4.0
 
 * Upgrade to Bootstrap 3.3
