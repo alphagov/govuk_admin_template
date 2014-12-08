@@ -1,3 +1,7 @@
+# 1.4.2
+
+* Track events using universal analytics as well as classic analytics
+
 # 1.4.1
 
 * Prevent wrapping of environment label
