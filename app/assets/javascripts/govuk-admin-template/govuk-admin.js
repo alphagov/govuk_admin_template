@@ -71,23 +71,26 @@
   }
 
   // Google Analytics event tracking
-  // https://developers.google.com/analytics/devguides/collection/gajs/eventTrackerGuide
   // Label and value are optional
   GOVUKAdmin.track = function(action, label, value) {
 
     // Default category to the page an event occurs on
     var category = root.location.pathname,
-        event;
 
-    // _gaq is the Google Analytics tracking object we
-    // push events to, GA asynchronously sends them on
-    root._gaq = root._gaq || [];
+        // https://developers.google.com/analytics/devguides/collection/gajs/eventTrackerGuide
+        eventGa = ["_trackEvent", category, action],
 
-    event = ["_trackEvent", category, action];
+        // https://developers.google.com/analytics/devguides/collection/analyticsjs/events
+        eventAnalytics = {
+          hitType: 'event',
+          eventCategory: category,
+          eventAction: action
+        };
 
     // Label is optional
     if (typeof label === "string") {
-      event.push(label);
+      eventGa.push(label);
+      eventAnalytics.eventLabel = label;
     }
 
     // Value is optional, but when used must be an
@@ -96,12 +99,21 @@
     if (value) {
       value = parseInt(value, 10);
       if (typeof value === "number" && !isNaN(value)) {
-        event.push(value);
+        eventGa.push(value);
+        eventAnalytics.eventValue = value;
       }
     }
 
-    // Useful for debugging: console.log(event);
-    _gaq.push(event);
+    // _gaq is the Google Analytics tracking object we
+    // push events to when using the old tracking code
+    root._gaq = root._gaq || [];
+
+    // Useful for debugging:
+    // console.log(eventGa, eventAnalytics);
+    root._gaq.push(eventGa);
+    if (typeof root.ga === "function") {
+      root.ga('send', eventAnalytics);
+    }
   }
 
 })(jQuery, window);
