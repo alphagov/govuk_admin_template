@@ -1,6 +1,7 @@
 <%
   environment_style = GovukAdminTemplate.environment_style
   environment_label = GovukAdminTemplate.environment_label
+  app_home_path = content_for?(:app_home_path) ? yield(:app_home_path) : root_path
 %>
 <!DOCTYPE html>
 <!--[if lte IE 7]><html class="no-js lte-ie7" lang="en"><![endif]-->
@@ -54,7 +55,7 @@
               <span class="icon-bar"></span>
             </a>
           <% end %>
-          <%= link_to content_for?(:app_title) ? yield(:app_title) : "GOV.UK", root_path, :class => 'navbar-brand' %>
+          <%= link_to content_for?(:app_title) ? yield(:app_title) : "GOV.UK", app_home_path, :class => 'navbar-brand' %>
           <% if environment_label %>
             <div class="environment-label">
               <%= environment_label %>
