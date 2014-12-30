@@ -72,6 +72,7 @@ The gem [uses nested layouts](http://guides.rubyonrails.org/layouts_and_renderin
 `content_for`     | Description
 ---------------   | -------------
 `:app_title`      | Name of your admin application
+`:app_home_path`  | Path to the home page of your application, defaults to `root_path`
 `:content`        | Main content
 `:head`           | HTML to include in the `<head>` of your application
 `:page_title`     | Page title

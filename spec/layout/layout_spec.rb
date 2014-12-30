@@ -34,6 +34,11 @@ describe 'Layout' do
     end
   end
 
+  it 'renders a link to a custom home path' do
+    visit '/'
+    expect(page).to have_selector('a[href="/style-guide"]', text: 'app_title')
+  end
+
   it 'renders a bootstrap header' do
     visit '/'
     within '.navbar' do
