@@ -1,3 +1,7 @@
+# 1.4.3
+
+* Allow customisation of app's home page
+
 # 1.4.2
 
 * Track events using universal analytics as well as classic analytics
