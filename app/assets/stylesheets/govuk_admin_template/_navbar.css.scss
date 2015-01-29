@@ -48,8 +48,16 @@ header .navbar-header {
 }
 
 .navbar-text a {
-  color: $gray-light;
+  color: $navbar-inverse-link-color;
   text-decoration: underline;
+
+  &:hover {
+    color: $navbar-inverse-link-hover-color;
+  }
+
+  &:active {
+    color: $navbar-inverse-link-active-color;
+  }
 }
 
 // Let's make these more specific to add the intended white colour
