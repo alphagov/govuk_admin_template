@@ -1,3 +1,7 @@
+# 1.5.0
+
+* Upgrade to Bootstrap 3.3.2
+
 # 1.4.3
 
 * Allow customisation of app's home page
