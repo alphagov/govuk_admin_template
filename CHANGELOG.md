@@ -1,3 +1,7 @@
+# 1.5.1
+
+* Rename SASS files to exclude `.css` and fix deprecation warnings
+
 # 1.5.0
 
 * Upgrade to Bootstrap 3.3.2
