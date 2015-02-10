@@ -70,9 +70,17 @@
     window.location.href = path;
   }
 
+  // Google Analytics pageview tracking
+  GOVUKAdmin.trackPageview = function(path) {
+    if (typeof root.ga === "function") {
+      // https://developers.google.com/analytics/devguides/collection/analyticsjs/pages
+      root.ga('send', 'pageview', path);
+    }
+  }
+
   // Google Analytics event tracking
   // Label and value are optional
-  GOVUKAdmin.track = function(action, label, value) {
+  GOVUKAdmin.trackEvent = function(action, label, value) {
 
     // https://developers.google.com/analytics/devguides/collection/analyticsjs/events
     // Default category to the page an event occurs on
