@@ -72,4 +72,17 @@ describe 'Layout' do
       expect(page).to have_selector('a', text: 'Crown Copyright')
     end
   end
+
+  it 'does not include analytics in development' do
+    visit '/'
+    expect(page).to have_no_selector('script.analytics', visible: false)
+  end
+
+  describe 'in production' do
+    before { Rails.env.stub(:production? => true) }
+    it 'includes analytics' do
+      visit '/'
+      expect(page).to have_selector('script.analytics', visible: false)
+    end
+  end
 end

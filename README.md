@@ -10,6 +10,7 @@ This gem provides (via a Rails engine):
 * Admin design patterns available from `/style-guide` (when routes are mounted)
 * [CSS helpers and SASS variables](CSS.md) for the admin theme
 * GOV.UK user friendly date formats
+* Google Analytics tracking code (Universal Analytics), using the "GOV.UK apps" profile
 
 [Apps using this gem](https://github.com/search?q=govuk_admin_template+user%3Aalphagov+filename%3AGemfile) include:
 * [Transition](https://github.com/alphagov/transition)
