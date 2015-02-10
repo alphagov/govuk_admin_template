@@ -74,22 +74,16 @@
   // Label and value are optional
   GOVUKAdmin.track = function(action, label, value) {
 
+    // https://developers.google.com/analytics/devguides/collection/analyticsjs/events
     // Default category to the page an event occurs on
-    var category = root.location.pathname,
-
-        // https://developers.google.com/analytics/devguides/collection/gajs/eventTrackerGuide
-        eventGa = ["_trackEvent", category, action],
-
-        // https://developers.google.com/analytics/devguides/collection/analyticsjs/events
-        eventAnalytics = {
+    var eventAnalytics = {
           hitType: 'event',
-          eventCategory: category,
+          eventCategory: root.location.pathname,
           eventAction: action
         };
 
     // Label is optional
     if (typeof label === "string") {
-      eventGa.push(label);
       eventAnalytics.eventLabel = label;
     }
 
@@ -99,18 +93,13 @@
     if (value) {
       value = parseInt(value, 10);
       if (typeof value === "number" && !isNaN(value)) {
-        eventGa.push(value);
         eventAnalytics.eventValue = value;
       }
     }
 
-    // _gaq is the Google Analytics tracking object we
-    // push events to when using the old tracking code
-    root._gaq = root._gaq || [];
-
     // Useful for debugging:
-    // console.log(eventGa, eventAnalytics);
-    root._gaq.push(eventGa);
+    // console.log(eventAnalytics);
+
     if (typeof root.ga === "function") {
       root.ga('send', eventAnalytics);
     }
