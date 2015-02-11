@@ -15,8 +15,8 @@ describe('An auto event tracker', function() {
   });
 
   it('tracks events on start', function() {
-    spyOn(root.GOVUKAdmin, 'track');
+    spyOn(root.GOVUKAdmin, 'trackEvent');
     tracker.start(element);
-    expect(GOVUKAdmin.track).toHaveBeenCalledWith('action', 'label', 10)
+    expect(GOVUKAdmin.trackEvent).toHaveBeenCalledWith('action', 'label', 10)
   });
 });

@@ -8,7 +8,7 @@
           label = element.data('track-label'),
           value = element.data('track-value');
 
-      GOVUKAdmin.track(action, label, value);
+      GOVUKAdmin.trackEvent(action, label, value);
     }
   };
 

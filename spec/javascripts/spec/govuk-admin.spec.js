@@ -84,10 +84,26 @@ describe('A GOVUKAdmin app', function() {
     });
   });
 
+  describe('when pageviews are tracked', function() {
+    beforeEach(function() {
+      window.ga = function() {};
+      spyOn(window, 'ga');
+    });
+
+    it('sends them to Google Analytics', function() {
+      GOVUKAdmin.trackPageview('/nicholas-page');
+      expect(window.ga.calls.mostRecent().args).toEqual(['send', 'pageview', {page: '/nicholas-page'}]);
+    });
+
+    it('can track a custom title', function() {
+      GOVUKAdmin.trackPageview('/nicholas-page', 'Nicholas Page');
+      expect(window.ga.calls.mostRecent().args).toEqual(['send', 'pageview', {page: '/nicholas-page', title: 'Nicholas Page'}]);
+    });
+  });
+
   describe('when events are tracked', function() {
 
     beforeEach(function() {
-      window._gaq = [];
       window.ga = function() {};
       spyOn(window, 'ga');
     });
@@ -97,44 +113,32 @@ describe('A GOVUKAdmin app', function() {
     }
 
     it('uses the current path as the category', function() {
-      GOVUKAdmin.track('action', 'label');
-      expect(window._gaq[0][1]).toEqual('/');
+      GOVUKAdmin.trackEvent('action', 'label');
       expect(eventObjectFromSpy()['eventCategory']).toBe('/');
     });
 
     it('sends them to Google Analytics', function() {
-      GOVUKAdmin.track('action', 'label');
-      expect(window._gaq).toEqual([['_trackEvent', '/', 'action', 'label']]);
+      GOVUKAdmin.trackEvent('action', 'label');
       expect(window.ga.calls.mostRecent().args).toEqual(
         ['send', {hitType: 'event', eventCategory: '/', eventAction: 'action', eventLabel: 'label'}]
       );
     });
 
-    it('creates a _gaq object when one isn\'t already present', function() {
-      delete window._gaq;
-      GOVUKAdmin.track('action');
-      expect(window._gaq).toEqual([['_trackEvent', '/', 'action']]);
-    });
-
     it('label is optional', function() {
-      GOVUKAdmin.track('action');
-      expect(window._gaq).toEqual([['_trackEvent', '/', 'action']]);
+      GOVUKAdmin.trackEvent('action');
       expect(window.ga.calls.mostRecent().args).toEqual(
         ['send', {hitType: 'event', eventCategory: '/', eventAction: 'action'}]
       );
     });
 
     it('only sends values if they are parseable as numbers', function() {
-      GOVUKAdmin.track('action', 'label', '10');
-      expect(window._gaq[0]).toEqual(['_trackEvent', '/', 'action', 'label', 10]);
+      GOVUKAdmin.trackEvent('action', 'label', '10');
       expect(eventObjectFromSpy()['eventValue']).toEqual(10);
 
-      GOVUKAdmin.track('action', 'label', 10);
-      expect(window._gaq[1]).toEqual(['_trackEvent', '/', 'action', 'label', 10]);
+      GOVUKAdmin.trackEvent('action', 'label', 10);
       expect(eventObjectFromSpy()['eventValue']).toEqual(10);
 
-      GOVUKAdmin.track('action', 'label', 'not a number');
-      expect(window._gaq[2]).toEqual(['_trackEvent', '/', 'action', 'label']);
+      GOVUKAdmin.trackEvent('action', 'label', 'not a number');
       expect(eventObjectFromSpy()['eventValue']).toEqual(undefined);
     });
   });
