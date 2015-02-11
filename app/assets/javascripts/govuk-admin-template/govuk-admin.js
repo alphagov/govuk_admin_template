@@ -71,10 +71,16 @@
   }
 
   // Google Analytics pageview tracking
-  GOVUKAdmin.trackPageview = function(path) {
+  GOVUKAdmin.trackPageview = function(path, title) {
+    var pageviewObject = { page: path };
+
+    if (typeof title === "string") {
+      pageviewObject.title = title;
+    }
+
     if (typeof root.ga === "function") {
       // https://developers.google.com/analytics/devguides/collection/analyticsjs/pages
-      root.ga('send', 'pageview', path);
+      root.ga('send', 'pageview', pageviewObject);
     }
   }
 

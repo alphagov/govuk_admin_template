@@ -85,12 +85,19 @@ describe('A GOVUKAdmin app', function() {
   });
 
   describe('when pageviews are tracked', function() {
-    it('sends them to Google Analytics', function() {
+    beforeEach(function() {
       window.ga = function() {};
       spyOn(window, 'ga');
-      GOVUKAdmin.trackPageview('/nicholas-page');
+    });
 
-      expect(window.ga.calls.mostRecent().args).toEqual(['send', 'pageview', '/nicholas-page']);
+    it('sends them to Google Analytics', function() {
+      GOVUKAdmin.trackPageview('/nicholas-page');
+      expect(window.ga.calls.mostRecent().args).toEqual(['send', 'pageview', {page: '/nicholas-page'}]);
+    });
+
+    it('can track a custom title', function() {
+      GOVUKAdmin.trackPageview('/nicholas-page', 'Nicholas Page');
+      expect(window.ga.calls.mostRecent().args).toEqual(['send', 'pageview', {page: '/nicholas-page', title: 'Nicholas Page'}]);
     });
   });
 
