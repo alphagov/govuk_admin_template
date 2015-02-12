@@ -1,3 +1,8 @@
+# 2.0.0
+
+* Manage Google Analytics tracking
+* Update event and pageview tracking API, deprecate classic GA event tracking
+
 # 1.5.1
 
 * Rename SASS files to exclude `.css` and fix deprecation warnings
