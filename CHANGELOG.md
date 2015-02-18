@@ -1,3 +1,7 @@
+# 2.1.0
+
+* Strip off the last octet of IP addresses before sending them to GA
+
 # 2.0.0
 
 * Manage Google Analytics tracking
