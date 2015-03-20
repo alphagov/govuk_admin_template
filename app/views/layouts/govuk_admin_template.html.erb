@@ -37,6 +37,7 @@
     <![endif]-->
   </head>
   <body<% if environment_style %> class="environment-<%= environment_style %>"<% end %>>
+    <%= yield :body_start %>
     <header class="
       navbar
       navbar-default
