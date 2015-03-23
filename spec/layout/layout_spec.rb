@@ -92,7 +92,7 @@ describe 'Layout' do
   context 'analytics is enabled' do
     before { GovukAdminTemplate.google_analytics = true }
 
-    it 'does not include analytics' do
+    it 'does include analytics' do
       visit '/'
       expect(page).to have_selector('script.analytics', visible: false)
     end
