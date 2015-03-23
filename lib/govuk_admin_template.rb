@@ -2,7 +2,7 @@ require "govuk_admin_template/version"
 require "govuk_admin_template/engine"
 
 module GovukAdminTemplate
-  mattr_accessor :environment_style, :environment_label
+  mattr_accessor :environment_style, :environment_label, :google_analytics
 
   def self.environment_style
     @@environment_style || self.default_environment_style
@@ -18,5 +18,13 @@ module GovukAdminTemplate
     if Rails.env.development?
       "development"
     end
+  end
+
+  def self.google_analytics
+    @@google_analytics || Rails.env.production?
+  end
+
+  def self.google_analytics?
+    !!self.google_analytics
   end
 end
