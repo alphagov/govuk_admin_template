@@ -100,6 +100,7 @@ File   | Module | Attribute | Description
 ------ | ------ | --------- | -----------
 auto_show_modal.js | `AutoShowModal` | `auto-show-modal` | Initialise a Bootstrap modal on page load and remove markup when closed
 auto_track_event.js | `AutoTrackEvent` | `auto-track-event` | Use data attributes to track events in Google Analytics on page load
+confirm.js | `Confirm` | `confirm` | Show a [window.confirm](https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm) dialogue when a link is clicked
 filterable_table.js | `FilterableTable` | `filterable-table` | Filter the contents of a table, showing only matching rows
 fixed_table_header.js | `FixedTableHeader` | `fixed-table-header` | Fix the `<thead>` portion of a table when scrolling offscreen
 toggle.js | `Toggle` | `toggle` | A simple toggle
