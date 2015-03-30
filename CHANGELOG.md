@@ -1,3 +1,7 @@
+# 2.2.0
+
+* Add a confirm javascript module for confirming a user action: https://github.com/alphagov/govuk_admin_template/pull/64
+
 # 2.1.0
 
 * Strip off the last octet of IP addresses before sending them to GA
