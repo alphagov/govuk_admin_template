@@ -67,6 +67,14 @@ describe 'Layout' do
     expect(page).to have_selector('body > section.container-fluid')
   end
 
+  it 'can render a custom navbar' do
+    visit '/navbar'
+    expect(body).not_to include('app_title')
+    expect(body).not_to include('navbar_right')
+    expect(body).not_to include('navbar_item')
+    expect(page).to have_selector('h1', text: 'custom navbar')
+  end
+
   it 'renders a footer' do
     visit '/'
     within 'footer' do

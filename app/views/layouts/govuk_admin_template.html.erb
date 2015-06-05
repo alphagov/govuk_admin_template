@@ -38,47 +38,51 @@
   </head>
   <body<% if environment_style %> class="environment-<%= environment_style %>"<% end %>>
     <%= yield :body_start %>
-    <header class="
-      navbar
-      navbar-default
-      navbar-inverse
-      navbar-static-top
-      <% if environment_style %>environment-indicator<% end %>
-      add-bottom-margin" role="banner">
-      <div class="<%= content_for?(:full_width) ? 'container-fluid' : 'container' %>">
-        <div class="navbar-header">
-          <% if content_for?(:navbar_right) || content_for?(:navbar_items) %>
-            <%# Bootstrap toggle for collapsed navbar content, used at smaller widths %>
-            <a class="navbar-toggle" data-toggle="collapse" data-target="header .navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </a>
-          <% end %>
-          <%= link_to content_for?(:app_title) ? yield(:app_title) : "GOV.UK", app_home_path, :class => 'navbar-brand' %>
-          <% if environment_label %>
-            <div class="environment-label">
-              <%= environment_label %>
-            </div>
-          <% end %>
-        </div>
-        <% if content_for?(:navbar_right) || content_for?(:navbar_items) %>
-          <nav role="navigation" class="collapse navbar-collapse">
-            <% if content_for?(:navbar_items) %>
-              <ul class="nav navbar-nav">
-                <%= yield :navbar_items %>
-              </ul>
+    <% if content_for?(:navbar) %>
+      <%= yield(:navbar) %>
+    <% else %>
+      <header class="
+        navbar
+        navbar-default
+        navbar-inverse
+        navbar-static-top
+        <% if environment_style %>environment-indicator<% end %>
+        add-bottom-margin" role="banner">
+        <div class="<%= content_for?(:full_width) ? 'container-fluid' : 'container' %>">
+          <div class="navbar-header">
+            <% if content_for?(:navbar_right) || content_for?(:navbar_items) %>
+              <%# Bootstrap toggle for collapsed navbar content, used at smaller widths %>
+              <a class="navbar-toggle" data-toggle="collapse" data-target="header .navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </a>
             <% end %>
-            <% if content_for?(:navbar_right) %>
-              <div class="navbar-text pull-right">
-                <%= yield :navbar_right %>
+            <%= link_to content_for?(:app_title) ? yield(:app_title) : "GOV.UK", app_home_path, :class => 'navbar-brand' %>
+            <% if environment_label %>
+              <div class="environment-label">
+                <%= environment_label %>
               </div>
             <% end %>
-          </nav>
-        <% end %>
-      </div>
-    </header>
+          </div>
+          <% if content_for?(:navbar_right) || content_for?(:navbar_items) %>
+            <nav role="navigation" class="collapse navbar-collapse">
+              <% if content_for?(:navbar_items) %>
+                <ul class="nav navbar-nav">
+                  <%= yield :navbar_items %>
+                </ul>
+              <% end %>
+              <% if content_for?(:navbar_right) %>
+                <div class="navbar-text pull-right">
+                  <%= yield :navbar_right %>
+                </div>
+              <% end %>
+            </nav>
+          <% end %>
+        </div>
+      </header>
+    <% end %>
     <section class="<%= content_for?(:full_width) ? 'container-fluid' : 'container' %>">
       <main role="main">
         <%= content_for?(:content) ? yield(:content) : yield %>
