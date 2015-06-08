@@ -1,3 +1,7 @@
+# 2.3.0
+
+* Allow apps to specify a custom navbar
+
 # 2.2.0
 
 * Add a confirm javascript module for confirming a user action: https://github.com/alphagov/govuk_admin_template/pull/64
