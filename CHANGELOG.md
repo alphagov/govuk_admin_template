@@ -1,3 +1,7 @@
+# 2.3.1
+
+* bump version of jquery-rails due to CSRF vulnerability
+
 # 2.3.0
 
 * Allow apps to specify a custom navbar
