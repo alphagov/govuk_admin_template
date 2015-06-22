@@ -1,6 +1,10 @@
+# 2.3.2
+
+* Make SASS compatible with libsass
+
 # 2.3.1
 
-* bump version of jquery-rails due to CSRF vulnerability
+* Bump version of jquery-rails due to CSRF vulnerability
 
 # 2.3.0
 
