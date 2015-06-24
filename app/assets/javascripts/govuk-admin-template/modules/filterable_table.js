@@ -6,12 +6,16 @@
     that.start = function(element) {
 
       var rows = element.find('tbody tr'),
-          tableInput = element.find('.js-filter-table-input');
+          tableInput = element.find('.js-filter-table-input'),
+          filterForm;
 
       element.on('keyup change', '.js-filter-table-input', filterTableBasedOnInput);
 
       if (element.find('a.js-open-on-submit').length > 0) {
-        element.on('submit', 'form', openFirstVisibleLink);
+        filterForm = tableInput.parents('form');
+        if (filterForm && filterForm.length > 0) {
+          filterForm.on('submit', openFirstVisibleLink);
+        }
       }
 
       function filterTableBasedOnInput(event) {

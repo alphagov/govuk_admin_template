@@ -22,6 +22,13 @@ describe('A filterable table module', function() {
               <a href="/second-link" class="js-open-on-submit">another thing</a>\
             </td>\
           </tr>\
+          <tr class="third">\
+            <td>\
+              <form>\
+                <input type="submit" value="Some other form" />\
+              </form>\
+            </td>\
+          </tr>\
         </tbody>\
       </table>\
     </div>');
@@ -60,12 +67,27 @@ describe('A filterable table module', function() {
     expect(tableElement.find('.second').is(':visible')).toBe(true);
   });
 
-  describe('when the form is submitted', function() {
+  describe('when the filter form is submitted', function() {
     it('opens the first visible link', function() {
       spyOn(GOVUKAdmin, 'redirect');
       filterBy('another');
-      tableElement.find('form').trigger('submit');
+      tableElement.find('form').first().trigger('submit');
       expect(GOVUKAdmin.redirect).toHaveBeenCalledWith('/second-link');
+    });
+  });
+
+  describe('when a form other than the filter is submitted', function() {
+    it('does not open the first visible link', function() {
+      var submitted = false;
+      spyOn(GOVUKAdmin, 'redirect');
+      tableElement.find('.third form').on('submit', function(evt) {
+        evt.preventDefault();
+        submitted = true;
+      });
+
+      tableElement.find('.third form').trigger('submit');
+      expect(GOVUKAdmin.redirect).not.toHaveBeenCalled();
+      expect(submitted).toBe(true);
     });
   });
 
