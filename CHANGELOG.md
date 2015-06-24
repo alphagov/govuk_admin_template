@@ -1,3 +1,7 @@
+# 2.3.3
+
+* Fix table filtering on tables that contain multiple forms
+
 # 2.3.2
 
 * Make SASS compatible with libsass
