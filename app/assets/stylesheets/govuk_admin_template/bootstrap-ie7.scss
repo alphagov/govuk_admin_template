@@ -2,11 +2,84 @@
   IE7 Bootstrap 3 fixes
   via https://github.com/coliff/bootstrap-ie7
 
-  * Linearises grid
   * Doesn't fix IE6, but it helps.
   * Fixes glyphicon font
   * Fixes small layout issues mostly by applying hasLayout
+  * Creates a limited grid system that works without box sizing support
+    * Uses important to override highly specific styles included by RespondJS
 */
+
+.col-xs-1,
+.col-md-1,
+.col-sm-1  {
+  width: 60px !important;
+}
+
+.col-xs-2,
+.col-md-2,
+.col-sm-2  {
+  width: 140px !important;
+}
+
+.col-xs-3,
+.col-md-3,
+.col-sm-3  {
+  width: 220px !important;
+}
+
+.col-xs-4,
+.col-md-4,
+.col-sm-4  {
+  width: 300px !important;
+}
+
+.col-xs-5,
+.col-md-5,
+.col-sm-5  {
+  width: 380px !important;
+}
+
+.col-xs-6,
+.col-md-6,
+.col-sm-6  {
+  width: 460px !important;
+}
+
+.col-xs-7,
+.col-md-7,
+.col-sm-7  {
+  width: 540px !important;
+}
+
+.col-xs-8,
+.col-md-8,
+.col-sm-8  {
+  width: 620px !important;
+}
+
+.col-xs-9,
+.col-md-9,
+.col-sm-9  {
+  width: 700px !important;
+}
+
+.col-xs-10,
+.col-md-10,
+.col-sm-10  {
+  width: 780px !important;
+}
+
+.col-xs-11,
+.col-md-11,
+.col-sm-11  {
+  width: 860px !important;
+}
+
+.col-xs-12,
+.col-md-12,
+.col-sm-12  {
+  width: 940px !important;
+}
 
 .col-xs-1,
 .col-xs-2,
@@ -43,17 +116,28 @@
 .col-md-9,
 .col-md-10,
 .col-md-11,
-.col-md-12,
-.row {
+.col-md-12 {
   padding-left: 0;
   padding-right: 0;
-  width: 100% !important;
-  float: none !important;
+  min-height: 1px;
+  margin-left: 20px;
+  margin-right: 0;
+  float: left;
 }
 
 .row {
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: -20px;
+}
+
+.row:before,
+.row:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.row:after {
+  clear: both;
 }
 
 audio,
@@ -116,11 +200,28 @@ input[type="radio"] {
 input[type="text"],
 input[type="password"] {
   height: 22px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+textarea.form-control {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .container,
 .container-fluid {
   zoom: 1;
+  width: 940px;
+}
+
+.container-fluid {
+  width: 970px;
+}
+
+header .container,
+header .container-fluid {
+  width: auto;
 }
 
 .row {
