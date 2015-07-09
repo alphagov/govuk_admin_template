@@ -1,3 +1,7 @@
+# 2.3.4
+
+* Improve Bootstrap 3 in IE7
+
 # 2.3.3
 
 * Fix table filtering on tables that contain multiple forms
