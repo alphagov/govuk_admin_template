@@ -1,0 +1,13 @@
+<%
+  placeholder ||= "Filter table"
+  colspan ||= 100
+  filter_id ||= SecureRandom.uuid
+%>
+<tr class="if-no-js-hide table-header-secondary">
+  <td colspan="<%= colspan %>">
+    <form>
+      <label for="<%= filter_id %>" class="rm"><%= placeholder %></label>
+      <input id="<%= filter_id %>" type="text" class="form-control normal js-filter-table-input" placeholder="<%= placeholder %>">
+    </form>
+  </td>
+</tr>
