@@ -8,6 +8,11 @@ describe 'Style guide' do
     expect(body).to include('Admin template style guide')
   end
 
+  it 'includes an example table filter from a partial' do
+    visit '/style-guide'
+    expect(body).to include('Filter fruity things')
+  end
+
   it 'includes formatted dates' do
     visit '/style-guide'
     expect(body).to include('31 October 2013')

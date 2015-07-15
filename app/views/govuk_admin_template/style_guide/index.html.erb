@@ -184,7 +184,8 @@
 <h2>Tables</h2>
 <div class="row">
   <div class="col-md-6 lead">
-    <p>When using a table with two layers of headings, usually for interacting with table content, <code>table-header</code> and <code>table-header-secondary</code> classes are used.</p>
+    <p>Tables should use the Bootstrap 3 classes <code>table table-bordered</code>. The row of table headings should have the admin template class <code>table-headers</code>.</p>
+    <p>When using a table with two layers of headings, <code>table-header</code> and <code>table-header-secondary</code> classes can be used.</p>
   </div>
   <div class="col-md-6">
     <table class="table table-bordered table-hover">
@@ -207,9 +208,23 @@
     </table>
   </div>
 </div>
+<h3>Filterable tables</h3>
 <div class="row">
   <div class="col-md-6 lead">
-    <p>Using the <code>filterable-table</code> <a href="https://github.com/alphagov/govuk_admin_template/blob/master/app/assets/javascripts/govuk-admin-template/modules/filterable_table.js">module</a> table rows can be filtered. The module performs a simple match against the content of each row, if there’s no match the row is hidden.</p>
+    <p>Using the <a href="https://github.com/alphagov/govuk_admin_template/blob/master/app/assets/javascripts/govuk-admin-template/modules/filterable_table.js">filterable-table module</a> and the <a href="https://github.com/alphagov/govuk_admin_template/tree/master/app/views/govuk_admin_template/_table_filter.html.erb">table_filter partial</a> any table can be filtered. The module performs a simple match against the content of each row, if there’s no match the row is hidden.</p>
+    <p>If the class <code>js-open-on-submit</code> is added to a link within a row, then the first link visible with that class will be opened when the user hits <code>ENTER</code>.</p>
+    <pre class="add-top-margin">&lt;table class="table table-bordered" data-module="filterable-table"&gt;
+  &lt;thead&gt;
+    &lt;tr class="table-header"&gt;
+      &lt;th&gt;
+        Heading
+      &lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;%= render partial: "govuk_admin_template/table_filter",
+      locals: {placeholder: "Filter items"} %&gt;
+  &lt;/thead&gt;
+  …
+&lt;/table&gt;</pre>
   </div>
   <div class="col-md-6">
     <table class="table table-bordered table-hover" data-module="filterable-table">
@@ -218,14 +233,7 @@
           <th>Primary header</th>
           <th style="width: 80px">Number</th>
         </tr>
-        <tr class="if-no-js-hide table-header-secondary">
-          <td colspan="2">
-            <form>
-              <label for="table-filter" class="rm">Filter organisations</label>
-              <input id="table-filter" type="text" class="form-control normal js-filter-table-input" placeholder="Filter table">
-            </form>
-          </td>
-        </tr>
+        <%= render partial: 'govuk_admin_template/table_filter', locals: {placeholder: 'Filter fruity things'} %>
       </thead>
       <tbody>
         <tr>
