@@ -1,3 +1,7 @@
+# 2.4.0
+
+* Add a table filter partial for re-use in apps
+
 # 2.3.4
 
 * Improve Bootstrap 3 in IE7
