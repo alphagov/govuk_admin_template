@@ -1,3 +1,8 @@
+# 2.5.0
+
+* Allow apps to disable Google Analytics
+* Fix table filtering for queries containing special characters
+
 # 2.4.0
 
 * Add a table filter partial for re-use in apps
