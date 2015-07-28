@@ -82,7 +82,8 @@ The gem [uses nested layouts](http://guides.rubyonrails.org/layouts_and_renderin
 `:footer_top` (optional) | Footer content before copyright text
 `:footer_version` (optional) | Text indicating the release, eg commit SHA
 `:body_end` (optional) | Just before the `</body>` tag
-`:full_width` (optional, boolean) | Expand content to edges of screen. Must be used on a per-page basis. Apps must not be full width by default.
+`:full_width` (optional, boolean) | Expand content to edges of screen.
+`:exclude_analytics` (optional, boolean) | Don’t use the default Google Analytics snippet and profile.
 `:navbar` (optional) | Custom navbar content, overrides default navbar
 
 Example navbar_items:

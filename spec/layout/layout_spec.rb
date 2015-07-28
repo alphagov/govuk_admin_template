@@ -93,5 +93,10 @@ describe 'Layout' do
       visit '/'
       expect(page).to have_selector('script.analytics', visible: false)
     end
+
+    it 'can exclude analytics' do
+      visit '/exclude-analytics'
+      expect(page).to have_no_selector('script.analytics', visible: false)
+    end
   end
 end
