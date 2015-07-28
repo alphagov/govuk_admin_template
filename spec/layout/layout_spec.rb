@@ -82,16 +82,36 @@ describe 'Layout' do
     end
   end
 
-  it 'does not include analytics in development' do
-    visit '/'
-    expect(page).to have_no_selector('script.analytics', visible: false)
+  context 'analytics is default' do
+    it 'does not include analytics in development' do
+      visit '/'
+      expect(page).to have_no_selector('script.analytics', visible: false)
+    end
+
+    describe 'in production' do
+      before { Rails.env.stub(:production? => true) }
+      it 'includes analytics' do
+        visit '/'
+        expect(page).to have_selector('script.analytics', visible: false)
+      end
+    end
   end
 
-  describe 'in production' do
-    before { Rails.env.stub(:production? => true) }
-    it 'includes analytics' do
+  context 'analytics is enabled' do
+    before { GovukAdminTemplate.google_analytics = true }
+
+    it 'does include analytics' do
       visit '/'
       expect(page).to have_selector('script.analytics', visible: false)
+    end
+  end
+
+  context 'analytics is disabled' do
+    before { GovukAdminTemplate.google_analytics = false }
+
+    it 'does not include analytics' do
+      visit '/'
+      expect(page).to have_no_selector('script.analytics', visible: false)
     end
   end
 end
