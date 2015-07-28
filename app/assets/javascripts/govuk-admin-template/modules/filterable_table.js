@@ -20,7 +20,7 @@
 
       function filterTableBasedOnInput(event) {
         var searchString = $.trim(tableInput.val()),
-            regExp = new RegExp(searchString, 'i');
+            regExp = new RegExp(escapeStringForRegexp(searchString), 'i');
 
         rows.each(function() {
           var row = $(this);
@@ -36,6 +36,13 @@
         evt.preventDefault();
         var link = element.find('a.js-open-on-submit:visible').first();
         GOVUKAdmin.redirect(link.attr('href'));
+      }
+
+      // http://stackoverflow.com/questions/3446170/escape-string-for-use-in-javascript-regex
+      // https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/regexp
+      // Escape ~!@#$%^&*(){}[]`/=?+\|-_;:'",<.>
+      function escapeStringForRegexp(str) {
+        return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
       }
     }
   };
