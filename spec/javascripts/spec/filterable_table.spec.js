@@ -19,7 +19,7 @@ describe('A filterable table module', function() {
           </tr>\
           <tr class="second">\
             <td>\
-              <a href="/second-link" class="js-open-on-submit">another thing</a>\
+              <a href="/second-link" class="js-open-on-submit">[another thing (^lovely$)]</a>\
             </td>\
           </tr>\
           <tr class="third">\
@@ -27,6 +27,7 @@ describe('A filterable table module', function() {
               <form>\
                 <input type="submit" value="Some other form" />\
               </form>\
+              ~!@#$%^&*(){}[]`/=?+|-_;:\'",<.>\
             </td>\
           </tr>\
         </tbody>\
@@ -58,6 +59,25 @@ describe('A filterable table module', function() {
     filterBy('not a thing');
     expect(tableElement.find('.first').is(':visible')).toBe(false);
     expect(tableElement.find('.second').is(':visible')).toBe(false);
+  });
+
+  it('filters the table based on input even when containing regexp characters', function() {
+    filterBy('[another');
+    expect(tableElement.find('.first').is(':visible')).toBe(false);
+    expect(tableElement.find('.second').is(':visible')).toBe(true);
+
+    filterBy('^lovely');
+    expect(tableElement.find('.first').is(':visible')).toBe(false);
+    expect(tableElement.find('.second').is(':visible')).toBe(true);
+
+    filterBy('lovely$');
+    expect(tableElement.find('.first').is(':visible')).toBe(false);
+    expect(tableElement.find('.second').is(':visible')).toBe(true);
+
+    filterBy('~!@#$%^&*(){}[]`/=?+|-_;:\'",<.>');
+    expect(tableElement.find('.first').is(':visible')).toBe(false);
+    expect(tableElement.find('.second').is(':visible')).toBe(false);
+    expect(tableElement.find('.third').is(':visible')).toBe(true);
   });
 
   it('shows all rows when no input is entered', function() {
