@@ -1,3 +1,7 @@
+# 2.5.1
+
+* Fix inline form rendering in IE7
+
 # 2.5.0
 
 * Allow apps to disable Google Analytics
