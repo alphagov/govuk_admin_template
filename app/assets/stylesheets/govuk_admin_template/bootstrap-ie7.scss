@@ -209,6 +209,14 @@ textarea.form-control {
   padding-right: 0;
 }
 
+/* Fix inline-block on inline forms
+   Most commonly used on date select fields */
+.form-inline .form-control {
+  display: inline-block;
+  zoom: 1;
+  display: inline;
+}
+
 .container,
 .container-fluid {
   zoom: 1;
