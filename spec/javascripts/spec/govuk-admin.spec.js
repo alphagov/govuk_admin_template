@@ -32,6 +32,26 @@ describe('A GOVUKAdmin app', function() {
     expect(GOVUKAdmin.find(container)[1]).toMatch(container);
   });
 
+  describe('when manipulating cookies', function() {
+    it('can set, retrieve and delete a cookie', function() {
+      GOVUKAdmin.cookie('name', 'value');
+      expect(GOVUKAdmin.cookie('name')).toBe('value');
+      expect(document.cookie).toBe('name=value');
+
+      GOVUKAdmin.cookie('name', null);
+      expect(document.cookie).toBe('');
+      expect(GOVUKAdmin.cookie('name')).toBe(null);
+    });
+
+    it('can set an expires on a cookie', function() {
+      GOVUKAdmin.cookie('expiring', 'cookie', {days: 5});
+      expect(GOVUKAdmin.cookie('expiring')).toBe('cookie');
+      expect(document.cookie).toBe('expiring=cookie');
+      
+      GOVUKAdmin.cookie('expiring', null);
+    });
+  });
+
   describe('when a module exists', function() {
 
     var callback;
