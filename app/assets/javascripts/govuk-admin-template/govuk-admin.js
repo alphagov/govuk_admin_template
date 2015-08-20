@@ -152,6 +152,9 @@
       date.setTime(date.getTime() + (options.days * 24 * 60 * 60 * 1000));
       cookieString = cookieString + "; expires=" + date.toGMTString();
     }
+    if (options.domain) {
+      cookieString = cookieString + "; domain=" + options.domain;
+    }
     if (document.location.protocol == 'https:'){
       cookieString = cookieString + "; Secure";
     }
