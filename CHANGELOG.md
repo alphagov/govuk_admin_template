@@ -1,3 +1,7 @@
+# 2.6.0
+
+* Add functions for setting, reading and deleting cookies
+
 # 2.5.1
 
 * Fix inline form rendering in IE7
