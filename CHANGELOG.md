@@ -1,3 +1,7 @@
+# 3.0.0
+
+* Use GOVUK_APP_DOMAIN environment variable to set Google Analytics domain
+
 # 2.6.0
 
 * Add functions for setting, reading and deleting cookies
