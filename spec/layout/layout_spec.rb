@@ -90,8 +90,11 @@ describe 'Layout' do
   describe 'in production' do
     before { Rails.env.stub(:production? => true) }
     it 'includes analytics' do
+      ENV.stub(:fetch).with('GOVUK_APP_DOMAIN').and_return('root.gov.uk')
+
       visit '/'
       expect(page).to have_selector('script.analytics', visible: false)
+      expect(page.body).to include("'root.gov.uk'")
     end
 
     it 'can exclude analytics' do
