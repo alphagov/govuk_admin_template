@@ -28,26 +28,22 @@
     <p>
       Based on the <a href="http://govuk-elements.herokuapp.com/form-elements/#form-toggle-content">GOV.UK elements pattern</a>, ticking a checkbox or selecting a radio element can toggle the display of further content or fields.
     </p>
-    <pre class="add-top-margin">&lt;div class=&quot;checkbox&quot;
-     data-module=&quot;toggle-checkbox&quot;
-     data-target=&quot;target-id&quot;&gt;
+    <pre class="add-top-margin">&lt;div class=&quot;checkbox&quot; data-module=&quot;toggle-checkbox&quot;&gt;
   &lt;label&gt;
-    &lt;input type=&quot;checkbox&quot;&gt; Check me
+    &lt;input type=&quot;checkbox&quot; data-target=&quot;target-id&quot;&gt; Check me
   &lt;/label&gt;
   &lt;div id=&quot;target-id&quot;&gt;Content&lt;/div&gt;
 &lt;/div&gt;</pre>
   </div>
   <form class="col-md-6">
-    <div class="checkbox" data-module="checkbox-toggle" data-target="target-id">
+    <div class="checkbox" data-module="checkbox-toggle">
       <label>
-        <input type="checkbox"> Check me to show content
+        <input type="checkbox" data-target="target-id"> Check me to show content
       </label>
       <div id="target-id" class="well add-top-margin">Content that appears</div>
-    </div>
-    <hr />
-    <div class="checkbox" data-module="checkbox-toggle" data-target="second-target-id">
+      <hr />
       <label>
-        <input type="checkbox" checked="checked"> I'm already checked
+        <input type="checkbox" checked="checked" data-target="second-target-id"> I'm already checked
       </label>
       <div id="second-target-id" class="well add-top-margin">When the checkbox is checked, the content will display.</div>
     </div>

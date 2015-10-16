@@ -6,9 +6,12 @@ describe('A checkbox toggle module', function() {
       toggleElement;
 
   beforeEach(function() {
-    toggleElement = $('<div data-target="target-id">\
+    toggleElement = $('<div>\
       <label>\
-        <input type="checkbox"> Check me\
+        <input type="checkbox" class="without-target"> Normal checkbox\
+      </label>\
+      <label>\
+        <input type="checkbox" data-target="target-id" class="with-target"> Check me\
       </label>\
       <div id="target-id">Content</div>\
     ');
@@ -41,12 +44,12 @@ describe('A checkbox toggle module', function() {
 
     it('adds an `aria-controls` attribute linking checkbox to target', function() {
       toggle.start(toggleElement);
-      var ariaControls = toggleElement.find('input[type="checkbox"]').attr('aria-controls');
+      var ariaControls = toggleElement.find('input[type="checkbox"][data-target]').attr('aria-controls');
       expect(ariaControls).toBe('target-id');
     });
   });
 
-  it('toggles content when checkbox changes', function() {
+  it('toggles content when checkbox with a target changes', function() {
     toggle.start(toggleElement);
 
     expectToggleToBeHidden();
@@ -56,18 +59,52 @@ describe('A checkbox toggle module', function() {
     expectToggleToBeHidden();
   });
 
-  function toggleCheckbox() {
-    toggleElement.find('input[type="checkbox"]').click();
+  it('does nothing when a checkbox without a target changes', function() {
+    toggle.start(toggleElement);
+
+    expectToggleToBeHidden();
+    toggleElement.find('.without-target').click();
+    expectToggleToBeHidden();
+    toggleElement.find('.without-target').click();
+    expectToggleToBeHidden();
+  });
+
+  it('can handle multiple checkboxes with toggles', function() {
+    toggleElement.find('div').append('\
+      <label>\
+        <input type="checkbox" data-target="second-target-id" class="second-with-target"> Check me\
+      </label>\
+      <div id="second-target-id">Content</div>\
+    ');
+    toggle.start(toggleElement);
+
+    expectToggleToBeHidden();
+    expectToggleToBeHidden('#second-target-id');
+    toggleCheckbox();
+    expectToggleToBeVisible();
+    expectToggleToBeHidden('#second-target-id');
+    toggleCheckbox('.second-with-target');
+    expectToggleToBeVisible();
+    expectToggleToBeVisible('#second-target-id');
+  });
+
+  function toggleCheckbox(selector) {
+    selector = selector || '.with-target';
+    toggleElement.find(selector).click();
   }
 
-  function expectToggleToBeVisible() {
-    expect(toggleElement.find('#target-id').is(':visible')).toBe(true);
-    expect(toggleElement.find('#target-id').attr('aria-hidden')).toBe('false');
+  function expectToggleToBeVisible(id) {
+    id = id || '#target-id';
+
+    expect(toggleElement.find(id).is(':visible')).toBe(true);
+    expect(toggleElement.find(id).attr('aria-hidden')).toBe('false');
   }
 
-  function expectToggleToBeHidden() {
-    expect(toggleElement.find('#target-id').is(':visible')).toBe(false);
-    expect(toggleElement.find('#target-id').attr('aria-hidden')).toBe('true');
+  function expectToggleToBeHidden(id) {
+    id = id || '#target-id';
+
+    expect(toggleElement.find(id).is(':visible')).toBe(false);
+    expect(toggleElement.find(id).attr('aria-hidden')).toBe('true');
   }
 
 });
