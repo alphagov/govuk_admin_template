@@ -1,3 +1,7 @@
+# 3.1.0
+
+* Add checkbox and radio form toggles: https://github.com/alphagov/govuk_admin_template/pull/90
+
 # 3.0.0
 
 * Use GOVUK_APP_DOMAIN environment variable to set Google Analytics domain
