@@ -47,7 +47,7 @@ describe('A GOVUKAdmin app', function() {
       GOVUKAdmin.cookie('expiring', 'cookie', {days: 5});
       expect(GOVUKAdmin.cookie('expiring')).toBe('cookie');
       expect(document.cookie).toBe('expiring=cookie');
-      
+
       GOVUKAdmin.cookie('expiring', null);
     });
   });
@@ -140,14 +140,25 @@ describe('A GOVUKAdmin app', function() {
     it('sends them to Google Analytics', function() {
       GOVUKAdmin.trackEvent('action', 'label');
       expect(window.ga.calls.mostRecent().args).toEqual(
-        ['send', {hitType: 'event', eventCategory: '/', eventAction: 'action', eventLabel: 'label'}]
+        ['send', {
+          hitType: 'event',
+          eventCategory: '/',
+          eventAction: 'action',
+          eventLabel: 'label',
+          transport: 'beacon'
+        }]
       );
     });
 
     it('label is optional', function() {
       GOVUKAdmin.trackEvent('action');
       expect(window.ga.calls.mostRecent().args).toEqual(
-        ['send', {hitType: 'event', eventCategory: '/', eventAction: 'action'}]
+        ['send', {
+          hitType: 'event',
+          eventCategory: '/',
+          eventAction: 'action',
+          transport: 'beacon'
+        }]
       );
     });
 
