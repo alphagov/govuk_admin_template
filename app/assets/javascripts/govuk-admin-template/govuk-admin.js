@@ -90,8 +90,11 @@
 
     // https://developers.google.com/analytics/devguides/collection/analyticsjs/events
     // Default category to the page an event occurs on
+    // Uses sendBeacon for all events
+    // https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#transport
     var eventAnalytics = {
           hitType: 'event',
+          transport: 'beacon',
           eventCategory: root.location.pathname,
           eventAction: action
         };
