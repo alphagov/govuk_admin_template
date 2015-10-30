@@ -1,3 +1,7 @@
+# 3.2.0
+
+* Enable sendBeacon for all admin analytics events
+
 # 3.1.0
 
 * Add checkbox and radio form toggles: https://github.com/alphagov/govuk_admin_template/pull/90
