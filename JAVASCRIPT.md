@@ -104,3 +104,4 @@ confirm.js | `Confirm` | `confirm` | Show a [window.confirm](https://developer.m
 filterable_table.js | `FilterableTable` | `filterable-table` | Filter the contents of a table, showing only matching rows
 fixed_table_header.js | `FixedTableHeader` | `fixed-table-header` | Fix the `<thead>` portion of a table when scrolling offscreen
 toggle.js | `Toggle` | `toggle` | A simple toggle
+track_click.js | `TrackClick` | `track-click` | Track button clicks in Google Anayltics using `sendBeacon`
