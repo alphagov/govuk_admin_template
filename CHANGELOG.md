@@ -1,3 +1,7 @@
+# 3.3.0
+
+* Add track-click module for Analytics tracking of button clicks
+
 # 3.2.0
 
 * Enable sendBeacon for all admin analytics events
