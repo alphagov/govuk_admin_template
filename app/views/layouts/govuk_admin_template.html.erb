@@ -108,6 +108,10 @@
           ga('set', 'anonymizeIp', true);
           ga('send', 'pageview');
         </script>
+      <% else %>
+        <script>
+          if (console) {window.ga = function() {console.log.apply(console, arguments);};}
+        </script>
       <% end %>
     <% end %>
   </body>
