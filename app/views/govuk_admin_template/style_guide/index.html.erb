@@ -551,3 +551,40 @@
   </div>
 </div>
 <hr>
+
+<h2>Analytics</h2>
+<div class="row">
+  <div class="col-md-6">
+    <h3>Auto Track Events</h3>
+    <p>Adding this module to a page will cause an event to be sent to Google Analytics with
+      a specified action, label and value</p>
+  </div>
+  <div class="col-md-6">
+    <pre class="add-top-margin">&lt;div class=&quot;alert-success&quot;
+     data-module=&quot;auto-track-event&quot;
+     data-track-action=&quot;alert-success&quot;
+     data-track-label=&quot;Logged in successfully&quot;&gt;
+  Logged in successfully
+&lt;/div&gt;</pre>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <h3>Track Click</h3>
+    <p>This module is intended as an easy way to track individual button/link
+    clicks as events in Google Analytics. Groups of buttons may end up
+    redirecting to the same place, meaning they’re not trackable via URLs
+    in GA. This will use the sendBeacon functionality to fire off an event
+    once the button has been clicked and during navigation.</p>
+    <p>The module should be added to the container of the buttons, where the
+    GA action can be changed from the default of <code>button-pressed</code> using the
+    <code>data-track-action</code> attribute. The label defaults to the link/button
+    text, but can be overridden with <code>data-track-label</code>.</p>
+  </div>
+  <div class="col-md-6">
+    <pre class="add-top-margin">&lt;div data-module=&quot;track-click&quot; data-track-action=&quot;dialog-buttons&quot;&gt;
+  &lt;button class=&quot;js-track&quot;&gt;Yes&lt;/button&gt;
+  &lt;a href=&quot;#&quot; class=&quot;js-track&quot; data-track-label=&quot;No&quot;&gt;Get me out&lt;/a&gt;
+&lt;/div&gt;</pre>
+  </div>
+</div>
