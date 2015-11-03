@@ -1,3 +1,7 @@
+# Development
+
+* Prevent GA shim output in test / CI
+
 # 3.3.0
 
 * Add track-click module for Analytics tracking of button clicks
