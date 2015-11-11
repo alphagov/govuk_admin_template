@@ -9,7 +9,7 @@ describe('A GOVUKAdmin app', function() {
     $('body').append(module);
 
     expect(GOVUKAdmin.find().length).toBe(1);
-    expect(GOVUKAdmin.find()[0]).toMatch(module);
+    expect(GOVUKAdmin.find().eq(0).data('module')).toBe('a-module');
 
     module.remove();
   });
@@ -20,7 +20,7 @@ describe('A GOVUKAdmin app', function() {
         container = $('<div></div>').append(module);
 
     expect(GOVUKAdmin.find(container).length).toBe(1);
-    expect(GOVUKAdmin.find(container)[0]).toMatch(module);
+    expect(GOVUKAdmin.find(container).eq(0).data('module')).toBe('a-module');
   });
 
   it('finds modules that are a container', function() {
@@ -29,7 +29,8 @@ describe('A GOVUKAdmin app', function() {
         container = $('<div data-module="container-module"></div>').append(module);
 
     expect(GOVUKAdmin.find(container).length).toBe(2);
-    expect(GOVUKAdmin.find(container)[1]).toMatch(container);
+    expect(GOVUKAdmin.find(container).eq(0).data('module')).toBe('container-module');
+    expect(GOVUKAdmin.find(container).eq(1).data('module')).toBe('a-module');
   });
 
   describe('when manipulating cookies', function() {
@@ -85,7 +86,7 @@ describe('A GOVUKAdmin app', function() {
       GOVUKAdmin.start(container);
 
       var args = callback.calls.argsFor(0);
-      expect(args[0]).toMatch(module);
+      expect(args[0].is('div[data-module="test-alert-module"]')).toBe(true);
     });
 
     it('starts all modules that are on the page', function() {
