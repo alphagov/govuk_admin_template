@@ -1,3 +1,7 @@
+# 3.3.2
+
+* Fix module starting when the module is defined on the container passed into `GOVUKAdmin.start` https://github.com/alphagov/govuk_admin_template/pull/98
+
 # 3.3.1
 
 * Prevent GA shim output in test / CI
