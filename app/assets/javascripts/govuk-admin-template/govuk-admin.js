@@ -13,10 +13,9 @@
 
     modules = container.find(moduleSelector);
 
-    // Include container if it matches pattern, as that could
-    // be a module too
+    // Container could be a module too
     if (container.is(moduleSelector)) {
-      modules.push(container);
+      modules = modules.add(container);
     }
 
     return modules;
