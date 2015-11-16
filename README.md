@@ -36,12 +36,14 @@ gem 'govuk_admin_template', '~> 3.3'
 
 At the top of `application.scss` include the styles (this provides all the mixins and variables from the gem as well as from bootstrap — [bootstrap mixins](https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/_mixins.scss)):
 ```css
+/* application.scss */
 @import 'govuk_admin_template';
 ```
 
 In `application.html.erb` after any content blocks you want to include, render the base template:
 ```erb
-<%= render :template => 'layouts/govuk_admin_template' %>
+# views/layouts/application.html.rb
+<%= render template: 'layouts/govuk_admin_template' %>
 ```
 
 The [base template](app/views/layouts/govuk_admin_template.html.erb) includes:
@@ -52,10 +54,13 @@ The [base template](app/views/layouts/govuk_admin_template.html.erb) includes:
 * header HTML
 * footer HTML
 
-You will also need to include your styles within the `<head>` of your HTML, do this using nested layouts:
+You will also need to include your styles and javascripts:
+
 ```erb
+# views/layouts/application.html.rb
 <% content_for :head do %>
-  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= stylesheet_link_tag "application", media: "all" %>
+  <%= javascript_include_tag 'application' %>
 <% end %>
 ```
 
@@ -91,6 +96,7 @@ The gem [uses nested layouts](http://guides.rubyonrails.org/layouts_and_renderin
 
 Example navbar_items:
 ```erb
+# views/layouts/application.html.rb
 <% content_for :navbar_items do %>
   <li>
     <a href="#">navbar_item</a>
