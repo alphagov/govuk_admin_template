@@ -13,16 +13,17 @@ This gem provides (via a Rails engine):
 * Google Analytics tracking code (Universal Analytics), using the "GOV.UK apps" profile
 
 [Apps using this gem](https://github.com/search?q=govuk_admin_template+user%3Aalphagov+filename%3AGemfile) include:
-* [Transition](https://github.com/alphagov/transition)
-* [Maslow](https://github.com/alphagov/maslow)
-* [Publisher](https://github.com/alphagov/publisher)
-* [Sign on](https://github.com/alphagov/signonotron2)
-* [Panopticon](https://github.com/alphagov/panopticon)
+* [Collections publisher](https://github.com/alphagov/collections-publisher)
 * [Imminence](https://github.com/alphagov/imminence)
-* [Support](https://github.com/alphagov/support)
-* [Travel advice publisher](https://github.com/alphagov/travel-advice-publisher)
-* [Specialist publisher](https://github.com/alphagov/specialist-publisher)
+* [Maslow](https://github.com/alphagov/maslow)
+* [Panopticon](https://github.com/alphagov/panopticon)
+* [Publisher](https://github.com/alphagov/publisher)
 * [Search admin](https://github.com/alphagov/search-admin)
+* [Sign on](https://github.com/alphagov/signonotron2)
+* [Specialist publisher](https://github.com/alphagov/specialist-publisher)
+* [Support](https://github.com/alphagov/support)
+* [Transition](https://github.com/alphagov/transition)
+* [Travel advice publisher](https://github.com/alphagov/travel-advice-publisher)
 
 ## Usage
 
