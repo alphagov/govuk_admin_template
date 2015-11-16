@@ -67,7 +67,10 @@ You will also need to include your styles and javascripts:
 It is recommended that the style guide is also made available within your app at the route `/style-guide`. Add this to your `config/routes.rb` file:
 
 ```ruby
-mount GovukAdminTemplate::Engine, at: "/style-guide"
+# config/routes.rb
+if Rails.env.development?
+  mount GovukAdminTemplate::Engine, at: "/style-guide"
+end
 ```
 
 The gem source includes a [dummy app](spec/dummy) configured to behave like an app using the gem. If you have the gem checked out it can be run from the `spec\dummy` directory using `rails s`.
