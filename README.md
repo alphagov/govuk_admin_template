@@ -27,9 +27,11 @@ This gem provides (via a Rails engine):
 
 ## Usage
 
-Firstly, include the gem in your Gemfile, pinned to the appropriate version and run ```bundle```:
+Firstly, include the gem in your Gemfile, pinned to the appropriate version and run `bundle`:
+
 ```ruby
-gem 'govuk_admin_template', '1.0.0'
+# Gemfile
+gem 'govuk_admin_template', '~> 3.3'
 ```
 
 At the top of `application.scss` include the styles (this provides all the mixins and variables from the gem as well as from bootstrap — [bootstrap mixins](https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/_mixins.scss)):
