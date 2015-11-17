@@ -13,32 +13,37 @@ This gem provides (via a Rails engine):
 * Google Analytics tracking code (Universal Analytics), using the "GOV.UK apps" profile
 
 [Apps using this gem](https://github.com/search?q=govuk_admin_template+user%3Aalphagov+filename%3AGemfile) include:
-* [Transition](https://github.com/alphagov/transition)
-* [Maslow](https://github.com/alphagov/maslow)
-* [Publisher](https://github.com/alphagov/publisher)
-* [Sign on](https://github.com/alphagov/signonotron2)
-* [Panopticon](https://github.com/alphagov/panopticon)
+* [Collections publisher](https://github.com/alphagov/collections-publisher)
 * [Imminence](https://github.com/alphagov/imminence)
-* [Support](https://github.com/alphagov/support)
-* [Travel advice publisher](https://github.com/alphagov/travel-advice-publisher)
-* [Specialist publisher](https://github.com/alphagov/specialist-publisher)
+* [Maslow](https://github.com/alphagov/maslow)
+* [Panopticon](https://github.com/alphagov/panopticon)
+* [Publisher](https://github.com/alphagov/publisher)
 * [Search admin](https://github.com/alphagov/search-admin)
+* [Sign on](https://github.com/alphagov/signonotron2)
+* [Specialist publisher](https://github.com/alphagov/specialist-publisher)
+* [Support](https://github.com/alphagov/support)
+* [Transition](https://github.com/alphagov/transition)
+* [Travel advice publisher](https://github.com/alphagov/travel-advice-publisher)
 
 ## Usage
 
-Firstly, include the gem in your Gemfile, pinned to the appropriate version and run ```bundle```:
+Firstly, include the gem in your Gemfile, pinned to the appropriate version and run `bundle`:
+
 ```ruby
-gem 'govuk_admin_template', '1.0.0'
+# Gemfile
+gem 'govuk_admin_template', '~> 3.3'
 ```
 
 At the top of `application.scss` include the styles (this provides all the mixins and variables from the gem as well as from bootstrap — [bootstrap mixins](https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/_mixins.scss)):
 ```css
+/* application.scss */
 @import 'govuk_admin_template';
 ```
 
 In `application.html.erb` after any content blocks you want to include, render the base template:
 ```erb
-<%= render :template => 'layouts/govuk_admin_template' %>
+# views/layouts/application.html.rb
+<%= render template: 'layouts/govuk_admin_template' %>
 ```
 
 The [base template](app/views/layouts/govuk_admin_template.html.erb) includes:
@@ -49,17 +54,23 @@ The [base template](app/views/layouts/govuk_admin_template.html.erb) includes:
 * header HTML
 * footer HTML
 
-You will also need to include your styles within the `<head>` of your HTML, do this using nested layouts:
+You will also need to include your styles and javascripts:
+
 ```erb
+# views/layouts/application.html.rb
 <% content_for :head do %>
-  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= stylesheet_link_tag "application", media: "all" %>
+  <%= javascript_include_tag 'application' %>
 <% end %>
 ```
 
 It is recommended that the style guide is also made available within your app at the route `/style-guide`. Add this to your `config/routes.rb` file:
 
 ```ruby
-mount GovukAdminTemplate::Engine, at: "/style-guide"
+# config/routes.rb
+if Rails.env.development?
+  mount GovukAdminTemplate::Engine, at: "/style-guide"
+end
 ```
 
 The gem source includes a [dummy app](spec/dummy) configured to behave like an app using the gem. If you have the gem checked out it can be run from the `spec\dummy` directory using `rails s`.
@@ -88,6 +99,7 @@ The gem [uses nested layouts](http://guides.rubyonrails.org/layouts_and_renderin
 
 Example navbar_items:
 ```erb
+# views/layouts/application.html.rb
 <% content_for :navbar_items do %>
   <li>
     <a href="#">navbar_item</a>
