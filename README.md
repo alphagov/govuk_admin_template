@@ -74,6 +74,7 @@ You can configure the gem with a config block in an initializer:
 # app/initializers/govuk_admin_template.rb
 GovukAdminTemplate.configure do |c|
   c.app_title = "My Publisher"
+  c.show_signout = true
 end
 ```
 

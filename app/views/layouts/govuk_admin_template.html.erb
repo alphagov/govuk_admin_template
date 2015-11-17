@@ -66,13 +66,21 @@
               </div>
             <% end %>
           </div>
-          <% if content_for?(:navbar_right) || content_for?(:navbar_items) %>
+          <% if GovukAdminTemplate::Config.show_signout || content_for?(:navbar_right) || content_for?(:navbar_items) %>
             <nav role="navigation" class="collapse navbar-collapse">
               <% if content_for?(:navbar_items) %>
                 <ul class="nav navbar-nav">
                   <%= yield :navbar_items %>
                 </ul>
               <% end %>
+
+              <% if GovukAdminTemplate::Config.show_signout %>
+                <div class="navbar-text pull-right">
+                  <%= link_to current_user.name, Plek.current.find('signon') %>
+                  &bull; <%= link_to 'Sign out', '/auth/gds/sign_out' %>
+                </div>
+              <% end %>
+
               <% if content_for?(:navbar_right) %>
                 <div class="navbar-text pull-right">
                   <%= yield :navbar_right %>
