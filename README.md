@@ -66,6 +66,17 @@ The gem source includes a [dummy app](spec/dummy) configured to behave like an a
 
 For Javascript usage, available modules and writing modules, see the [Javascript guide](JAVASCRIPT.md).
 
+### Configuration
+
+You can configure the gem with a config block in an initializer:
+
+```ruby
+# app/initializers/govuk_admin_template.rb
+GovukAdminTemplate.configure do |c|
+  c.app_title = "My Publisher"
+end
+```
+
 ### Content blocks
 
 The gem [uses nested layouts](http://guides.rubyonrails.org/layouts_and_rendering.html#using-nested-layouts) for customisation.
