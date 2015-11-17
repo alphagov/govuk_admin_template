@@ -2,6 +2,7 @@
   environment_style = GovukAdminTemplate.environment_style
   environment_label = GovukAdminTemplate.environment_label
   app_home_path = content_for?(:app_home_path) ? yield(:app_home_path) : root_path
+  app_title = content_for?(:app_title) ? yield(:app_title) : GovukAdminTemplate::Config.app_title
 %>
 <!DOCTYPE html>
 <!--[if lte IE 7]><html class="no-js lte-ie7" lang="en"><![endif]-->
@@ -9,7 +10,7 @@
 <!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
   <head>
     <meta charset="utf-8">
-    <title><%= content_for?(:page_title) ? yield(:page_title) : "GOV.UK" %></title>
+    <title><%= content_for?(:page_title) ? yield(:page_title) : app_title %></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>(function(d){d.className=d.className.replace(/^no-js\b/,'js');}(document.documentElement));</script>
@@ -59,20 +60,28 @@
                 <span class="icon-bar"></span>
               </a>
             <% end %>
-            <%= link_to content_for?(:app_title) ? yield(:app_title) : "GOV.UK", app_home_path, :class => 'navbar-brand' %>
+            <%= link_to app_title, app_home_path, :class => 'navbar-brand' %>
             <% if environment_label %>
               <div class="environment-label">
                 <%= environment_label %>
               </div>
             <% end %>
           </div>
-          <% if content_for?(:navbar_right) || content_for?(:navbar_items) %>
+          <% if GovukAdminTemplate::Config.show_signout || content_for?(:navbar_right) || content_for?(:navbar_items) %>
             <nav role="navigation" class="collapse navbar-collapse">
               <% if content_for?(:navbar_items) %>
                 <ul class="nav navbar-nav">
                   <%= yield :navbar_items %>
                 </ul>
               <% end %>
+
+              <% if GovukAdminTemplate::Config.show_signout %>
+                <div class="navbar-text pull-right">
+                  <%= link_to current_user.name, Plek.current.find('signon') %>
+                  &bull; <%= link_to 'Sign out', '/auth/gds/sign_out' %>
+                </div>
+              <% end %>
+
               <% if content_for?(:navbar_right) %>
                 <div class="navbar-text pull-right">
                   <%= yield :navbar_right %>
