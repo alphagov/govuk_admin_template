@@ -4,4 +4,5 @@ Dummy::Application.routes.draw do
   match '/full-width' => 'welcome#full_width'
   match '/exclude-analytics' => 'welcome#exclude_analytics'
   match '/navbar' => 'welcome#navbar'
+  match '/with-flashes' => 'welcome#with_flashes'
 end

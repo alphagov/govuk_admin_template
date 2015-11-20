@@ -82,9 +82,10 @@ For Javascript usage, available modules and writing modules, see the [Javascript
 You can configure the gem with a config block in an initializer:
 
 ```ruby
-# app/initializers/govuk_admin_template.rb
+# config/initializers/govuk_admin_template.rb
 GovukAdminTemplate.configure do |c|
   c.app_title = "My Publisher"
+  c.show_flash = true
   c.show_signout = true
 end
 ```
@@ -152,6 +153,52 @@ GovukAdminTemplate.environment_style = [preview|production|development]
 
 # used for the human readable label
 GovukAdminTemplate.environment_label = [Preview|Staging|Production|Development]
+```
+
+## Flash messages
+
+Turn on flash messages in the config:
+
+```ruby
+# config/initializers/govuk_admin_template.rb
+GovukAdminTemplate.configure do |c|
+  c.show_signout = true
+end
+```
+
+Use like this:
+
+```ruby
+# app/controllers/my_controller.rb
+class MyController < ApplicationController
+  def create
+    if thing.save
+      flash[:success] = "Your thing has been created!"
+    else
+      flash[:danger] = "Sorry, it did not work."
+    end
+
+    redirect_to :back
+  end
+end
+```
+
+We support `:success`, `:info`, `:warning` and `:danger`:
+
+![Flash types](docs/flash-types.png)
+
+In Rails 4, you can register your types to allow them to be used as arguments
+to `redirect_to`.
+
+```ruby
+# app/controllers/application_controller.rb
+class ApplicationController < ActionController::Base
+  add_flash_types :success, :info, :warning, :danger
+end
+
+# Now this works:
+redirect_to :back, success: "Well done!"
+redirect_to :back, danger: "This didn't work."
 ```
 
 ## Development
