@@ -3,7 +3,6 @@ require File.expand_path('../boot', __FILE__)
 # Pick the frameworks you want:
 require "action_controller/railtie"
 require "action_mailer/railtie"
-require "active_resource/railtie"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
@@ -48,5 +47,7 @@ module Dummy
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.secret_key_base = SecureRandom.hex
   end
 end
