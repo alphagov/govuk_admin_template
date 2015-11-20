@@ -25,5 +25,9 @@ module GovukAdminTemplate
       # 1:15pm
       Time::DATE_FORMATS[:govuk_time] = '%-I:%M%P'
     end
+
+    initializer "govuk_admin_template.view_helpers" do
+      ActionView::Base.send :include, ViewHelpers
+    end
   end
 end

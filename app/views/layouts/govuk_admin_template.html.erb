@@ -94,6 +94,10 @@
     <% end %>
     <section class="<%= content_for?(:full_width) ? 'container-fluid' : 'container' %>">
       <main role="main">
+        <% if GovukAdminTemplate::Config.show_flash %>
+          <%= display_flash_message %>
+        <% end %>
+
         <%= content_for?(:content) ? yield(:content) : yield %>
       </main>
       <footer class="page-footer">

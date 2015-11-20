@@ -87,6 +87,13 @@ describe 'Layout' do
     expect(page).to have_no_selector('script.analytics', visible: false)
   end
 
+  it 'renders a flash' do
+    visit '/with-flashes'
+
+    expect(page).to have_content('I am an alert with type success')
+    expect(page).not_to have_content('I am some other flash')
+  end
+
   describe 'in production' do
     before { Rails.env.stub(:production? => true) }
     it 'includes analytics' do
