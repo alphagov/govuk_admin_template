@@ -4,7 +4,7 @@ module GovukAdminTemplate
       html = []
 
       flash.each do |type, message|
-        next unless type.in?(%i[success info warning danger])
+        next unless type.to_sym.in?(%i[success info warning danger])
         html << content_tag(:div, message, class: "alert alert-#{type}")
       end
 
