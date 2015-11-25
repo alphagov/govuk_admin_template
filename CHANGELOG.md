@@ -1,4 +1,7 @@
+# 3.4.0
+
 * Add support for flash messages
+* Add optional signout element to navigation bar
 
 # 3.3.2
 
