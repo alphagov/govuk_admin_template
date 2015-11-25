@@ -162,7 +162,7 @@ Turn on flash messages in the config:
 ```ruby
 # config/initializers/govuk_admin_template.rb
 GovukAdminTemplate.configure do |c|
-  c.show_signout = true
+  c.show_flash = true
 end
 ```
 
