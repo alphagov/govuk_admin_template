@@ -77,7 +77,7 @@ header .navbar-header {
    ========================================================================== */
 
 .environment-indicator {
-  border-bottom: 5px solid #000;
+  border-bottom: 5px solid #999;
 }
 
 .environment-production .environment-indicator {
@@ -93,7 +93,8 @@ header .navbar-header {
 }
 
 .environment-label {
-  background: #333;
+  background: #fff;
+  color: #333;
   padding: 3px 5px;
   border-radius: 3px;
   font-weight: bold;
