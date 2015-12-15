@@ -1,3 +1,8 @@
+# 3.5.0
+
+* Add a govspeak help template
+* Improve default indicator styles
+
 # 3.4.0
 
 * Add support for flash messages
