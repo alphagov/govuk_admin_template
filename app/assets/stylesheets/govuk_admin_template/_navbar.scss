@@ -120,8 +120,8 @@ header .navbar-header {
   color: #fff;
 }
 
-.environment-preview .environment-indicator,
-.environment-integration .environment-indicator {
+.environment-preview .environment-label,
+.environment-integration .environment-label {
   background-color: $integration-color;
   color: #000;
 }
