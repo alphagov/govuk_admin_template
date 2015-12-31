@@ -84,8 +84,9 @@ header .navbar-header {
   border-bottom-color: $production-color;
 }
 
-.environment-preview .environment-indicator {
-  border-bottom-color: $preview-color;
+.environment-preview .environment-indicator,
+.environment-integration .environment-indicator {
+  border-bottom-color: $integration-color;
 }
 
 .environment-development .environment-indicator {
@@ -119,8 +120,9 @@ header .navbar-header {
   color: #fff;
 }
 
-.environment-preview .environment-label {
-  background-color: $preview-color;
+.environment-preview .environment-indicator,
+.environment-integration .environment-indicator {
+  background-color: $integration-color;
   color: #000;
 }
 
