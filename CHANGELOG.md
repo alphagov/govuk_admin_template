@@ -1,3 +1,7 @@
+# 4.0.0
+
+* Allow environment style and labels to be set to integration. When using integration as the environment style the custom favicon in the application must also be present. eg `favicon-preview.png` must be duplicated as `favicon-integration.png`. #102
+
 # 3.5.0
 
 * Add a govspeak help template
