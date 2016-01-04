@@ -3,6 +3,7 @@
   environment_label = GovukAdminTemplate.environment_label
   app_home_path = content_for?(:app_home_path) ? yield(:app_home_path) : root_path
   app_title = content_for?(:app_title) ? yield(:app_title) : GovukAdminTemplate::Config.app_title
+  has_navbar_content = GovukAdminTemplate::Config.show_signout || content_for?(:navbar_right) || content_for?(:navbar_items)
 %>
 <!DOCTYPE html>
 <!--[if lte IE 7]><html class="no-js lte-ie7" lang="en"><![endif]-->
@@ -51,7 +52,7 @@
         add-bottom-margin" role="banner">
         <div class="<%= content_for?(:full_width) ? 'container-fluid' : 'container' %>">
           <div class="navbar-header">
-            <% if content_for?(:navbar_right) || content_for?(:navbar_items) %>
+            <% if has_navbar_content %>
               <%# Bootstrap toggle for collapsed navbar content, used at smaller widths %>
               <a class="navbar-toggle" data-toggle="collapse" data-target="header .navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -67,7 +68,7 @@
               </div>
             <% end %>
           </div>
-          <% if GovukAdminTemplate::Config.show_signout || content_for?(:navbar_right) || content_for?(:navbar_items) %>
+          <% if has_navbar_content %>
             <nav role="navigation" class="collapse navbar-collapse">
               <% if content_for?(:navbar_items) %>
                 <ul class="nav navbar-nav">
