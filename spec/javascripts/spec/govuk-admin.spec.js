@@ -105,6 +105,24 @@ describe('A GOVUKAdmin app', function() {
     });
   });
 
+  describe('when starting analytics', function() {
+    beforeEach(function() {
+      window.ga = function() {};
+      spyOn(window, 'ga');
+    });
+
+    it('configures the profile', function() {
+      GOVUKAdmin.startAnalytics('UA-XXX', 'cookieDomain');
+      expect(window.ga.calls.argsFor(0)).toEqual(['create', 'UA-XXX', {'cookieDomain': 'cookieDomain'}]);
+      expect(window.ga.calls.argsFor(1)).toEqual(['set', 'anonymizeIp', true]);
+    });
+
+    it('tracks the current page', function() {
+      GOVUKAdmin.startAnalytics('UA-XXX', 'cookieDomain');
+      expect(window.ga.calls.mostRecent().args).toEqual(['send', 'pageview']);
+    });
+  });
+
   describe('when pageviews are tracked', function() {
     beforeEach(function() {
       window.ga = function() {};

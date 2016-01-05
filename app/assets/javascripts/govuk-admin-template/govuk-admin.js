@@ -69,17 +69,26 @@
     window.location.href = path;
   }
 
+  GOVUKAdmin.startAnalytics = function(id, cookieDomain) {
+    sendToGa('create', id, {'cookieDomain': cookieDomain});
+    sendToGa('set', 'anonymizeIp', true);
+    GOVUKAdmin.trackPageview();
+  }
+
   // Google Analytics pageview tracking
   GOVUKAdmin.trackPageview = function(path, title) {
-    var pageviewObject = { page: path };
+    if (typeof path === "string") {
+      var pageviewObject = {
+            page: path
+          };
 
-    if (typeof title === "string") {
-      pageviewObject.title = title;
-    }
+      if (typeof title === "string") {
+        pageviewObject.title = title;
+      }
 
-    if (typeof root.ga === "function") {
-      // https://developers.google.com/analytics/devguides/collection/analyticsjs/pages
-      root.ga('send', 'pageview', pageviewObject);
+      sendToGa('send', 'pageview', pageviewObject);
+    } else {
+      sendToGa('send', 'pageview');
     }
   }
 
@@ -113,8 +122,12 @@
       }
     }
 
-    if (typeof root.ga === "function") {
-      root.ga('send', eventAnalytics);
+    sendToGa('send', eventAnalytics);
+  }
+
+  function sendToGa() {
+    if (typeof window.ga === "function") {
+      ga.apply(window, arguments);
     }
   }
 
