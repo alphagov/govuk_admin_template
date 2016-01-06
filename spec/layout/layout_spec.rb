@@ -82,9 +82,9 @@ describe 'Layout' do
     end
   end
 
-  it 'does not include analytics in development' do
+  it 'does not include Google Analytics in development' do
     visit '/'
-    expect(page).to have_no_selector('script.analytics', visible: false)
+    expect(page.body).not_to include("www.google-analytics.com/analytics.js")
   end
 
   it 'renders a flash' do
@@ -96,11 +96,11 @@ describe 'Layout' do
 
   describe 'in production' do
     before { Rails.env.stub(:production? => true) }
-    it 'includes analytics' do
+    it 'includes Google Analytics' do
       ENV.stub(:fetch).with('GOVUK_APP_DOMAIN').and_return('root.gov.uk')
 
       visit '/'
-      expect(page).to have_selector('script.analytics', visible: false)
+      expect(page.body).to include("www.google-analytics.com/analytics.js")
       expect(page.body).to include("'root.gov.uk'")
     end
 
