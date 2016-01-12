@@ -69,6 +69,10 @@
     window.location.href = path;
   }
 
+  GOVUKAdmin.getQueryParameters = function() {
+    return window.location.search;
+  }
+
   GOVUKAdmin.startAnalytics = function(id, cookieDomain) {
     sendToGa('create', id, {'cookieDomain': cookieDomain});
     sendToGa('set', 'anonymizeIp', true);
@@ -77,6 +81,10 @@
 
   // Google Analytics pageview tracking
   GOVUKAdmin.trackPageview = function(path, title) {
+    if (queryParameterBlacklisted(path)) {
+      // do the cleanup!
+    }
+
     if (typeof path === "string") {
       var pageviewObject = {
             page: path
@@ -89,6 +97,17 @@
       sendToGa('send', 'pageview', pageviewObject);
     } else {
       sendToGa('send', 'pageview');
+    }
+
+    function queryParameterBlacklisted(path) {
+      if (path && !/\?/i.test(path)) {
+        return false;
+      }
+
+      var blacklist = /reset_password_token|invitation_token/i,
+          queryParameters = path.split('?')[1] || GOVUKAdmin.getQueryParameters();
+
+      return blacklist.test(queryParameters);
     }
   }
 

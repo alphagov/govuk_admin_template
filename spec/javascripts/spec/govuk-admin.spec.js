@@ -121,6 +121,14 @@ describe('A GOVUKAdmin app', function() {
       GOVUKAdmin.startAnalytics('UA-XXX', 'cookieDomain');
       expect(window.ga.calls.mostRecent().args).toEqual(['send', 'pageview']);
     });
+
+    describe('and the page URL contains a blacklisted query parameter', function() {
+      it('strips out the query string before tracking', function() {
+        spyOn(GOVUKAdmin, 'getQueryParameters').and.returnValue('?reset_password_token=12345&some=other');
+        GOVUKAdmin.startAnalytics('UA-XXX', 'cookieDomain');
+        expect(window.ga.calls.mostRecent().args).toEqual(['send', 'pageview', { page: '/' }]);
+      });
+    });
   });
 
   describe('when pageviews are tracked', function() {
