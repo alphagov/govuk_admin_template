@@ -95,10 +95,12 @@ describe 'Layout' do
   end
 
   describe 'in production' do
-    before { Rails.env.stub(:production? => true) }
-    it 'includes analytics' do
+    before do
+      Rails.env.stub(:production? => true)
       ENV.stub(:fetch).with('GOVUK_APP_DOMAIN').and_return('root.gov.uk')
+    end
 
+    it 'includes analytics' do
       visit '/'
       expect(page).to have_selector('script.analytics', visible: false)
       expect(page.body).to include("'root.gov.uk'")
@@ -107,6 +109,11 @@ describe 'Layout' do
     it 'can exclude analytics' do
       visit '/exclude-analytics'
       expect(page).to have_no_selector('script.analytics', visible: false)
+    end
+
+    it 'can specify a custom pageview URL' do
+      visit '/custom-pageview-url'
+      expect(page.html).to include("GOVUKAdmin.trackPageview('/not-the-actual-url-the-user-navigated-to');")
     end
   end
 end
