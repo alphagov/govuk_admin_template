@@ -1,3 +1,8 @@
+# 4.1.0
+
+* Allow a custom URL to be sent to Google Analytics using: `content_for :custom_pageview_fullpath, "/custom-path"`
+* Fix: Move navbar logic into variable. Fixes a bug where the collapsed nav icon wouldn’t shown when there are no navbar items but there is a sign out link.
+
 # 4.0.1
 
 * Fix environment-label styles for integration #114
