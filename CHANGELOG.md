@@ -1,3 +1,7 @@
+# 4.1.1
+
+* Add assets initializer to support sprockets-rails >= 3 
+
 # 4.1.0
 
 * Allow a custom URL to be sent to Google Analytics using: `content_for :custom_pageview_fullpath, "/custom-path"`
