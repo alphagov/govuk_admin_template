@@ -95,12 +95,12 @@
           hitType: 'event',
           transport: 'beacon',
           eventCategory: root.location.pathname,
-          eventAction: action
+          eventAction: redactEmails(action)
         };
 
     // Label is optional
     if (typeof label === "string") {
-      eventAnalytics.eventLabel = label;
+      eventAnalytics.eventLabel = redactEmails(label);
     }
 
     // Value is optional, but when used must be an
@@ -115,6 +115,10 @@
 
     if (typeof root.ga === "function") {
       root.ga('send', eventAnalytics);
+    }
+
+    function redactEmails(string) {
+      return string.replace(/\S+@\S+/g, '[email]');
     }
   }
 

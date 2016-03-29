@@ -173,5 +173,20 @@ describe('A GOVUKAdmin app', function() {
       GOVUKAdmin.trackEvent('action', 'label', 'not a number');
       expect(eventObjectFromSpy()['eventValue']).toEqual(undefined);
     });
+
+    it('redacts any email addresses accidentally passed in as actions or labels', function() {
+      GOVUKAdmin.trackEvent('this email@email.com is bad', 'and that a@a.co.uk');
+      expect(eventObjectFromSpy()['eventAction']).toEqual('this [email] is bad');
+      expect(eventObjectFromSpy()['eventLabel']).toEqual('and that [email]');
+
+      GOVUKAdmin.trackEvent('email@email.com');
+      expect(eventObjectFromSpy()['eventAction']).toEqual('[email]');
+
+      GOVUKAdmin.trackEvent('1@email.com 2@this.com 3@gov.uk 4@business.biz');
+      expect(eventObjectFromSpy()['eventAction']).toEqual('[email] [email] [email] [email]');
+
+      GOVUKAdmin.trackEvent('@something @twitterhandle sent to email@email.com @ 2pm');
+      expect(eventObjectFromSpy()['eventAction']).toEqual('@something @twitterhandle sent to [email] @ 2pm');
+    });
   });
 });

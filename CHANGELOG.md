@@ -1,6 +1,10 @@
+# Development
+
+* Redact emails from Google Analytics event labels and actions
+
 # 4.1.1
 
-* Add assets initializer to support sprockets-rails >= 3 
+* Add assets initializer to support sprockets-rails >= 3
 
 # 4.1.0
 
