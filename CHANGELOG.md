@@ -1,4 +1,4 @@
-# Development
+# 4.2.0
 
 * Redact emails from Google Analytics event labels and actions
 
