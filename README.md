@@ -20,6 +20,7 @@ This gem provides (via a Rails engine):
 * [Publisher](https://github.com/alphagov/publisher)
 * [Search admin](https://github.com/alphagov/search-admin)
 * [Sign on](https://github.com/alphagov/signonotron2)
+* [Service manual publisher](https://github.com/alphagov/service-manual-publisher)
 * [Specialist publisher](https://github.com/alphagov/specialist-publisher)
 * [Support](https://github.com/alphagov/support)
 * [Transition](https://github.com/alphagov/transition)
