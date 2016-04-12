@@ -65,6 +65,16 @@ You will also need to include your styles and javascripts:
 <% end %>
 ```
 
+Note that `jquery` and `jquery_ujs` are already imported by `govuk_admin_template`,
+so you should remove them from your `app/assets/javascripts/application.js`. This may
+cause your jasmine tests to fail, so you'll need to include `assets/govuk-admin-template.js`
+in your `spec/javascripts/support/jasmine.yml` like this:
+
+```yaml
+src_files:
+  - assets/govuk-admin-template.js
+ ```
+
 It is recommended that the style guide is also made available within your app at the route `/style-guide`. Add this to your `config/routes.rb` file:
 
 ```ruby
