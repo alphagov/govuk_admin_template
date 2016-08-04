@@ -116,6 +116,7 @@ The gem [uses nested layouts](http://guides.rubyonrails.org/layouts_and_renderin
 `:navbar_right`   | Text to the right of the nav bar. Logged in user, sign out link, etc
 `:footer_top` (optional) | Footer content before copyright text
 `:footer_version` (optional) | Text indicating the release, eg commit SHA
+`:body_start` (optional) | Just after the `<body>` tag
 `:body_end` (optional) | Just before the `</body>` tag
 `:full_width` (optional, boolean) | Expand content to edges of screen.
 `:exclude_analytics` (optional, boolean) | Don’t use the default Google Analytics snippet and profile.
