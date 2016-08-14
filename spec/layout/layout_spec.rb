@@ -96,8 +96,8 @@ describe 'Layout' do
 
   describe 'in production' do
     before do
-      Rails.env.stub(:production? => true)
-      ENV.stub(:fetch).with('GOVUK_APP_DOMAIN').and_return('root.gov.uk')
+      allow(Rails.env).to receive(:production?).and_return(true)
+      allow(ENV).to receive(:fetch).with('GOVUK_APP_DOMAIN').and_return('root.gov.uk')
     end
 
     it 'includes analytics' do
