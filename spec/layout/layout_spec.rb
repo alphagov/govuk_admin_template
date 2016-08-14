@@ -21,7 +21,7 @@ describe 'Layout' do
       visit '/'
       expect(page).not_to have_selector('.environment-label')
       expect(page).not_to have_selector('.environment-message')
-      expect(page.body).to include("favicon.png")
+      expect(page.body).to match(/favicon-.*.png/)
     end
   end
 
@@ -31,7 +31,7 @@ describe 'Layout' do
       visit '/'
       expect(page).to have_selector('.environment-label', text: 'Development')
       expect(page).to have_selector('.environment-development')
-      expect(page.body).to include("favicon-development.png")
+      expect(page.body).to match(/favicon-development-.*.png/)
     end
   end
 
