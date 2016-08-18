@@ -1,9 +1,9 @@
 Dummy::Application.routes.draw do
   mount GovukAdminTemplate::Engine, at: "/style-guide"
   root :to => 'welcome#index'
-  match '/full-width' => 'welcome#full_width'
-  match '/exclude-analytics' => 'welcome#exclude_analytics'
-  match '/custom-pageview-url' => 'welcome#custom_pageview_url'
-  match '/navbar' => 'welcome#navbar'
-  match '/with-flashes' => 'welcome#with_flashes'
+  get '/full-width' => 'welcome#full_width'
+  get '/exclude-analytics' => 'welcome#exclude_analytics'
+  get '/custom-pageview-url' => 'welcome#custom_pageview_url'
+  get '/navbar' => 'welcome#navbar'
+  get '/with-flashes' => 'welcome#with_flashes'
 end
