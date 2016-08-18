@@ -1,3 +1,8 @@
+# 4.3.0
+
+* Add Rails 5 compatibility
+  https://github.com/alphagov/govuk_admin_template/pull/127
+
 # 4.2.0
 
 * Redact emails from Google Analytics event labels and actions
