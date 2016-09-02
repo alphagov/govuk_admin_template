@@ -73,7 +73,7 @@ in your `spec/javascripts/support/jasmine.yml` like this:
 ```yaml
 src_files:
   - assets/govuk-admin-template.js
- ```
+```
 
 It is recommended that the style guide is also made available within your app at the route `/style-guide`. Add this to your `config/routes.rb` file:
 
