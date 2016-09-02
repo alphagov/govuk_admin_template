@@ -101,6 +101,14 @@ GovukAdminTemplate.configure do |c|
 end
 ```
 
+### Forms
+
+Some GOV.UK admin apps use the [Simple
+Form](https://github.com/plataformatec/simple_form) library for writing form
+markup. This repo contains a standard configuration in
+`config/initializers/simple_form.rb`. Simply add `simple_form` to your Gemfile
+along with `govuk_admin_template` to automatically load this config file.
+
 ### Content blocks
 
 The gem [uses nested layouts](http://guides.rubyonrails.org/layouts_and_rendering.html#using-nested-layouts) for customisation.
