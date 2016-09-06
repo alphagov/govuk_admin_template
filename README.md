@@ -105,9 +105,24 @@ end
 
 Some GOV.UK admin apps use the [Simple
 Form](https://github.com/plataformatec/simple_form) library for writing form
-markup. This repo contains a standard configuration in
-`config/initializers/simple_form.rb`. Simply add `simple_form` to your Gemfile
-along with `govuk_admin_template` to automatically load this config file.
+markup. This repo contains a recommended configuration in
+`lib/govuk_admin_template/simple_form.rb`.
+
+To use this configuration:
+
+0. Add `simple_form` to your Gemfile.
+0. Add an initializer in `config/initializers/simple_form.rb` containing the
+   following:
+
+```
+SimpleForm.setup do |config|
+  GovukAdminTemplate.setup_simple_form(config)
+end
+```
+
+This gem also provides an i18n file in `config/locales/simple_form.en.yml`.
+This removes the need for this file to be present in the host project unless
+specific customisations are required.
 
 ### Content blocks
 
