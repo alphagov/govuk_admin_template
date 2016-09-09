@@ -2,6 +2,7 @@ require "govuk_admin_template/version"
 require "govuk_admin_template/engine"
 require "govuk_admin_template/config"
 require "govuk_admin_template/view_helpers"
+require "govuk_admin_template/simple_form"
 
 module GovukAdminTemplate
   mattr_accessor :environment_style, :environment_label

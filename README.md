@@ -73,7 +73,7 @@ in your `spec/javascripts/support/jasmine.yml` like this:
 ```yaml
 src_files:
   - assets/govuk-admin-template.js
- ```
+```
 
 It is recommended that the style guide is also made available within your app at the route `/style-guide`. Add this to your `config/routes.rb` file:
 
@@ -100,6 +100,29 @@ GovukAdminTemplate.configure do |c|
   c.show_signout = true
 end
 ```
+
+### Forms
+
+Some GOV.UK admin apps use the [Simple
+Form](https://github.com/plataformatec/simple_form) library for writing form
+markup. This repo contains a recommended configuration in
+`lib/govuk_admin_template/simple_form.rb`.
+
+To use this configuration:
+
+0. Add `simple_form` to your Gemfile.
+0. Add an initializer in `config/initializers/simple_form.rb` containing the
+   following:
+
+```
+SimpleForm.setup do |config|
+  GovukAdminTemplate.setup_simple_form(config)
+end
+```
+
+This gem also provides an i18n file in `config/locales/simple_form.en.yml`.
+This removes the need for this file to be present in the host project unless
+specific customisations are required.
 
 ### Content blocks
 
