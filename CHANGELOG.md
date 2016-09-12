@@ -1,3 +1,7 @@
+# 4.4.1
+
+* Remove default label of `Password` for input fields.
+
 # 4.4.0
 
 * Include optional `simple_form` configuration and locale files
