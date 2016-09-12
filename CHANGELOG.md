@@ -1,3 +1,7 @@
+# 4.4.0
+
+* Include optional `simple_form` configuration and locale files
+
 # 4.3.0
 
 * Add Rails 5 compatibility
