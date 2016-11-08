@@ -1,3 +1,7 @@
+# 4.4.2
+
+* Modularize the table-filter markup
+
 # 4.4.1
 
 * Remove default label of `Password` for input fields.
