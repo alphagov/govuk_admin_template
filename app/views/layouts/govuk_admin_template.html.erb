@@ -4,6 +4,7 @@
   app_home_path = content_for?(:app_home_path) ? yield(:app_home_path) : root_path
   app_title = content_for?(:app_title) ? yield(:app_title) : GovukAdminTemplate::Config.app_title
   has_navbar_content = GovukAdminTemplate::Config.show_signout || content_for?(:navbar_right) || content_for?(:navbar_items)
+  disable_google_analytics = GovukAdminTemplate::Config.disable_google_analytics
 %>
 <!DOCTYPE html>
 <!--[if lte IE 7]><html class="no-js lte-ie7" lang="en"><![endif]-->
@@ -110,7 +111,7 @@
       </footer>
     </section>
     <%= yield :body_end %>
-    <% unless content_for?(:exclude_analytics) %>
+    <% unless content_for?(:exclude_analytics) || disable_google_analytics %>
       <% if Rails.env.production? %>
         <script class="analytics">
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

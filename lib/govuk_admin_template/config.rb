@@ -15,5 +15,9 @@ module GovukAdminTemplate
     # Show username and signout link in the top right corner
     # Default: false
     mattr_accessor :show_signout
+
+    # Disable analytics
+    # Default: false
+    mattr_accessor :disable_google_analytics
   end
 end
