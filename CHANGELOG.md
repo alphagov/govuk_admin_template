@@ -1,3 +1,8 @@
+# Development
+
+* Remove `exclude_analytics` content block from template
+* Add `disable_google_analytics` to config
+
 # 4.4.2
 
 * Modularize the table-filter markup

@@ -106,11 +106,6 @@ describe 'Layout' do
       expect(page.body).to include("'root.gov.uk'")
     end
 
-    it 'can exclude analytics' do
-      visit '/exclude-analytics'
-      expect(page).to have_no_selector('script.analytics', visible: false)
-    end
-
     it 'can specify a custom pageview URL' do
       visit '/custom-pageview-url'
       expect(page.html).to include("GOVUKAdmin.trackPageview('/not-the-actual-url-the-user-navigated-to');")
