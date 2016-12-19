@@ -1,6 +1,6 @@
-# Development
+# 5.0.0
 
-* Remove `exclude_analytics` content block from template
+* Remove `exclude_analytics` content block from template. References to `exclude_analytics` should be removed and replaced with the following config flag.
 * Add `disable_google_analytics` to config
 
 # 4.4.2
