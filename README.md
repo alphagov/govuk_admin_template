@@ -143,7 +143,6 @@ The gem [uses nested layouts](http://guides.rubyonrails.org/layouts_and_renderin
 `:body_start` (optional) | Just after the `<body>` tag
 `:body_end` (optional) | Just before the `</body>` tag
 `:full_width` (optional, boolean) | Expand content to edges of screen.
-`:exclude_analytics` (optional, boolean) | Don’t use the default Google Analytics snippet and profile.
 `:navbar` (optional) | Custom navbar content, overrides default navbar
 
 Example navbar_items:
