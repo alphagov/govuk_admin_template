@@ -6,7 +6,7 @@ module GovukAdminTemplate
     initializer 'govuk_admin_template.assets.precompile' do |app|
       app.config.assets.precompile += %w(lte-ie8.js govuk-admin-template.js govuk_admin_template/bootstrap-ie7.css)
       app.config.assets.precompile += %w(govuk_admin_template/favicon-development.png govuk_admin_template/favicon-integration.png
-                                          govuk_admin_template/favicon-preview.png govuk_admin_template/favicon.production.png govuk_admin_template/favicon.png)
+                                          govuk_admin_template/favicon-preview.png govuk_admin_template/favicon-production.png govuk_admin_template/favicon.png)
 
     end
 
