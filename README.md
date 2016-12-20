@@ -190,6 +190,15 @@ GovukAdminTemplate.environment_style = [integration|production|development]
 GovukAdminTemplate.environment_label = [Integration|Staging|Production|Development]
 ```
 
+For later versions of Rails you will need to explicitly compile the favicons in `config/initializers/assets.rb`
+
+```ruby
+Rails.application.config.assets.precompile += %w( govuk_admin_template/favicon.png )
+if GovukAdminTemplate.environment_style
+  Rails.application.config.assets.precompile += ["govuk_admin_template/favicon-#{GovukAdminTemplate.environment_style}.png"]
+end
+```
+
 ## Flash messages
 
 Turn on flash messages in the config:
