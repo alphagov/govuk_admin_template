@@ -1,3 +1,7 @@
+# 5.0.1
+
+* Compile correct favicon for production.
+
 # 5.0.0
 
 * Remove `exclude_analytics` content block from template. References to `exclude_analytics` should be removed and replaced with the following config flag.
