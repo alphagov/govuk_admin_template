@@ -55,12 +55,12 @@
           <div class="navbar-header">
             <% if has_navbar_content %>
               <%# Bootstrap toggle for collapsed navbar content, used at smaller widths %>
-              <a class="navbar-toggle" data-toggle="collapse" data-target="header .navbar-collapse">
+              <button class="navbar-toggle" data-toggle="collapse" data-target="#navbar-header-menu-items" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-              </a>
+              </button>
             <% end %>
             <%= link_to app_title, app_home_path, :class => 'navbar-brand' %>
             <% if environment_label %>
@@ -70,7 +70,7 @@
             <% end %>
           </div>
           <% if has_navbar_content %>
-            <nav role="navigation" class="collapse navbar-collapse">
+            <nav role="navigation" class="collapse navbar-collapse" id="navbar-header-menu-items">
               <% if content_for?(:navbar_items) %>
                 <ul class="nav navbar-nav">
                   <%= yield :navbar_items %>
