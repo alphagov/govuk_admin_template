@@ -94,7 +94,7 @@ Modules should have their own tests, whether they’re being included with the g
 
 ## Included modules
 
-Found in the [app/assets/javascripts/modules](app/assets/javascripts/modules) directory, with tests in [spec/javascripts/spec/](spec/javascripts/spec/).
+Found in the [app/assets/javascripts/govuk-admin-template/modules](app/assets/javascripts/govuk-admin-template/modules) directory, with tests in [spec/javascripts/spec/](spec/javascripts/spec/).
 
 File   | Module | Attribute | Description
 ------ | ------ | --------- | -----------
