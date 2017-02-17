@@ -16,7 +16,6 @@ This gem provides (via a Rails engine):
 * [Collections publisher](https://github.com/alphagov/collections-publisher)
 * [Imminence](https://github.com/alphagov/imminence)
 * [Maslow](https://github.com/alphagov/maslow)
-* [Panopticon](https://github.com/alphagov/panopticon)
 * [Publisher](https://github.com/alphagov/publisher)
 * [Search admin](https://github.com/alphagov/search-admin)
 * [Sign on](https://github.com/alphagov/signonotron2)
