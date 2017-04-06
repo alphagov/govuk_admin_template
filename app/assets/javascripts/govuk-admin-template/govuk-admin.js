@@ -129,6 +129,16 @@
     }
   }
 
+  GOVUKAdmin.setDimension = function(index, value) {
+    // https://developers.google.com/analytics/devguides/collection/analyticsjs/custom-dims-mets
+    // The custom dimension index must be configured within the
+    // Universal Analytics profile
+
+    if (typeof root.ga === "function") {
+      root.ga('set', 'dimension' + index, String(value));
+    }
+  }
+
   /*
     Cookie methods
     ==============
