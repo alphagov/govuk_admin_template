@@ -6,9 +6,10 @@
     that.start = function(element) {
       var action = element.data('track-action'),
           label = element.data('track-label'),
-          value = element.data('track-value');
+          value = element.data('track-value'),
+          category = element.data('track-category');
 
-      GOVUKAdmin.trackEvent(action, label, value);
+      GOVUKAdmin.trackEvent(action, label, value, category);
     }
   };
 

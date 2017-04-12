@@ -85,16 +85,23 @@
 
   // Google Analytics event tracking
   // Label and value are optional
-  GOVUKAdmin.trackEvent = function(action, label, value) {
-
+  GOVUKAdmin.trackEvent = function(action, label, value, category) {
     // https://developers.google.com/analytics/devguides/collection/analyticsjs/events
     // Default category to the page an event occurs on
     // Uses sendBeacon for all events
     // https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#transport
+
+    // Category is optional, but when used must be
+    // either a string such as "userInteraction:LLM"
+    // or the path name
+    if (typeof category === 'undefined') {
+      category = root.location.pathname;
+    }
+
     var eventAnalytics = {
           hitType: 'event',
           transport: 'beacon',
-          eventCategory: root.location.pathname,
+          eventCategory: category,
           eventAction: redactEmails(action)
         };
 
@@ -119,6 +126,16 @@
 
     function redactEmails(string) {
       return string.replace(/\S+@\S+/g, '[email]');
+    }
+  }
+
+  GOVUKAdmin.setDimension = function(index, value) {
+    // https://developers.google.com/analytics/devguides/collection/analyticsjs/custom-dims-mets
+    // The custom dimension index must be configured within the
+    // Universal Analytics profile
+
+    if (typeof root.ga === "function") {
+      root.ga('set', 'dimension' + index, String(value));
     }
   }
 
