@@ -9,6 +9,18 @@ RSpec::Core::RakeTask.new(:spec)
 #
 # Import all dummy app rake tasks under a namespace
 
+namespace :assets do
+  desc "Takes place of govuk-lint"
+
+  task :precompile do |t|
+    puts "Placeholder"
+  end
+
+  task :clean do |t|
+    puts "Placeholder"
+  end
+end
+
 namespace :dummy_app do
   require File.expand_path('../spec/dummy/config/application', __FILE__)
   Dummy::Application.load_tasks

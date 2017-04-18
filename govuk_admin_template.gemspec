@@ -26,4 +26,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'capybara', '2.4.4'
   gem.add_development_dependency 'gem_publisher', '1.3.1'
   gem.add_development_dependency 'jasmine', '2.4.0'
+  gem.add_development_dependency 'govuk-lint', '1.2.1'
 end
