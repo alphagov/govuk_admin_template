@@ -1,4 +1,4 @@
-# Development
+# 6.0.0
 
 * Changes method call from `GOVUKAdmin.trackEvent(action, label, value)` to `GOVUKAdmin.trackEvent(category, action, options)`. Categories are now mandatory. Calls to `GOVUKAdmin.trackEvent` should be changed to use the latest method signature.  
 
