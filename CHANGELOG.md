@@ -1,3 +1,7 @@
+# Development
+
+* Changes method call from `GOVUKAdmin.trackEvent(action, label, value)` to `GOVUKAdmin.trackEvent(category, action, options)`. Categories are now mandatory. Calls to `GOVUKAdmin.trackEvent` should be changed to use the latest method signature.  
+
 # 5.0.1
 
 * Compile correct favicon for production.

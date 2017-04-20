@@ -6,10 +6,11 @@
 
     that.start = function(container) {
       var trackClick = function() {
-        var action = container.data("track-action") || "button-pressed",
+        var category = container.data("track-category"),
+            action = container.data("track-action") || "button-pressed",
             label = $(this).data("track-label") || $(this).text();
 
-        GOVUKAdmin.trackEvent(action, label);
+        GOVUKAdmin.trackEvent(category, action, { label: label });
       };
 
       container.on("click", ".js-track", trackClick);

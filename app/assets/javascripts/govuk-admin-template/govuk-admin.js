@@ -85,32 +85,37 @@
 
   // Google Analytics event tracking
   // Label and value are optional
-  GOVUKAdmin.trackEvent = function(action, label, value) {
-
+  GOVUKAdmin.trackEvent = function(category, action, options) {
+    // Possible values for params: category: 'category', action: 'action', label: 'label', value: 10
     // https://developers.google.com/analytics/devguides/collection/analyticsjs/events
     // Default category to the page an event occurs on
     // Uses sendBeacon for all events
     // https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#transport
+
+    options = options || {}
+    var value;
     var eventAnalytics = {
           hitType: 'event',
           transport: 'beacon',
-          eventCategory: root.location.pathname,
+          eventCategory: category,
           eventAction: redactEmails(action)
-        };
+    };
 
     // Label is optional
-    if (typeof label === "string") {
-      eventAnalytics.eventLabel = redactEmails(label);
+    if (typeof options.label === "string") {
+      eventAnalytics.eventLabel = redactEmails(options.label);
+      delete options.label;
     }
 
     // Value is optional, but when used must be an
     // integer, otherwise the event will be invalid
     // and not logged
-    if (value) {
-      value = parseInt(value, 10);
+    if (options.value) {
+      value = parseInt(options.value, 10);
       if (typeof value === "number" && !isNaN(value)) {
         eventAnalytics.eventValue = value;
       }
+      delete options.value;
     }
 
     if (typeof root.ga === "function") {

@@ -12,7 +12,7 @@ describe('A click tracker', function() {
   describe('with defaults', function() {
     beforeEach(function() {
       element = $('\
-        <div>\
+        <div data-track-category="userInteraction">\
           <a class="foo js-track">Foo</a>\
           <a class="bar">Bar</a>\
           <button class="js-track">Qux</button>\
@@ -24,14 +24,14 @@ describe('A click tracker', function() {
       spyOn(root.GOVUKAdmin, 'trackEvent');
       tracker.start(element);
       element.find("a.foo").click();
-      expect(GOVUKAdmin.trackEvent).toHaveBeenCalledWith('button-pressed', 'Foo');
+      expect(GOVUKAdmin.trackEvent).toHaveBeenCalledWith('userInteraction', 'button-pressed', { label: 'Foo' });
     });
 
     it('tracks buttons with default action and label', function() {
       spyOn(root.GOVUKAdmin, 'trackEvent');
       tracker.start(element);
       element.find("button").click();
-      expect(GOVUKAdmin.trackEvent).toHaveBeenCalledWith('button-pressed', 'Qux');
+      expect(GOVUKAdmin.trackEvent).toHaveBeenCalledWith('userInteraction', 'button-pressed', { label: 'Qux' });
     });
 
     it('does not track until clicked', function() {
@@ -51,7 +51,7 @@ describe('A click tracker', function() {
   describe('with overrides specified', function(){
     beforeEach(function() {
       element = $('\
-        <div data-track-action="a-press">\
+        <div data-track-action="a-press" data-track-category="userInteraction">\
           <a class="js-track" data-track-label="bar">Foo</a>\
         </div>\
       ');
@@ -61,7 +61,7 @@ describe('A click tracker', function() {
       spyOn(root.GOVUKAdmin, 'trackEvent');
       tracker.start(element);
       element.find("a").click();
-      expect(GOVUKAdmin.trackEvent).toHaveBeenCalledWith('a-press', 'bar');
+      expect(GOVUKAdmin.trackEvent).toHaveBeenCalledWith('userInteraction', 'a-press', { label: 'bar' });
     });
   });
 });
