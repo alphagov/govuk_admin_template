@@ -133,17 +133,12 @@ describe('A GOVUKAdmin app', function() {
       return window.ga.calls.mostRecent().args[1];
     }
 
-    it('uses the current path as the category', function() {
-      GOVUKAdmin.trackEvent('action', 'label');
-      expect(eventObjectFromSpy()['eventCategory']).toBe('/');
-    });
-
     it('sends them to Google Analytics', function() {
-      GOVUKAdmin.trackEvent('action', 'label');
+      GOVUKAdmin.trackEvent('category', 'action', { label: 'label' });
       expect(window.ga.calls.mostRecent().args).toEqual(
         ['send', {
           hitType: 'event',
-          eventCategory: '/',
+          eventCategory: 'category',
           eventAction: 'action',
           eventLabel: 'label',
           transport: 'beacon'
@@ -152,11 +147,11 @@ describe('A GOVUKAdmin app', function() {
     });
 
     it('label is optional', function() {
-      GOVUKAdmin.trackEvent('action');
+      GOVUKAdmin.trackEvent('category', 'action');
       expect(window.ga.calls.mostRecent().args).toEqual(
         ['send', {
           hitType: 'event',
-          eventCategory: '/',
+          eventCategory: 'category',
           eventAction: 'action',
           transport: 'beacon'
         }]
@@ -164,28 +159,28 @@ describe('A GOVUKAdmin app', function() {
     });
 
     it('only sends values if they are parseable as numbers', function() {
-      GOVUKAdmin.trackEvent('action', 'label', '10');
+      GOVUKAdmin.trackEvent('category', 'action', { label: 'label', value: '10' });
       expect(eventObjectFromSpy()['eventValue']).toEqual(10);
 
-      GOVUKAdmin.trackEvent('action', 'label', 10);
+      GOVUKAdmin.trackEvent('category', 'action', { label: 'label', value: '10' });
       expect(eventObjectFromSpy()['eventValue']).toEqual(10);
 
-      GOVUKAdmin.trackEvent('action', 'label', 'not a number');
+      GOVUKAdmin.trackEvent('category', 'action', { label: 'label', value: 'not a number' });
       expect(eventObjectFromSpy()['eventValue']).toEqual(undefined);
     });
 
     it('redacts any email addresses accidentally passed in as actions or labels', function() {
-      GOVUKAdmin.trackEvent('this email@email.com is bad', 'and that a@a.co.uk');
+      GOVUKAdmin.trackEvent('category', 'this email@email.com is bad', { label: 'and that a@a.co.uk' });
       expect(eventObjectFromSpy()['eventAction']).toEqual('this [email] is bad');
       expect(eventObjectFromSpy()['eventLabel']).toEqual('and that [email]');
 
-      GOVUKAdmin.trackEvent('email@email.com');
+      GOVUKAdmin.trackEvent('category', 'email@email.com');
       expect(eventObjectFromSpy()['eventAction']).toEqual('[email]');
 
-      GOVUKAdmin.trackEvent('1@email.com 2@this.com 3@gov.uk 4@business.biz');
+      GOVUKAdmin.trackEvent('category', '1@email.com 2@this.com 3@gov.uk 4@business.biz');
       expect(eventObjectFromSpy()['eventAction']).toEqual('[email] [email] [email] [email]');
 
-      GOVUKAdmin.trackEvent('@something @twitterhandle sent to email@email.com @ 2pm');
+      GOVUKAdmin.trackEvent('category', '@something @twitterhandle sent to email@email.com @ 2pm');
       expect(eventObjectFromSpy()['eventAction']).toEqual('@something @twitterhandle sent to [email] @ 2pm');
     });
   });
