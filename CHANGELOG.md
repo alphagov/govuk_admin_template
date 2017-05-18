@@ -2,6 +2,8 @@
 
 * Update the jquery-rails dependency to 4.3.1 for compatibility with the latest
 version of nokogiri
+* Compile test favicon to remove Rails 5.1 asset pipeline fallback deprecation
+message
 
 # 6.0.0
 
