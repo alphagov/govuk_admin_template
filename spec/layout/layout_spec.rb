@@ -35,6 +35,14 @@ describe 'Layout' do
     end
   end
 
+  context 'in a test environment' do
+    it 'includes details about the current environment' do
+      GovukAdminTemplate.environment_style = "test"
+      visit '/'
+      expect(page.body).to match(/favicon-test-.*.png/)
+    end
+  end
+
   it 'renders a link to a custom home path' do
     visit '/'
     expect(page).to have_selector('a[href="/style-guide"]', text: 'app_title')
