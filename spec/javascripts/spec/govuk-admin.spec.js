@@ -184,4 +184,22 @@ describe('A GOVUKAdmin app', function() {
       expect(eventObjectFromSpy()['eventAction']).toEqual('@something @twitterhandle sent to [email] @ 2pm');
     });
   });
+
+  describe('when dimensions are set', function() {
+    beforeEach(function() {
+      window.ga = function() {};
+      spyOn(window, 'ga');
+    });
+
+    it('sends them to Google Analytics', function() {
+      GOVUKAdmin.setDimension(1, 'something-exciting');
+      expect(window.ga.calls.mostRecent().args).toEqual(['set', 'dimension1', 'something-exciting']);
+    });
+
+    it('converts the value into a string', function() {
+      GOVUKAdmin.setDimension(1, 2);
+      expect(window.ga.calls.mostRecent().args).toEqual(['set', 'dimension1', '2']);
+    });
+  });
+
 });
