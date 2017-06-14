@@ -1,6 +1,7 @@
 # Unreleased
 
 * Add `GOVUKAdmin.setDimension` to allow setting custom dimensions for GA
+* Add `before_pageview_js` content block that is injected into the layout template GA code before we track the page view.  This allows for running more GA code (like setting custom dimensions) before the page view is tracked.
 
 # 6.1.0
 

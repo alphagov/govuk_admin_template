@@ -121,6 +121,7 @@
 
           ga('create', 'UA-26179049-6', '<%= ENV.fetch('GOVUK_APP_DOMAIN') %>');
           ga('set', 'anonymizeIp', true);
+          <%= content_for(:before_pageview_js) %>
           <% if content_for?(:custom_pageview_fullpath) %>
             GOVUKAdmin.trackPageview('<%= content_for(:custom_pageview_fullpath) %>');
           <% else %>
@@ -130,6 +131,7 @@
       <% elsif Rails.env.development? %>
         <script>
           if (console) {window.ga = function() {console.log.apply(console, arguments);};}
+          <%= content_for(:before_pageview_js) %>
         </script>
       <% end %>
     <% end %>
