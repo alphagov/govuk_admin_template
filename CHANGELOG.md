@@ -2,6 +2,7 @@
 
 * Add `GOVUKAdmin.setDimension` to allow setting custom dimensions for GA
 * Add `before_pageview_js` content block that is injected into the layout template GA code before we track the page view.  This allows for running more GA code (like setting custom dimensions) before the page view is tracked.
+* Add `enable_google_analytics_in_tests` config setting to allow including the GA code block in the layout in Rails test environments.  This allows upstream apps to test any GA code they might include.
 
 # 6.1.0
 

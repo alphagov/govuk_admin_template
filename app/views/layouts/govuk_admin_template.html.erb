@@ -5,6 +5,7 @@
   app_title = content_for?(:app_title) ? yield(:app_title) : GovukAdminTemplate::Config.app_title
   has_navbar_content = GovukAdminTemplate::Config.show_signout || content_for?(:navbar_right) || content_for?(:navbar_items)
   disable_google_analytics = GovukAdminTemplate::Config.disable_google_analytics
+  allow_google_analytics_stub = (Rails.env.development? || (Rails.env.test? && GovukAdminTemplate::Config.enable_google_analytics_in_tests))
 %>
 <!DOCTYPE html>
 <!--[if lte IE 7]><html class="no-js lte-ie7" lang="en"><![endif]-->
@@ -128,7 +129,7 @@
             ga('send', 'pageview');
           <% end %>
         </script>
-      <% elsif Rails.env.development? %>
+      <% elsif allow_google_analytics_stub %>
         <script>
           if (console) {window.ga = function() {console.log.apply(console, arguments);};}
           <%= content_for(:before_pageview_js) %>
