@@ -19,5 +19,9 @@ module GovukAdminTemplate
     # Disable analytics
     # Default: false
     mattr_accessor :disable_google_analytics
+
+    # Enable analytics in tests
+    # Default: false
+    mattr_accessor :enable_google_analytics_in_tests
   end
 end

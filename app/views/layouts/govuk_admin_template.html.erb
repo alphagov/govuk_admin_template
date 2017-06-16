@@ -5,6 +5,7 @@
   app_title = content_for?(:app_title) ? yield(:app_title) : GovukAdminTemplate::Config.app_title
   has_navbar_content = GovukAdminTemplate::Config.show_signout || content_for?(:navbar_right) || content_for?(:navbar_items)
   disable_google_analytics = GovukAdminTemplate::Config.disable_google_analytics
+  allow_google_analytics_stub = (Rails.env.development? || (Rails.env.test? && GovukAdminTemplate::Config.enable_google_analytics_in_tests))
 %>
 <!DOCTYPE html>
 <!--[if lte IE 7]><html class="no-js lte-ie7" lang="en"><![endif]-->
@@ -121,15 +122,17 @@
 
           ga('create', 'UA-26179049-6', '<%= ENV.fetch('GOVUK_APP_DOMAIN') %>');
           ga('set', 'anonymizeIp', true);
+          <%= content_for(:before_pageview_js) %>
           <% if content_for?(:custom_pageview_fullpath) %>
             GOVUKAdmin.trackPageview('<%= content_for(:custom_pageview_fullpath) %>');
           <% else %>
             ga('send', 'pageview');
           <% end %>
         </script>
-      <% elsif Rails.env.development? %>
+      <% elsif allow_google_analytics_stub %>
         <script>
           if (console) {window.ga = function() {console.log.apply(console, arguments);};}
+          <%= content_for(:before_pageview_js) %>
         </script>
       <% end %>
     <% end %>

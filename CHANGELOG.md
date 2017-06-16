@@ -1,3 +1,9 @@
+# Unreleased
+
+* Add `GOVUKAdmin.setDimension` to allow setting custom dimensions for GA
+* Add `before_pageview_js` content block that is injected into the layout template GA code before we track the page view.  This allows for running more GA code (like setting custom dimensions) before the page view is tracked.
+* Add `enable_google_analytics_in_tests` config setting to allow including the GA code block in the layout in Rails test environments.  This allows upstream apps to test any GA code they might include.
+
 # 6.1.0
 
 * Update the jquery-rails dependency to 4.3.1 for compatibility with the latest
@@ -7,7 +13,7 @@ message
 
 # 6.0.0
 
-* Changes method call from `GOVUKAdmin.trackEvent(action, label, value)` to `GOVUKAdmin.trackEvent(category, action, options)`. Categories are now mandatory. Calls to `GOVUKAdmin.trackEvent` should be changed to use the latest method signature.  
+* Changes method call from `GOVUKAdmin.trackEvent(action, label, value)` to `GOVUKAdmin.trackEvent(category, action, options)`. Categories are now mandatory. Calls to `GOVUKAdmin.trackEvent` should be changed to use the latest method signature.
 
 # 5.0.1
 
