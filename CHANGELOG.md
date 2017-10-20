@@ -1,3 +1,7 @@
+# Unreleased
+
+* Add ids to styleguide headings so we can link to them.
+
 # 6.2.0
 
 * Add `GOVUKAdmin.setDimension` to allow setting custom dimensions for GA

@@ -8,7 +8,7 @@
 
 <p class="lead">Admin app UIs are powered by <a href="http://getbootstrap.com/css/">bootstrap 3.3.2</a>, using <a href="https://github.com/twbs/bootstrap-sass/tree/v3.3.3">bootstrap SASS</a> v3.3.3 (<a href="https://github.com/twbs/bootstrap-sass/blob/v3.3.3/assets/stylesheets/bootstrap/_mixins.scss">mixins</a>), but maintaining bootstrap 2 button styles. This guide documents how we use bootstrap, where the apps have diverged from default styles and any custom styles needed to fill in the gaps.</p>
 
-<h2>Grid</h2>
+<h2 id="grid">Grid</h2>
 <p class="lead">Apps use the <a href="http://getbootstrap.com/css/#grid">default bootstrap</a> <strong>12 column scaleable responsive grid</strong>.</p>
 <div class="row add-bottom-margin">
   <div class="grid-example col-md-2">col-md-2</div>
@@ -20,9 +20,9 @@
 </div>
 <hr>
 
-<h2>Forms</h2>
+<h2 id="forms">Forms</h2>
 
-<h3>Conditionally revealing content</h3>
+<h3 id="forms-conditionally-revealing-content">Conditionally revealing content</h3>
 <div class="row">
   <div class="col-md-6 lead">
     <p>
@@ -70,7 +70,7 @@
   </form>
 </div>
 
-<h3>Input widths</h3>
+<h3 id="forms-input-widths">Input widths</h3>
 <div class="row">
   <div class="col-md-6 lead">
     <p>Bootstrap 3 inputs always <a href="http://getbootstrap.com/css/#forms">extend to the size of their container</a>. The recommendation from Bootstrap is to wrap form elements with grid classes. Sometimes this isn’t suitable, for instance if a page isn’t using a grid.</p>
@@ -107,7 +107,7 @@
   </div>
 </div>
 
-<h4 class="add-bottom-margin">Inputs in a grid</h4>
+<h4 id="forms-input-widths-inputs-in-a-grid" class="add-bottom-margin">Inputs in a grid</h4>
 <div class="row">
   <div class="col-md-1">
     <input class="input-md-1 form-control" value="input-md-1" />
@@ -130,7 +130,7 @@
 </div>
 <hr>
 
-<h2>Buttons</h2>
+<h2 id="buttons">Buttons</h2>
 <div class="row">
   <p class="col-md-6 lead">Despite using bootstrap 3 apps use the classic bootstrap button styles — the buttons have better affordance and clearer focus and active states. The source to override the buttons with the originals is from <a href="https://gist.github.com/Erve1879/6167373">https://gist.github.com/Erve1879/6167373</a>.</p>
   <div class="col-md-6">
@@ -143,7 +143,7 @@
     <a href="#" class="btn btn-link">Link</a>
   </div>
 </div>
-<h3 class="add-vertical-margins">Which button style should be used</h3>
+<h3 id="buttons-which-button-style-should-be-used" class="add-vertical-margins">Which button style should be used</h3>
 <div class="row">
   <p class="col-md-6 lead">Start with <code>btn-default</code>. Buttons should always be the default grey unless there is a good reason otherwise. Buttons that initiate a user action (ie lead to a form, pop-up a modal) should be grey.</p>
   <div class="col-md-6">
@@ -176,7 +176,7 @@
 </div>
 <hr>
 
-<h2>Dates</h2>
+<h2 id="dates">Dates</h2>
 <div class="row">
   <p class="col-md-6 lead">
     The gem includes date and time formats which match the <a href="https://www.gov.uk/design-principles/style-guide/style-points#style-dates-and-times">recommended style</a>.
@@ -205,7 +205,7 @@
 </div>
 <hr>
 
-<h2>Page headers with subtitles</h2>
+<h2 id="page-headers-with-subtitles">Page headers with subtitles</h2>
 <div class="row">
   <p class="col-md-6 lead">Page headers have a single pixel bottom-border. Subtitles - if used - run underneath this.</p>
   <section class="headers col-md-6">
@@ -231,7 +231,7 @@
 </div>
 <hr>
 
-<h2>Tables</h2>
+<h2 id="tables">Tables</h2>
 <div class="row">
   <div class="col-md-6 lead">
     <p>Tables should use the Bootstrap 3 classes <code>table table-bordered</code>. The row of table headings should have the admin template class <code>table-headers</code>.</p>
@@ -258,7 +258,7 @@
     </table>
   </div>
 </div>
-<h3>Filterable tables</h3>
+<h3 id="tables-filterable-tables">Filterable tables</h3>
 <div class="row">
   <div class="col-md-6 lead">
     <p>Using the <a href="https://github.com/alphagov/govuk_admin_template/blob/master/app/assets/javascripts/govuk-admin-template/modules/filterable_table.js">filterable-table module</a> and the <a href="https://github.com/alphagov/govuk_admin_template/tree/master/app/views/govuk_admin_template/_table_filter.html.erb">table_filter partial</a> any table can be filtered. The module performs a simple match against the content of each row, if there’s no match the row is hidden.</p>
@@ -310,7 +310,7 @@
 </div>
 <hr>
 
-<h2>Links</h2>
+<h2 id="links">Links</h2>
 <div class="row">
   <div class="col-md-6 lead">
     <p>To match bootstrap’s muted text, a muted link class is available.</p>
@@ -326,7 +326,7 @@
   </div>
 </div>
 
-<h3>Links in Bootstrap components</h3>
+<h3 id="links-links-in-bootstrap-components">Links in Bootstrap components</h3>
 <div class="row">
   <div class="col-md-3">
     <h4 class="add-bottom-margin">List group with content</h4>
@@ -400,7 +400,7 @@
 </div>
 <hr>
 
-<h2>Nav lists</h2>
+<h2 id="nav-lists">Nav lists</h2>
 <div class="row">
   <p class="col-md-4 lead">
     <a href="http://stackoverflow.com/questions/18281636/what-replaces-nav-lists-in-bootstrap-3">Bootstrap 3 removed</a> the <code>nav-list</code> classes and <a href="http://getbootstrap.com/2.3.2/components.html#navs">design pattern</a>. For backwards compatibility these styles have been put back, but it’s advised to avoid this pattern.
@@ -458,15 +458,15 @@
 </div>
 <hr>
 
-<h2>Big number</h2>
+<h2 id="big-number">Big number</h2>
 <p class="big-number text-muted">100 hits</p>
 <hr>
 
-<h2>Big message</h2>
+<h2 id="big-message">Big message</h2>
 <p class="big-message text-muted">A big message</p>
 <hr>
 
-<h2>Highlights</h2>
+<h2 id="highlights">Highlights</h2>
 <div class="row add-bottom-margin">
   <p class="col-md-6 lead">Highlights are a reproduction of the <a href="https://www.gov.uk/vat-rates">GOV.UK answer style</a> and use colours from the <a href="https://www.gov.uk/service-manual/user-centered-design/resources/colour-palettes">style guide palette</a>. They are predominantly used on dashboards (see transition).</p>
   <div class="col-md-6">
@@ -498,7 +498,7 @@
 </div>
 <hr>
 
-<h2>Callouts</h2>
+<h2 id="callouts">Callouts</h2>
 <div class="row">
   <p class="col-md-6 lead">A component for drawing attention to particular content, which is more subtle than a highlight.</p>
   <div class="col-md-6">
@@ -541,7 +541,7 @@
 </div>
 <hr>
 
-<h2>No content</h2>
+<h2 id="no-content">No content</h2>
 <div class="row">
   <p class="col-md-6 lead">A large but light style which applies to the empty state. The bordered version mimics bootstrap table styles.</p>
   <div class="col-md-6">
@@ -552,10 +552,10 @@
 </div>
 <hr>
 
-<h2>Analytics</h2>
+<h2 id="analytics">Analytics</h2>
 <div class="row">
   <div class="col-md-6">
-    <h3>Auto Track Events</h3>
+    <h3 id="analytics-auto-track-events">Auto Track Events</h3>
     <p>Adding this module to a page will cause an event to be sent to Google Analytics with
       a specified action, label and value</p>
   </div>
@@ -570,7 +570,7 @@
 </div>
 <div class="row">
   <div class="col-md-6">
-    <h3>Track Click</h3>
+    <h3 id="analytics-track-click">Track Click</h3>
     <p>This module is intended as an easy way to track individual button/link
     clicks as events in Google Analytics. Groups of buttons may end up
     redirecting to the same place, meaning they’re not trackable via URLs
