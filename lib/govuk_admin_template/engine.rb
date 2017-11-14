@@ -11,7 +11,8 @@ module GovukAdminTemplate
     end
 
     # User friendly GOV.UK date formats, based on:
-    # https://www.gov.uk/design-principles/style-guide/style-points#style-dates-and-times
+    # https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style#dates
+    # https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style#times
     initializer 'govuk_admin_template.date_formats' do |app|
       # 1 January 2013
       Date::DATE_FORMATS[:govuk_date] = '%-e %B %Y'

@@ -1,5 +1,6 @@
 # Unreleased
 
+* Replace references to design principles style-guide with the new location.
 * Add ids to styleguide headings so we can link to them.
 
 # 6.2.0
