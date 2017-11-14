@@ -156,7 +156,7 @@ Example navbar_items:
 
 ### Date formats
 
-The [gem includes](lib/govuk_admin_template/engine.rb) date and time formats which match the [recommended style](https://www.gov.uk/design-principles/style-guide/style-points#style-dates-and-times).
+The [gem includes](lib/govuk_admin_template/engine.rb) date and time formats which match the recommended styles for [dates](https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style#dates) and [times](https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style#times).
 
 ```ruby
 # 1 January 2013
