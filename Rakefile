@@ -17,6 +17,10 @@ namespace :assets do
   task :clean do |t|
     puts "Placeholder"
   end
+
+  task :clobber do |t|
+    puts "Placeholder"
+  end
 end
 
 namespace :dummy_app do
