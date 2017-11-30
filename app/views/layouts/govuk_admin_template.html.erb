@@ -8,9 +8,9 @@
   allow_google_analytics_stub = (Rails.env.development? || (Rails.env.test? && GovukAdminTemplate::Config.enable_google_analytics_in_tests))
 %>
 <!DOCTYPE html>
-<!--[if lte IE 7]><html class="no-js lte-ie7" lang="en"><![endif]-->
-<!--[if IE 8]><html class="no-js ie8" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!--[if lte IE 7]><html class="no-js lte-ie7 <%= yield(:html_class) %>" lang="en"><![endif]-->
+<!--[if IE 8]><html class="no-js ie8 <%= yield(:html_class) %>" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js <%= yield(:html_class) %>" lang="en"><!--<![endif]-->
   <head>
     <meta charset="utf-8">
     <title><%= content_for?(:page_title) ? yield(:page_title) : app_title %></title>
