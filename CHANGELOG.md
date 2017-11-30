@@ -1,5 +1,9 @@
 # Unreleased
 
+# 6.3.0
+
+* Add `assets:clobber` placeholder rake task
+* Allow setting a class on the root `<html>` tag
 * Replace references to design principles style-guide with the new location.
 * Add ids to styleguide headings so we can link to them.
 
