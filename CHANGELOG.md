@@ -1,5 +1,7 @@
 # Unreleased
 
+# 6.4.0
+
 * Add `ie9` class to root `<html>` tag when user is using Internet Explorer 9
 
 # 6.3.0
