@@ -10,7 +10,8 @@
 <!DOCTYPE html>
 <!--[if lte IE 7]><html class="no-js lte-ie7 <%= yield(:html_class) %>" lang="en"><![endif]-->
 <!--[if IE 8]><html class="no-js ie8 <%= yield(:html_class) %>" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--><html class="no-js <%= yield(:html_class) %>" lang="en"><!--<![endif]-->
+<!--[if IE 9]><html class="no-js ie9 <%= yield(:html_class) %>" lang="en"><![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js <%= yield(:html_class) %>" lang="en"><!--<![endif]-->
   <head>
     <meta charset="utf-8">
     <title><%= content_for?(:page_title) ? yield(:page_title) : app_title %></title>
