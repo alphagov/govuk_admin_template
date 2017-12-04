@@ -1,5 +1,7 @@
 # Unreleased
 
+* Add `ie9` class to root `<html>` tag when user is using Internet Explorer 9
+
 # 6.3.0
 
 * Add `assets:clobber` placeholder rake task
