@@ -15,18 +15,9 @@
   vertical-align: top;
   float: none;
 
-  .ie8 &,
-  .lte-ie7 & {
+  .ie8 & {
     min-height: 20px;
   }
-
-  .lte-ie7 & {
-    display: inline;
-    padding-left: 60px;
-    background-position: 15px 0.67em;
-    height: auto;
-  }
-
 }
 
 // Prevent navbar height from collapsing when there's
@@ -102,11 +93,6 @@ header .navbar-header {
   margin-top: 13px;
   margin-right: 10px;
   display: inline-block;
-
-  .lte-ie7 & {
-    display: inline;
-    margin-bottom: 13px;
-  }
 }
 
 @media (max-width: 500px) {
