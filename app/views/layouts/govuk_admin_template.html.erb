@@ -8,7 +8,6 @@
   allow_google_analytics_stub = (Rails.env.development? || (Rails.env.test? && GovukAdminTemplate::Config.enable_google_analytics_in_tests))
 %>
 <!DOCTYPE html>
-<!--[if lte IE 7]><html class="no-js lte-ie7 <%= yield(:html_class) %>" lang="en"><![endif]-->
 <!--[if IE 8]><html class="no-js ie8 <%= yield(:html_class) %>" lang="en"><![endif]-->
 <!--[if IE 9]><html class="no-js ie9 <%= yield(:html_class) %>" lang="en"><![endif]-->
 <!--[if gt IE 9]><!--><html class="no-js <%= yield(:html_class) %>" lang="en"><!--<![endif]-->
@@ -28,10 +27,6 @@
       %>
     <% end %>
     <%= yield :head %>
-    <%# CSS resets and fixes for Bootstrap 3 in IE7 %>
-    <!--[if lte IE 7]>
-      <%= stylesheet_link_tag "govuk_admin_template/bootstrap-ie7" %>
-    <![endif]-->
     <%
       # HTML5 and bootstrap shims, for <= IE8 support of HTML5 elements
       # respond.js must come after CSS (from :head) and media queries so
