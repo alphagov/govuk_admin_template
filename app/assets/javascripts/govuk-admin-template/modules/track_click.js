@@ -5,6 +5,7 @@
     var that = this;
 
     that.start = function(container) {
+      var selector = container.data("track-selector") || '.js-track';
       var trackClick = function() {
         var category = container.data("track-category"),
             action = container.data("track-action") || "button-pressed",
@@ -13,7 +14,7 @@
         GOVUKAdmin.trackEvent(category, action, { label: label });
       };
 
-      container.on("click", ".js-track", trackClick);
+      container.on("click", selector, trackClick);
     }
   };
 

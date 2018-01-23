@@ -64,4 +64,37 @@ describe('A click tracker', function() {
       expect(GOVUKAdmin.trackEvent).toHaveBeenCalledWith('userInteraction', 'a-press', { label: 'bar' });
     });
   });
+
+  describe('with selector specified', function(){
+    beforeEach(function() {
+      element = $('\
+        <div data-track-category="userInteraction" data-track-selector=".custom-track-class">\
+          <a class="foo custom-track-class">Foo</a>\
+          <a class="bar">Bar</a>\
+          <button class="custom-track-class">Qux</button>\
+        </div>\
+      ');
+    });
+
+    it('tracks links with default action and label', function() {
+      spyOn(root.GOVUKAdmin, 'trackEvent');
+      tracker.start(element);
+      element.find("a.foo").click();
+      expect(GOVUKAdmin.trackEvent).toHaveBeenCalledWith('userInteraction', 'button-pressed', { label: 'Foo' });
+    });
+
+    it('tracks buttons with default action and label', function() {
+      spyOn(root.GOVUKAdmin, 'trackEvent');
+      tracker.start(element);
+      element.find("button").click();
+      expect(GOVUKAdmin.trackEvent).toHaveBeenCalledWith('userInteraction', 'button-pressed', { label: 'Qux' });
+    });
+
+    it('does not track if not enabled', function() {
+      spyOn(root.GOVUKAdmin, 'trackEvent');
+      tracker.start(element);
+      element.find("a.bar").click();
+      expect(GOVUKAdmin.trackEvent).not.toHaveBeenCalled();
+    });
+  });
 });
