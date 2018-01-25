@@ -1,5 +1,7 @@
 # Unreleased
 
+# 6.5.0
+
 * Remove IE7 support
 * Allow track-click to be customised with a selector
 
