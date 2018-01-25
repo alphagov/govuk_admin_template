@@ -1,5 +1,8 @@
 # Unreleased
 
+* Remove IE7 support
+* Allow track-click to be customised with a selector
+
 # 6.4.0
 
 * Add `ie9` class to root `<html>` tag when user is using Internet Explorer 9
