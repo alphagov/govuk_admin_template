@@ -1,5 +1,8 @@
 # Unreleased
 
+* Use the external URL for Signon
+* Explicitly declare a dependency on `plek`
+
 # 6.5.0
 
 * Remove IE7 support
