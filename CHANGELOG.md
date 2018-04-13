@@ -1,4 +1,4 @@
-# Unreleased
+# 6.6.0
 
 * Use the external URL for Signon
 * Explicitly declare a dependency on `plek`
