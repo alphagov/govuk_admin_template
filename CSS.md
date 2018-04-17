@@ -118,6 +118,5 @@ Along with Bootstrap’s many [mixins](https://github.com/twbs/bootstrap-sass/bl
 
 Class   | Purpose
 ------  |--------
-`$font-family-gill-sans` | Gill Sans font stack
 `$default-vertical-margin` | Based on Bootstrap’s `$line-height-computed`. Use increments of this value.
 `$link-color-visited` | Like Bootstrap’s `$link-color`, the purple visited link colour.

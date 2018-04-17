@@ -21,6 +21,8 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'bootstrap-sass', '3.3.5.1'
   gem.add_dependency 'jquery-rails', '~> 4.3.1'
   gem.add_dependency 'plek', '>= 2.1.0'
+  gem.add_dependency 'govuk_publishing_components'
+  gem.add_dependency 'govuk_template'
 
   gem.add_development_dependency 'sass-rails', '5.0.6'
   gem.add_development_dependency 'rspec-rails', '~> 3.5'

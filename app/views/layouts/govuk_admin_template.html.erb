@@ -7,130 +7,39 @@
   disable_google_analytics = GovukAdminTemplate::Config.disable_google_analytics
   allow_google_analytics_stub = (Rails.env.development? || (Rails.env.test? && GovukAdminTemplate::Config.enable_google_analytics_in_tests))
 %>
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js ie8 <%= yield(:html_class) %>" lang="en"><![endif]-->
-<!--[if IE 9]><html class="no-js ie9 <%= yield(:html_class) %>" lang="en"><![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js <%= yield(:html_class) %>" lang="en"><!--<![endif]-->
-  <head>
-    <meta charset="utf-8">
-    <title><%= content_for?(:page_title) ? yield(:page_title) : app_title %></title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script>(function(d){d.className=d.className.replace(/^no-js\b/,'js');}(document.documentElement));</script>
-    <% # jQuery and Bootstrap %>
-    <%= javascript_include_tag "govuk-admin-template" %>
-    <% if content_for?(:favicon) %>
-      <%= yield :favicon %>
-    <% else %>
-      <%= favicon_link_tag environment_style ?
-        "govuk_admin_template/favicon-#{environment_style}.png" : "govuk_admin_template/favicon.png"
-      %>
-    <% end %>
-    <%= yield :head %>
-    <%
-      # HTML5 and bootstrap shims, for <= IE8 support of HTML5 elements
-      # respond.js must come after CSS (from :head) and media queries so
-      # that rules and styles can be correctly calculated.
+
+<% content_for :head do %>
+  <script>(function(d){d.className=d.className.replace(/^no-js\b/,'js');}(document.documentElement));</script>
+  <% # jQuery and Bootstrap %>
+  <%= javascript_include_tag "govuk-admin-template" %>
+
+  <% if content_for?(:favicon) %>
+    <%= yield :favicon %>
+  <% else %>
+    <%= favicon_link_tag environment_style ?
+      "govuk_admin_template/favicon-#{environment_style}.png" : "govuk_admin_template/favicon.png"
     %>
-    <!--[if lte IE 8]>
-      <%= javascript_include_tag "lte-ie8" %>
-    <![endif]-->
-  </head>
-  <body<% if environment_style %> class="environment-<%= environment_style %>"<% end %>>
-    <%= yield :body_start %>
-    <% if content_for?(:navbar) %>
-      <%= yield(:navbar) %>
-    <% else %>
-      <header class="
-        navbar
-        navbar-default
-        navbar-inverse
-        navbar-static-top
-        <% if environment_style %>environment-indicator<% end %>
-        add-bottom-margin" role="banner">
-        <div class="<%= content_for?(:full_width) ? 'container-fluid' : 'container' %>">
-          <div class="navbar-header">
-            <% if has_navbar_content %>
-              <%# Bootstrap toggle for collapsed navbar content, used at smaller widths %>
-              <button class="navbar-toggle" data-toggle="collapse" data-target="#navbar-header-menu-items" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-            <% end %>
-            <%= link_to app_title, app_home_path, :class => 'navbar-brand' %>
-            <% if environment_label %>
-              <div class="environment-label">
-                <%= environment_label %>
-              </div>
-            <% end %>
-          </div>
-          <% if has_navbar_content %>
-            <nav role="navigation" class="collapse navbar-collapse" id="navbar-header-menu-items">
-              <% if content_for?(:navbar_items) %>
-                <ul class="nav navbar-nav">
-                  <%= yield :navbar_items %>
-                </ul>
-              <% end %>
+  <% end %>
+  <%= yield :head %>
+<% end %>
 
-              <% if GovukAdminTemplate::Config.show_signout %>
-                <div class="navbar-text pull-right">
-                  <%= link_to current_user.name, Plek.new.external_url_for('signon') %>
-                  &bull; <%= link_to 'Sign out', '/auth/gds/sign_out' %>
-                </div>
-              <% end %>
+<% content_for :content do %>
+  <section class="<%= content_for?(:full_width) ? 'container-fluid' : 'container' %>">
+    <%= yield :inside_content %>
+  </section>
+<% end %>
 
-              <% if content_for?(:navbar_right) %>
-                <div class="navbar-text pull-right">
-                  <%= yield :navbar_right %>
-                </div>
-              <% end %>
-            </nav>
-          <% end %>
-        </div>
-      </header>
-    <% end %>
-    <section class="<%= content_for?(:full_width) ? 'container-fluid' : 'container' %>">
-      <main role="main">
-        <% if GovukAdminTemplate::Config.show_flash %>
-          <%= display_flash_message %>
-        <% end %>
+<% content_for :proposition_header do %>
+  <div class="header-proposition">
+    <div class="content">
+      <%= link_to app_title, app_home_path, class: 'proposition-name' %>
+    </div>
+  </div>
+  <% if environment_label %>
+    <div class="environment-label">
+      <%= environment_label %>
+    </div>
+  <% end %>
+<% end %>
 
-        <%= content_for?(:content) ? yield(:content) : yield %>
-      </main>
-      <footer class="page-footer">
-        <%= yield :footer_top %>
-        <a class="inherit" href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">&copy; Crown Copyright</a>
-        <% if content_for?(:footer_version) %>
-          <span class="pull-right">Version: <%= yield :footer_version %></span>
-        <% end %>
-      </footer>
-    </section>
-    <%= yield :body_end %>
-    <% unless disable_google_analytics %>
-      <% if Rails.env.production? %>
-        <script class="analytics">
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-          ga('create', 'UA-26179049-6', '<%= ENV.fetch('GOVUK_APP_DOMAIN') %>');
-          ga('set', 'anonymizeIp', true);
-          <%= content_for(:before_pageview_js) %>
-          <% if content_for?(:custom_pageview_fullpath) %>
-            GOVUKAdmin.trackPageview('<%= content_for(:custom_pageview_fullpath) %>');
-          <% else %>
-            ga('send', 'pageview');
-          <% end %>
-        </script>
-      <% elsif allow_google_analytics_stub %>
-        <script>
-          if (console) {window.ga = function() {console.log.apply(console, arguments);};}
-          <%= content_for(:before_pageview_js) %>
-        </script>
-      <% end %>
-    <% end %>
-  </body>
-</html>
+<%= render file: 'layouts/govuk_template' %>

@@ -8,6 +8,8 @@ require "jasmine"
 
 Bundler.require(*Rails.groups)
 require "govuk_admin_template"
+require "plek"
+require "govuk_template"
 
 module Dummy
   class Application < Rails::Application
