@@ -1,3 +1,5 @@
+require "govuk_publishing_components"
+
 require "govuk_admin_template/version"
 require "govuk_admin_template/engine"
 require "govuk_admin_template/config"
