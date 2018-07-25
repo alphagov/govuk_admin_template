@@ -1,4 +1,8 @@
-# GOV.UK Admin Template
+# GOV.UK Admin Template (DEPRECATED)
+
+> **NOTE**: This project is deprecated. New GOV.UK admin applications should be built using the [layout component in govuk_publishing_components](https://govuk-publishing-components.herokuapp.com/component-guide/layout_for_admin). Projects outside of GDS can use the [GOV.UK Design System](https://design-system.service.gov.uk/) directly to build interfaces.
+
+---
 
 Styles, scripts and templates wrapped up in a gem for getting up and running with [Bootstrap](http://getbootstrap.com) based backend admin apps.
 
