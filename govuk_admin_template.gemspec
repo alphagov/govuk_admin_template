@@ -18,7 +18,7 @@ Gem::Specification.new do |gem|
   gem.required_ruby_version = '>= 1.9.3'
 
   gem.add_dependency 'rails', '>= 3.2.0'
-  gem.add_dependency 'bootstrap-sass', '3.3.5.1'
+  gem.add_dependency 'bootstrap-sass', '3.4.1'
   gem.add_dependency 'jquery-rails', '~> 4.3.1'
   gem.add_dependency 'plek', '>= 2.1.0'
 
