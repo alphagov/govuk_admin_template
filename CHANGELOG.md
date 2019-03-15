@@ -1,3 +1,7 @@
+# 6.7.0
+
+* Update bootstrap-sass dependency to 3.4.1 (from 3.3.5.1)
+
 # 6.6.0
 
 * Use the external URL for Signon
