@@ -25,6 +25,6 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'sass-rails', '~> 5'
   gem.add_development_dependency 'rspec-rails', '~> 3'
   gem.add_development_dependency 'capybara', '~> 2'
-  gem.add_development_dependency 'jasmine', '~> 2'
+  gem.add_development_dependency 'jasmine', '~> 3'
   gem.add_development_dependency 'govuk-lint'
 end
