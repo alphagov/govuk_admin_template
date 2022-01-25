@@ -20,3 +20,35 @@
   font-weight: normal;
   color: #555;
 }
+
+// Overrides the lables to use same colour scheme as the GOVUK design system
+
+.label-default {
+  color: #383f43;
+  background: #eeefef;
+}
+
+.label-primary {
+  color: #fff;
+  background: #1d70b8;
+}
+
+.label-success {
+  color: #005a30;
+  background: #cce2d8;
+}
+
+.label-info {
+  color: #144e81;
+  background: #d2e2f1;
+}
+
+.label-warning {
+  color: #594d00;
+  background: #fff7bf;
+}
+
+.label-danger {
+  color: #942514;
+  background: #f6d7d2;
+}
