@@ -5,4 +5,35 @@
   This assumed gray-light was on a light background. We aren't always
   using it in that way. Reset to the original value #999.
 */
+
 $gray-light: lighten(#000, 60%);
+
+/*
+  Updates a bunch of copy that used to be gray to black for things like labels.
+*/
+$text-color: #000;
+
+/*
+  Updates the input to black so it contrasts with the light gray background.
+*/
+$input-color: #000;
+
+/*
+  Updates muted text to gray so it contrasts with the light gray background.
+*/
+$text-muted: #444;
+
+/*
+  Updates text in the breadcrumbs to use a darker gray to fix contrast issues.
+*/
+$breadcrumb-active-color: #444;
+
+/*
+  Updates the spans in headers to use a darker gray to fix contrast issues.
+*/
+$headings-small-color: #444;
+
+/*
+  Updates the disabled pagination links to use a darker gray to fix contrast issues.
+*/
+$pagination-disabled-color: #444;
