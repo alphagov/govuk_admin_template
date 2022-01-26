@@ -37,3 +37,9 @@ $headings-small-color: #444;
   Updates the disabled pagination links to use a darker gray to fix contrast issues.
 */
 $pagination-disabled-color: #444;
+
+/*
+  Updates the default link to colour to a the same colour used in the
+  GOVUK design system. This fixes some contrast issues.
+*/
+$link-color: #1d70b8;

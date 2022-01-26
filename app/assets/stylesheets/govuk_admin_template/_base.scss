@@ -282,7 +282,7 @@ a.list-group-item {
 
 .link-muted:hover,
 .link-muted:focus {
-  color: $gray;
+  color: #000;
 }
 
 .link-inherit,
@@ -304,7 +304,7 @@ a.list-group-item {
   font-size: 65%;
   font-weight: normal;
   line-height: 1.5;
-  color: $gray-light;
+  color: $gray;
   display: block;
 }
 
