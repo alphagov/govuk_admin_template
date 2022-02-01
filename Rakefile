@@ -10,14 +10,17 @@ RSpec::Core::RakeTask.new(:spec)
 # Import all dummy app rake tasks under a namespace
 
 namespace :assets do
+  desc "Placeholder rake task for precompile"
   task :precompile do |_t|
     puts "Placeholder"
   end
 
+  desc "Placeholder rake task for clean"
   task :clean do |_t|
     puts "Placeholder"
   end
 
+  desc "Placeholder rake task for clobber"
   task :clobber do |_t|
     puts "Placeholder"
   end
