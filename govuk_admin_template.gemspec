@@ -14,7 +14,7 @@ Gem::Specification.new do |gem|
   gem.files         = Dir["{app,config,lib}/**/*"] + Dir["*.md"] + ["LICENCE.txt"]
   gem.require_paths = %w[lib]
 
-  gem.required_ruby_version = ">= 1.9.3"
+  gem.required_ruby_version = ">= 2.7.2"
 
   gem.add_dependency "bootstrap-sass", "3.4.1"
   gem.add_dependency "jquery-rails", "~> 4.3.1"
