@@ -1,4 +1,4 @@
-require 'rspec/core/rake_task'
+require "rspec/core/rake_task"
 RSpec::Core::RakeTask.new(:spec)
 
 # The jasmine gem isn't designed for testing engines
@@ -10,27 +10,28 @@ RSpec::Core::RakeTask.new(:spec)
 # Import all dummy app rake tasks under a namespace
 
 namespace :assets do
-  task :precompile do |t|
+  desc "Placeholder rake task for precompile"
+  task :precompile do |_t|
     puts "Placeholder"
   end
 
-  task :clean do |t|
+  desc "Placeholder rake task for clean"
+  task :clean do |_t|
     puts "Placeholder"
   end
 
-  task :clobber do |t|
+  desc "Placeholder rake task for clobber"
+  task :clobber do |_t|
     puts "Placeholder"
   end
 end
 
 namespace :dummy_app do
-  require File.expand_path('../spec/dummy/config/application', __FILE__)
+  require File.expand_path("spec/dummy/config/application", __dir__)
   Dummy::Application.load_tasks
 end
 
 # Load local tasks
-Dir['tasks/**/*.rake'].each { |file| load file }
+Rails.application.load_tasks
 
-task(:default).clear
-task :default => [:spec, 'dummy_app:jasmine:ci', 'sass:check']
-
+task default: ["lint", :spec, "dummy_app:jasmine:ci", "sass:check"]
