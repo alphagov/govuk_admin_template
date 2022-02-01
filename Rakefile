@@ -32,6 +32,6 @@ namespace :dummy_app do
 end
 
 # Load local tasks
-Dir["tasks/**/*.rake"].each { |file| load file }
+Dir['tasks/**/*.rake'].each { |file| load file }
 
-task default: [:spec, "dummy_app:jasmine:ci", "sass:check"]
+task default: ["lint", :spec, "dummy_app:jasmine:ci", "sass:check"]
