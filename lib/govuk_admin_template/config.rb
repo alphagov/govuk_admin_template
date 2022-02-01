@@ -6,7 +6,7 @@ module GovukAdminTemplate
   module Config
     # Name of your application
     mattr_accessor :app_title
-    @@app_title = "GOV.UK"
+    @app_title = "GOV.UK"
 
     # Show flash-messages
     # Default: false
