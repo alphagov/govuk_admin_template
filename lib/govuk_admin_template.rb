@@ -8,11 +8,11 @@ module GovukAdminTemplate
   mattr_accessor :environment_style, :environment_label
 
   def self.environment_style
-    @@environment_style || self.default_environment_style
+    @@environment_style || default_environment_style
   end
 
   def self.environment_label
-    @@environment_label || self.environment_style.try(:titleize)
+    @@environment_label || environment_style.try(:titleize)
   end
 
   # In development we can't consistently set an environment
