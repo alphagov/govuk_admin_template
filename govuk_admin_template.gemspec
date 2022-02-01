@@ -26,5 +26,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rspec-rails', '~> 3'
   gem.add_development_dependency 'capybara', '~> 3'
   gem.add_development_dependency 'jasmine', '~> 3'
-  gem.add_development_dependency 'govuk-lint'
+  gem.add_development_dependency 'rubocop-govuk'
 end

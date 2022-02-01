@@ -1,3 +1,7 @@
+# Unreleased
+
+* Replace the development dependency govuk-lint with rubocop-govuk
+
 # 6.7.0
 
 * Update bootstrap-sass dependency to 3.4.1 (from 3.3.5.1)
