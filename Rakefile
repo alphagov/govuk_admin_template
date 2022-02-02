@@ -1,5 +1,4 @@
 require "rspec/core/rake_task"
-RSpec::Core::RakeTask.new(:spec)
 
 # The jasmine gem isn't designed for testing engines
 #
@@ -34,4 +33,7 @@ end
 # Load local tasks
 Rails.application.load_tasks
 
+# RSpec shoves itself into the default task without asking, which confuses the ordering.
+# https://github.com/rspec/rspec-rails/blob/eb3377bca425f0d74b9f510dbb53b2a161080016/lib/rspec/rails/tasks/rspec.rake#L6
+Rake::Task[:default].clear if Rake::Task.task_defined?(:default)
 task default: ["lint", :spec, "dummy_app:jasmine:ci", "sass:check"]
