@@ -16,7 +16,7 @@ describe "Layout" do
     expect(page).to have_title "page_title"
   end
 
-  context "no environment set" do
+  context "when no environment set" do
     it "defaults to not showing any environment details" do
       GovukAdminTemplate.environment_style = nil
       visit "/"
@@ -26,7 +26,7 @@ describe "Layout" do
     end
   end
 
-  context "in a development environment" do
+  context "when in a development environment" do
     it "includes details about the current environment" do
       GovukAdminTemplate.environment_style = "development"
       visit "/"
@@ -36,7 +36,7 @@ describe "Layout" do
     end
   end
 
-  context "in a test environment" do
+  context "when in a test environment" do
     it "includes details about the current environment" do
       GovukAdminTemplate.environment_style = "test"
       visit "/"
