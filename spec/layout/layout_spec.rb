@@ -2,6 +2,7 @@ require "spec_helper"
 
 describe "Layout" do
   subject(:body) { page.body }
+
   it "yields the specified content" do
     visit "/"
     expect(body).to include("app_title")
@@ -15,7 +16,7 @@ describe "Layout" do
     expect(page).to have_title "page_title"
   end
 
-  context "no environment set" do
+  context "when no environment set" do
     it "defaults to not showing any environment details" do
       GovukAdminTemplate.environment_style = nil
       visit "/"
@@ -25,7 +26,7 @@ describe "Layout" do
     end
   end
 
-  context "in a development environment" do
+  context "when in a development environment" do
     it "includes details about the current environment" do
       GovukAdminTemplate.environment_style = "development"
       visit "/"
@@ -35,7 +36,7 @@ describe "Layout" do
     end
   end
 
-  context "in a test environment" do
+  context "when in a test environment" do
     it "includes details about the current environment" do
       GovukAdminTemplate.environment_style = "test"
       visit "/"
@@ -92,7 +93,7 @@ describe "Layout" do
 
   it "does not include analytics in development" do
     visit "/"
-    expect(page).to have_no_selector("script.analytics", visible: false)
+    expect(page).to have_no_selector("script.analytics", visible: :hidden)
   end
 
   it "renders a flash" do
@@ -110,7 +111,7 @@ describe "Layout" do
 
     it "includes analytics" do
       visit "/"
-      expect(page).to have_selector("script.analytics", visible: false)
+      expect(page).to have_selector("script.analytics", visible: :hidden)
       expect(page.body).to include("'root.gov.uk'")
     end
 

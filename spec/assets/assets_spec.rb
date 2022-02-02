@@ -5,7 +5,7 @@ describe "Assets" do
 
   it "serves images, eg the crown header" do
     visit "/assets/govuk_admin_template/header-crown.png"
-    expect(asset).to_not be_empty
+    expect(asset).not_to be_empty
   end
 
   describe "Compiling javascript" do

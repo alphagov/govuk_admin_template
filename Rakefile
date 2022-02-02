@@ -11,17 +11,17 @@ RSpec::Core::RakeTask.new(:spec)
 
 namespace :assets do
   desc "Placeholder rake task for precompile"
-  task :precompile do |_t|
+  task precompile: :environment do |_t|
     puts "Placeholder"
   end
 
   desc "Placeholder rake task for clean"
-  task :clean do |_t|
+  task clean: :environment do |_t|
     puts "Placeholder"
   end
 
   desc "Placeholder rake task for clobber"
-  task :clobber do |_t|
+  task clobber: :environment do |_t|
     puts "Placeholder"
   end
 end
