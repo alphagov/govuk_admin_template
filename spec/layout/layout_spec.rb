@@ -93,7 +93,7 @@ describe "Layout" do
 
   it "does not include analytics in development" do
     visit "/"
-    expect(page).to have_no_selector("script.analytics", visible: false)
+    expect(page).to have_no_selector("script.analytics", visible: :hidden)
   end
 
   it "renders a flash" do
@@ -111,7 +111,7 @@ describe "Layout" do
 
     it "includes analytics" do
       visit "/"
-      expect(page).to have_selector("script.analytics", visible: false)
+      expect(page).to have_selector("script.analytics", visible: :hidden)
       expect(page.body).to include("'root.gov.uk'")
     end
 
