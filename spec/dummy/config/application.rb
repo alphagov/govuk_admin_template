@@ -5,6 +5,7 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "sprockets/railtie"
 require "jasmine"
+require "jasmine_selenium_runner"
 
 Bundler.require(*Rails.groups)
 require "govuk_admin_template"
