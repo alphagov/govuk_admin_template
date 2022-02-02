@@ -8,8 +8,8 @@ describe GovukAdminTemplate::Config do
         config.disable_google_analytics = false
       end
 
-      expect(GovukAdminTemplate::Config.app_title).to eql("My Publisher")
-      expect(GovukAdminTemplate::Config.disable_google_analytics).to eql(false)
+      expect(described_class.app_title).to eql("My Publisher")
+      expect(described_class.disable_google_analytics).to be(false)
     end
   end
 end

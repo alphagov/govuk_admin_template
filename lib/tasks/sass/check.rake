@@ -3,7 +3,7 @@ ABSOLUTE_ASSET_USAGE = /(?:image-path|image-url|asset-path|asset-url)\(["']\/ass
 
 namespace :sass do
   desc "Check all SCSS for 404-creating problems, takes place of govuk-lint"
-  task :check do
+  task check: :environment do
     scss_files = File.expand_path(
       "../../app/assets/stylesheets/**/*.scss", __dir__
     )

@@ -2,6 +2,7 @@ require "spec_helper"
 
 describe "Layout" do
   subject(:body) { page.body }
+
   it "yields the specified content" do
     visit "/"
     expect(body).to include("app_title")
