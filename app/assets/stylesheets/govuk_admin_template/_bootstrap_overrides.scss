@@ -1,5 +1,18 @@
 @import 'govuk_admin_template/buttons'; // overrides bootstrap buttons
 
+$govuk-tag-dark-grey: #383f43;
+$govuk-tag-light-gray: #eeefef;
+$govuk-tag-mid-blue: #1d70b8;
+$govuk-tag-white: #fff;
+$govuk-tag-dark-green: #005a30;
+$govuk-tag-light-green: #cce2d8;
+$govuk-tag-dark-blue: #144e81;
+$govuk-tag-light-blue: #d2e2f1;
+$govuk-tag-dark-yellow: #594d00;
+$govuk-tag-light-yellow: #fff7bf;
+$govuk-tag-dark-red: #942514;
+$govuk-tag-light-red: #f6d7d2;
+
 /*
   The admin gem's navbar has a bottom margin, for correct spacing
   when the page-header class isn't used. To account for this reduce
@@ -24,31 +37,31 @@
 // Overrides the lables to use same colour scheme as the GOVUK design system
 
 .label-default {
-  color: #383f43;
-  background: #eeefef;
+  color: $govuk-tag-dark-grey;
+  background: $govuk-tag-light-gray;
 }
 
 .label-primary {
-  color: #fff;
-  background: #1d70b8;
+  color: $govuk-tag-mid-blue;
+  background: $govuk-tag-white;
 }
 
 .label-success {
-  color: #005a30;
-  background: #cce2d8;
+  color: $govuk-tag-dark-green;
+  background: $govuk-tag-light-green;
 }
 
 .label-info {
-  color: #144e81;
-  background: #d2e2f1;
+  color: $govuk-tag-dark-blue;
+  background: $govuk-tag-light-blue;
 }
 
 .label-warning {
-  color: #594d00;
-  background: #fff7bf;
+  color: $govuk-tag-dark-yellow;
+  background: $govuk-tag-light-yellow;
 }
 
 .label-danger {
-  color: #942514;
-  background: #f6d7d2;
+  color: $govuk-tag-dark-red;
+  background: $govuk-tag-light-red;
 }

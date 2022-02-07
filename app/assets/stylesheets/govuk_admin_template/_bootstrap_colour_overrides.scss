@@ -1,3 +1,7 @@
+$black: #000;
+$gray-dark: #444;
+$blue: #1d70b8;
+
 /*
   Bootstrap 3.2 made gray-light darker for accessibility and contrast:
   https://github.com/twbs/bootstrap/releases/tag/v3.2.0
@@ -6,40 +10,40 @@
   using it in that way. Reset to the original value #999.
 */
 
-$gray-light: lighten(#000, 60%);
+$gray-light: lighten($black, 60%);
 
 /*
   Updates a bunch of copy that used to be gray to black for things like labels.
 */
-$text-color: #000;
+$text-color: $black;
 
 /*
   Updates the input to black so it contrasts with the light gray background.
 */
-$input-color: #000;
+$input-color: $black;
 
 /*
   Updates muted text to gray so it contrasts with the light gray background.
 */
-$text-muted: #444;
+$text-muted: $gray-dark;
 
 /*
   Updates text in the breadcrumbs to use a darker gray to fix contrast issues.
 */
-$breadcrumb-active-color: #444;
+$breadcrumb-active-color: $gray-dark;
 
 /*
   Updates the spans in headers to use a darker gray to fix contrast issues.
 */
-$headings-small-color: #444;
+$headings-small-color: $gray-dark;
 
 /*
   Updates the disabled pagination links to use a darker gray to fix contrast issues.
 */
-$pagination-disabled-color: #444;
+$pagination-disabled-color: $gray-dark;
 
 /*
   Updates the default link to colour to a the same colour used in the
   GOVUK design system. This fixes some contrast issues.
 */
-$link-color: #1d70b8;
+$link-color: $blue;
