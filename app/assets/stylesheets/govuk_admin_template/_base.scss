@@ -276,13 +276,13 @@ a.list-group-item {
 
 .link-muted,
 .link-muted:visited {
-  color: $gray-light;
+  color: $gray-dark;
   text-decoration: underline;
 }
 
 .link-muted:hover,
 .link-muted:focus {
-  color: $gray;
+  color: #000;
 }
 
 .link-inherit,
@@ -304,7 +304,7 @@ a.list-group-item {
   font-size: 65%;
   font-weight: normal;
   line-height: 1.5;
-  color: $gray-light;
+  color: $gray;
   display: block;
 }
 
@@ -360,7 +360,7 @@ a.list-group-item {
 }
 
 .no-content {
-  color: lighten($gray-light, 20%); // Large text needs a lighter colour for balance
+  color: $gray;
   @extend %large-and-spaced;
 }
 
