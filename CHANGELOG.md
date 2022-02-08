@@ -1,6 +1,8 @@
-# Unreleased
+# 6.8.0
 
 * Replace the development dependency govuk-lint with rubocop-govuk
+* Fix colour contrast issues flagged by WAVE Web Accessibility Evaluation Tool
+* Ensure govspeak guidance can be navigated to via keyboard tabbing
 
 # 6.7.0
 
