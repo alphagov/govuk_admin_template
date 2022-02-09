@@ -1,3 +1,7 @@
+# 6.8.1
+
+* Ensure labels have sufficient colour contrast
+
 # 6.8.0
 
 * Replace the development dependency govuk-lint with rubocop-govuk
