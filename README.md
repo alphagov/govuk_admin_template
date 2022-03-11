@@ -241,7 +241,9 @@ redirect_to :back, danger: "This didn't work."
 
 ## Development
 
-Clone the repository and run `bundle`.
+1. Clone the repository
+2. Run `bundle install`
+3. Run `yarn install`
 
 The source files are in the [app](app) directory. Unlike other GOVUK frontend gems, there is no compile step. The app directory is included in the gem and hooked in as a Rails engine.
 
@@ -261,13 +263,13 @@ Layout and nested layouts are tested using RSpec and Capybara:
 bundle exec rake spec
 ```
 
-Javascript is tested using Jasmine and the [Jasmine gem](https://github.com/pivotal/jasmine-gem). Tests can be run either in the browser or on the command line via the dummy app’s tasks:
+Javascript is tested using Jasmine and [jasmine-browser-runner](https://jasmine.github.io/setup/browser.html). Tests can be run either in the browser or on the command line via the dummy app’s tasks:
 ```sh
 # browser
-bundle exec rake dummy_app:jasmine
+yarn run jasmine:browser
 
 # command line
-bundle exec rake dummy_app:jasmine:ci
+yarn run jasmine:ci
 ```
 
 ## Publishing

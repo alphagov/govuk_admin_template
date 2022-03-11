@@ -34,4 +34,4 @@ end
 # Load local tasks
 Rails.application.load_tasks
 
-task default: ["lint", :spec, "dummy_app:jasmine:ci", "sass:check"]
+task default: [:lint, :spec, :jasmine, "sass:check"]
