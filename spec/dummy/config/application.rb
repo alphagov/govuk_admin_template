@@ -5,6 +5,7 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "sprockets/railtie"
 require "sassc-rails"
+require "plek"
 
 Bundler.require(*Rails.groups)
 require "govuk_admin_template"
