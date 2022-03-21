@@ -16,16 +16,13 @@ Gem::Specification.new do |gem|
 
   gem.required_ruby_version = ">= 2.7.2"
 
-  gem.add_dependency "bootstrap-sass", "3.4.1"
-  gem.add_dependency "jquery-rails", "~> 4.3.1"
-  gem.add_dependency "plek", ">= 2.1.0"
-  gem.add_dependency "rails", ">= 3.2.0"
+  gem.add_dependency "bootstrap-sass", "~> 3.4"
+  gem.add_dependency "jquery-rails", "~> 4.3"
+  gem.add_dependency "plek", ">= 2.1"
+  gem.add_dependency "rails", ">= 6"
 
   gem.add_development_dependency "capybara", "~> 3"
-  gem.add_development_dependency "govuk_test", "~> 2"
-  gem.add_development_dependency "jasmine", "~> 3"
-  gem.add_development_dependency "jasmine_selenium_runner", "~> 3"
   gem.add_development_dependency "rspec-rails", "~> 3"
-  gem.add_development_dependency "rubocop-govuk"
-  gem.add_development_dependency "sass-rails", "~> 5"
+  gem.add_development_dependency "rubocop-govuk", "4.3.0"
+  gem.add_development_dependency "sassc-rails", "~> 2"
 end

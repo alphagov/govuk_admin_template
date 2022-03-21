@@ -192,13 +192,13 @@
     <blockquote>
       <dl class="remove-bottom-margin">
         <dt class="add-label-margin"><code>:govuk_date</code></dt>
-        <dd><%= halloween.to_s(:govuk_date) %><br />
-          <%= halloween.to_time.to_s(:govuk_date) %></dd>
+        <dd><%= halloween.to_fs(:govuk_date) %><br />
+          <%= halloween.to_time.to_fs(:govuk_date) %></dd>
         <dt class="add-top-margin add-label-margin"><code>:govuk_date_short</code></dt>
-        <dd><%= halloween.to_s(:govuk_date_short) %><br />
-          <%= halloween.to_time.to_s(:govuk_date_short) %></dd>
+        <dd><%= halloween.to_fs(:govuk_date_short) %><br />
+          <%= halloween.to_time.to_fs(:govuk_date_short) %></dd>
         <dt class="add-top-margin add-label-margin"><code>:govuk_time</code></dt>
-        <dd><%= halloween.to_time.to_s(:govuk_time) %></dd>
+        <dd><%= halloween.to_time.to_fs(:govuk_time) %></dd>
       </dl>
     </blockquote>
   </section>
