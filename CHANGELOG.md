@@ -2,6 +2,7 @@
 
 * Rails 7 compatibility: use `Time#to_fs` instead of deprecated use of `Time#to_s`
 * Bump minimum supported Rails version to 6
+* Fix broken 'Crown Copyright' link in the layout template page footer
 
 # 6.8.1
 

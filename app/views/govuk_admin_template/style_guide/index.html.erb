@@ -6,10 +6,10 @@
   </h1>
 </div>
 
-<p class="lead">Admin app UIs are powered by <a href="http://getbootstrap.com/css/">bootstrap 3.3.2</a>, using <a href="https://github.com/twbs/bootstrap-sass/tree/v3.3.3">bootstrap SASS</a> v3.3.3 (<a href="https://github.com/twbs/bootstrap-sass/blob/v3.3.3/assets/stylesheets/bootstrap/_mixins.scss">mixins</a>), but maintaining bootstrap 2 button styles. This guide documents how we use bootstrap, where the apps have diverged from default styles and any custom styles needed to fill in the gaps.</p>
+<p class="lead">Admin app UIs are powered by <a href="https://getbootstrap.com/docs/3.4/">Bootstrap 3.4</a>, using <a href="https://github.com/twbs/bootstrap-sass/tree/v3.4.1">Bootstrap SASS</a> v3.4.1 (<a href="https://github.com/twbs/bootstrap-sass/blob/v3.4.1/assets/stylesheets/bootstrap/_mixins.scss">mixins</a>), but maintaining Bootstrap 2 button styles. This guide documents how we use Bootstrap, where the apps have diverged from default styles and any custom styles needed to fill in the gaps.</p>
 
 <h2 id="grid">Grid</h2>
-<p class="lead">Apps use the <a href="http://getbootstrap.com/css/#grid">default bootstrap</a> <strong>12 column scaleable responsive grid</strong>.</p>
+<p class="lead">Apps use the <a href="https://getbootstrap.com/docs/3.4/css/#grid">default bootstrap</a> <strong>12 column scaleable responsive grid</strong>.</p>
 <div class="row add-bottom-margin">
   <div class="grid-example col-md-2">col-md-2</div>
   <div class="grid-example col-md-4">col-md-4</div>
@@ -26,7 +26,7 @@
 <div class="row">
   <div class="col-md-6 lead">
     <p>
-      Based on the <a href="http://govuk-elements.herokuapp.com/form-elements/#form-toggle-content">GOV.UK elements pattern</a>, ticking a checkbox or selecting a radio element can toggle the display of further content or fields.
+      Based on the <a href="https://govuk-elements.herokuapp.com/form-elements/#form-toggle-content">GOV.UK elements pattern</a>, ticking a checkbox or selecting a radio element can toggle the display of further content or fields.
     </p>
     <pre class="add-top-margin">&lt;div class=&quot;checkbox&quot; data-module=&quot;toggle-checkbox&quot;&gt;
   &lt;label&gt;
@@ -73,7 +73,7 @@
 <h3 id="forms-input-widths">Input widths</h3>
 <div class="row">
   <div class="col-md-6 lead">
-    <p>Bootstrap 3 inputs always <a href="http://getbootstrap.com/css/#forms">extend to the size of their container</a>. The recommendation from Bootstrap is to wrap form elements with grid classes. Sometimes this isn’t suitable, for instance if a page isn’t using a grid.</p>
+    <p>Bootstrap 3 inputs always <a href="https://getbootstrap.com/docs/3.4/css/#forms">extend to the size of their container</a>. The recommendation from Bootstrap is to wrap form elements with grid classes. Sometimes this isn’t suitable, for instance if a page isn’t using a grid.</p>
     <p>The gem includes classes to restrict the width of inputs based on column sizes: <code>input-md-x</code> (1 — 11)</p>
   </div>
   <div class="col-md-6">
@@ -261,7 +261,7 @@
 <h3 id="tables-filterable-tables">Filterable tables</h3>
 <div class="row">
   <div class="col-md-6 lead">
-    <p>Using the <a href="https://github.com/alphagov/govuk_admin_template/blob/master/app/assets/javascripts/govuk-admin-template/modules/filterable_table.js">filterable-table module</a> and the <a href="https://github.com/alphagov/govuk_admin_template/tree/master/app/views/govuk_admin_template/_table_filter.html.erb">table_filter partial</a> any table can be filtered. The module performs a simple match against the content of each row, if there’s no match the row is hidden.</p>
+    <p>Using the <a href="https://github.com/alphagov/govuk_admin_template/blob/main/app/assets/javascripts/govuk-admin-template/modules/filterable_table.js">filterable-table module</a> and the <a href="https://github.com/alphagov/govuk_admin_template/blob/main/app/views/govuk_admin_template/_table_filter.html.erb">table_filter partial</a> any table can be filtered. The module performs a simple match against the content of each row, if there’s no match the row is hidden.</p>
     <p>If the class <code>js-open-on-submit</code> is added to a link within a row, then the first link visible with that class will be opened when the user hits <code>ENTER</code>.</p>
     <pre class="add-top-margin">&lt;table class="table table-bordered" data-module="filterable-table"&gt;
   &lt;thead&gt;
@@ -403,7 +403,7 @@
 <h2 id="nav-lists">Nav lists</h2>
 <div class="row">
   <p class="col-md-4 lead">
-    <a href="http://stackoverflow.com/questions/18281636/what-replaces-nav-lists-in-bootstrap-3">Bootstrap 3 removed</a> the <code>nav-list</code> classes and <a href="http://getbootstrap.com/2.3.2/components.html#navs">design pattern</a>. For backwards compatibility these styles have been put back, but it’s advised to avoid this pattern.
+    <a href="https://stackoverflow.com/questions/18281636/what-replaces-nav-lists-in-bootstrap-3">Bootstrap 3 removed</a> the <code>nav-list</code> classes and <a href="https://getbootstrap.com/2.3.2/components.html#navs">design pattern</a>. For backwards compatibility these styles have been put back, but it’s advised to avoid this pattern.
   </p>
   <div class="col-md-4">
     <div class="well sidebar-nav">

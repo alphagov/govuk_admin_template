@@ -4,7 +4,7 @@
 
 ---
 
-Styles, scripts and templates wrapped up in a gem for getting up and running with [Bootstrap](http://getbootstrap.com) based backend admin apps.
+Styles, scripts and templates wrapped up in a gem for getting up and running with [Bootstrap 3.4](https://getbootstrap.com/docs/3.4/) based backend admin apps.
 
 This gem provides (via a Rails engine):
 * jQuery
@@ -35,10 +35,10 @@ Firstly, include the gem in your Gemfile, pinned to the appropriate version and 
 
 ```ruby
 # Gemfile
-gem 'govuk_admin_template', '~> 3.3'
+gem 'govuk_admin_template', '~> 6.8'
 ```
 
-At the top of `application.scss` include the styles (this provides all the mixins and variables from the gem as well as from bootstrap — [bootstrap mixins](https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/_mixins.scss)):
+At the top of `application.scss` include the styles (this provides all the mixins and variables from the gem as well as from bootstrap — [bootstrap mixins](https://github.com/twbs/bootstrap-sass/blob/v3.4.1/assets/stylesheets/bootstrap/_mixins.scss)):
 ```css
 /* application.scss */
 @import 'govuk_admin_template';
@@ -71,11 +71,13 @@ You will also need to include your styles and javascripts:
 Note that `jquery` and `jquery_ujs` are already imported by `govuk_admin_template`,
 so you should remove them from your `app/assets/javascripts/application.js`. This may
 cause your jasmine tests to fail, so you'll need to include `assets/govuk-admin-template.js`
-in your `spec/javascripts/support/jasmine.yml` like this:
+in your `spec/support/jasmine-browser.json` like this:
 
-```yaml
-src_files:
-  - assets/govuk-admin-template.js
+```json
+"srcFiles": [
+  "govuk-admin-template-*.js",
+  "application-*.js"
+]
 ```
 
 It is recommended that the style guide is also made available within your app at the route `/style-guide`. Add this to your `config/routes.rb` file:
@@ -87,7 +89,7 @@ if Rails.env.development?
 end
 ```
 
-The gem source includes a [dummy app](spec/dummy) configured to behave like an app using the gem. If you have the gem checked out it can be run from the `spec\dummy` directory using `rails s`.
+The gem source includes a [dummy app](spec/dummy) configured to behave like an app using the gem. If you have the gem checked out it can be run from the `spec/dummy` directory using `rails s`.
 
 For Javascript usage, available modules and writing modules, see the [Javascript guide](JAVASCRIPT.md).
 
@@ -118,7 +120,7 @@ To use this configuration:
 0. Add an initializer in `config/initializers/simple_form.rb` containing the
    following:
 
-```
+```ruby
 SimpleForm.setup do |config|
   GovukAdminTemplate.setup_simple_form(config)
 end
@@ -130,7 +132,7 @@ specific customisations are required.
 
 ### Content blocks
 
-The gem [uses nested layouts](http://guides.rubyonrails.org/layouts_and_rendering.html#using-nested-layouts) for customisation.
+The gem [uses nested layouts](https://guides.rubyonrails.org/layouts_and_rendering.html#using-nested-layouts) for customisation.
 
 `content_for`     | Description
 ---------------   | -------------
@@ -164,19 +166,19 @@ The [gem includes](lib/govuk_admin_template/engine.rb) date and time formats whi
 
 ```ruby
 # 1 January 2013
-date.to_s(:govuk_date)
+date.to_fs(:govuk_date)
 
 # 1:15pm, 1 January 2013
-time.to_s(:govuk_date)
+time.to_fs(:govuk_date)
 
 # 1 Jan 2013
-date.to_s(:govuk_date_short)
+date.to_fs(:govuk_date_short)
 
 # 1:15pm, 1 Jan 2013
-time.to_s(:govuk_date_short)
+time.to_fs(:govuk_date_short)
 
 # 1:15pm
-time.to_s(:govuk_time)
+time.to_fs(:govuk_time)
 ```
 
 ### Environment indicators
@@ -225,7 +227,7 @@ We support `:success`, `:info`, `:warning` and `:danger`:
 
 ![Flash types](docs/flash-types.png)
 
-In Rails 4, you can register your types to allow them to be used as arguments
+You can register your types to allow them to be used as arguments
 to `redirect_to`.
 
 ```ruby
@@ -249,7 +251,7 @@ The source files are in the [app](app) directory. Unlike other GOVUK frontend ge
 
 While developing it may be helpful to see how the gem will render. The dummy app at [spec/dummy](spec/dummy) is configured to act like an application using the gem and can be started from that directory using `rails s`. Changes will show immediately. The tests also run against this app.
 
-The dummy app’s rake tasks have been loaded into the gem’s task list under the namespace `dummy_app` for convenience.
+The dummy app’s rake tasks have been loaded into the gem’s task list under the namespace `app` for convenience – e.g. `bundle exec rake app:assets:precompile`
 
 ### Running tests
 
@@ -263,7 +265,7 @@ Layout and nested layouts are tested using RSpec and Capybara:
 bundle exec rake spec
 ```
 
-Javascript is tested using Jasmine and [jasmine-browser-runner](https://jasmine.github.io/setup/browser.html). Tests can be run either in the browser or on the command line via the dummy app’s tasks:
+Javascript is tested using Jasmine and [jasmine-browser-runner](https://jasmine.github.io/setup/browser.html). Tests can be run either in the browser or on the command line:
 ```sh
 # browser
 yarn run jasmine:browser
