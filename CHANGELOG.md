@@ -1,4 +1,4 @@
-# Unreleased
+# 6.9.0
 
 * Rails 7 compatibility: use `Time#to_fs` instead of deprecated use of `Time#to_s`
 * Bump minimum supported Rails version to 6
