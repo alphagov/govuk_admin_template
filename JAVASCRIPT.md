@@ -39,7 +39,7 @@ The simplest of modules looks like this:
 
 ## Writing modules
 
-Whilst this isn’t prescriptive, it helps if modules look and behave in a similar manner. Modules should live within your app’s `app\assets\javascripts\modules` directory.
+Whilst this isn’t prescriptive, it helps if modules look and behave in a similar manner. Modules should live within your app’s `app/assets/javascripts/modules` directory.
 
 ### Use `js-` prefixed classes for interaction hooks
 

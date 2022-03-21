@@ -4,7 +4,7 @@ require File.expand_path("dummy/config/environment.rb", __dir__)
 require "capybara/rails"
 require "plek"
 
-# See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+# See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   config.order = "random"
   config.include Capybara::DSL

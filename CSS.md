@@ -9,20 +9,20 @@ CSS in the gem follows two conventions:
 ## Available helper classes
 
 Firstly, the admin styles are based on Bootstrap:
-* [Bootstrap CSS](http://getbootstrap.com/css/)
-* [Bootstrap Components](http://getbootstrap.com/components/)
+* [Bootstrap CSS](https://getbootstrap.com/docs/3.4/css/)
+* [Bootstrap Components](https://getbootstrap.com/docs/3.4/components/)
 
 For admin components, see the admin style guide (`/style-guide` in your app).
 
 ### Hide and show content
-[toggle.css.scss](app/assets/stylesheets/govuk_admin_template/_toggles.css.scss)
+See: [toggles.scss](app/assets/stylesheets/govuk_admin_template/_toggles.scss)
 
 Class   | Purpose
 ------  |--------
 `hide` | Hide content from all users, including screenreaders
 `if-no-js-hide` | Hide from users without Javascript
 `if-js-hide` | Hide from users with Javascript
-`rm` | [Hide visually](http://snook.ca/archives/html_and_css/hiding-content-for-accessibility) but keep available to screenreaders
+`rm` | [Hide visually](https://snook.ca/archives/html_and_css/hiding-content-for-accessibility) but keep available to screenreaders
 `if-js-rm` | Hide visually from users with Javascript
 
 ### Margin helpers
@@ -35,7 +35,7 @@ Rather than creating a class purely to remove or add margins (many Bootstrap sty
 
 The mixins don’t include `!important` by default, but can be added as a parameter:
 
-```sass
+```scss
 .class {
   @include add-top-margin;
   @include add-top-margin('!important');
@@ -61,7 +61,7 @@ Like the margin helpers, the padding classes include `!important` so they’ll a
 <h3 class="add-bottom-padding"></h3>
 ```
 
-```sass
+```scss
 .class {
   @include add-top-padding;
   @include add-top-padding('!important');
@@ -105,7 +105,7 @@ Class   | Purpose
 `inline-block` | Display inline-block
 
 ### Tables
-[tables.css.scss](app/assets/stylesheets/govuk_admin_template/_tables.css.scss)
+See: [tables.scss](app/assets/stylesheets/govuk_admin_template/_tables.scss)
 
 Class   | Purpose
 ------  |--------
@@ -114,7 +114,7 @@ Class   | Purpose
 
 ### SASS Variables
 
-Along with Bootstrap’s many [mixins](https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/_mixins.scss) and [variables](http://getbootstrap.com/customize/#less-variables), the admin gem comes with [some of its own](app/assets/stylesheets/govuk_admin_template/_theme.css.scss).
+Along with Bootstrap’s many [mixins](https://github.com/twbs/bootstrap-sass/blob/v3.4.1/assets/stylesheets/bootstrap/_mixins.scss) and [variables](https://github.com/twbs/bootstrap-sass/blob/v3.4.1/assets/stylesheets/bootstrap/_variables.scss), the admin gem comes with [some of its own](app/assets/stylesheets/govuk_admin_template/_theme.scss).
 
 Class   | Purpose
 ------  |--------
