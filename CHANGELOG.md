@@ -1,4 +1,4 @@
-# Unreleased
+# 6.9.1
 
 * Fix broken Rails 6 compatibility: use `Date#to_formatted_s` instead of `Date#to_fs`
 
