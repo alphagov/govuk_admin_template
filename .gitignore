@@ -21,3 +21,4 @@ spec/dummy/tmp
 spec/dummy/public/assets
 node_modules
 Gemfile.lock
+gemfiles/*.lock
