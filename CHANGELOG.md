@@ -1,3 +1,7 @@
+# Unreleased
+
+* Fix broken Rails 6 compatibility: use `Date#to_formatted_s` instead of `Date#to_fs`
+
 # 6.9.0
 
 * Rails 7 compatibility: use `Time#to_fs` instead of deprecated use of `Time#to_s`
