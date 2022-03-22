@@ -274,6 +274,18 @@ yarn run jasmine:browser
 yarn run jasmine:ci
 ```
 
+### Testing against different Rails versions
+
+The CI pipeline is configured to test this gem against multiple versions of Rails.
+
+Each Rails version has a corresponding Gemfile located in the [gemfiles](gemfiles/) directory. And the CI pipeline defines a [matrix of Gemfiles](https://github.com/alphagov/govuk_admin_template/blob/8f53865fa3d33f741642783f9bfcaefc201c3751/.github/workflows/ci.yml#L13) to test against.
+
+It's also possible to run tests against multiple Rails versions locally.
+
+1. Run `export BUNDLE_GEMFILE="gemfiles/rails_X.gemfile"` where `X` is the version to test against.
+  This tells Bundler which Gemfile to use.
+2. Run `bundle install` and then `bundle exec rake` as usual.
+
 ## Publishing
 
 Version bumps will automatically update RubyGems.org.
