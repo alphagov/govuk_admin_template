@@ -2,14 +2,18 @@ name: Continuous integration
 on: [push, pull_request]
 
 jobs:
-  # This matrix job runs the test suite against multiple Ruby versions
+  # This matrix job runs the test suite against multiple Ruby and Rails versions
   test_matrix:
     strategy:
       fail-fast: false
       matrix:
         # Due to https://github.com/actions/runner/issues/849, we have to use quotes for '3.0'
         ruby: [2.7, '3.0', 3.1]
+        # Test against multiple Rails versions
+        gemfile: [rails_6, rails_7]
     runs-on: ubuntu-latest
+    env:
+      BUNDLE_GEMFILE: gemfiles/${{ matrix.gemfile }}.gemfile
     steps:
     - uses: actions/checkout@v3
     - uses: ruby/setup-ruby@v1
