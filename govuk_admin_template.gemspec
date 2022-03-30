@@ -11,7 +11,7 @@ Gem::Specification.new do |gem|
   gem.summary       = gem.description
   gem.homepage      = "https://github.com/alphagov/govuk_admin_template"
 
-  gem.files         = Dir["{app,config,lib}/**/*"] + Dir["*.md"] + ["LICENCE.txt"]
+  gem.files         = Dir["{app,config,lib}/**/*"] + Dir["*.md"] + %w[LICENSE]
   gem.require_paths = %w[lib]
 
   gem.required_ruby_version = ">= 2.7.2"
