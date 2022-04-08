@@ -13,7 +13,7 @@ end
 
 desc "Lint files"
 task "lint" => :environment do
-  sh "rubocop --format clang"
+  sh "bundle exec rubocop"
 end
 
 # Define default tasks to run
