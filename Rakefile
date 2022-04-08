@@ -17,4 +17,4 @@ task "lint" => :environment do
 end
 
 # Define default tasks to run
-task default: %w[lint app:spec jasmine]
+task default: %w[lint spec jasmine]
