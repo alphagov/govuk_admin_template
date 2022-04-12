@@ -1,4 +1,4 @@
-# Unreleased
+# 6.9.2
 
 * Fix providing gem internal Rake tasks to applications embedding this gem as an engine.
 
