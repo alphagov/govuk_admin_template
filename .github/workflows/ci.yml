@@ -36,33 +36,11 @@ jobs:
     steps:
       - run: echo "All matrix tests have passed 🚀"
 
-  release:
+  publish:
     needs: test
-    runs-on: ubuntu-latest
     if: ${{ github.ref == 'refs/heads/main' }}
     permissions:
       contents: write
-    steps:
-    - uses: actions/checkout@v3
-    - uses: ruby/setup-ruby@v1
-      with:
-        rubygems: latest
-    - uses: actions/setup-node@v3.4.1
-      with:
-        node-version: lts/* # use the latest LTS release
-    - run: yarn install
-    - env:
-        GEM_HOST_API_KEY: ${{ secrets.ALPHAGOV_RUBYGEMS_API_KEY }}
-      run: |
-        VERSION=$(ruby -e "puts eval(File.read('govuk_admin_template.gemspec')).version")
-        GEM_VERSION=$(gem list --exact --remote govuk_admin_template)
-
-        if [ "${GEM_VERSION}" != "govuk_admin_template (${VERSION})" ]; then
-          gem build govuk_admin_template.gemspec
-          gem push "govuk_admin_template-${VERSION}.gem"
-        fi
-
-        if ! git ls-remote --tags --exit-code origin v${VERSION}; then
-          git tag v${VERSION}
-          git push --tags
-        fi
+    uses: alphagov/govuk-infrastructure/.github/workflows/publish-rubygem.yaml@main
+    secrets:
+      GEM_HOST_API_KEY: ${{ secrets.ALPHAGOV_RUBYGEMS_API_KEY }}
