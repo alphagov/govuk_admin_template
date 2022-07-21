@@ -23,6 +23,6 @@ Gem::Specification.new do |gem|
 
   gem.add_development_dependency "capybara", "~> 3"
   gem.add_development_dependency "rspec-rails", "~> 5"
-  gem.add_development_dependency "rubocop-govuk", "4.5.0"
+  gem.add_development_dependency "rubocop-govuk", "4.6.0"
   gem.add_development_dependency "sassc-rails", "~> 2"
 end
