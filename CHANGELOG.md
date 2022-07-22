@@ -1,3 +1,7 @@
+# 6.10.0
+
+* Remove Priority list from govspeak help example
+
 # 6.9.2
 
 * Fix providing gem internal Rake tasks to applications embedding this gem as an engine.
