@@ -106,6 +106,7 @@ describe "Layout" do
   describe "in production" do
     before do
       allow(Rails.env).to receive(:production?).and_return(true)
+      allow(ENV).to receive(:fetch).and_call_original
       allow(ENV).to receive(:fetch).with("GOVUK_APP_DOMAIN").and_return("root.gov.uk")
     end
 
