@@ -289,3 +289,8 @@ It's also possible to run tests against multiple Rails versions locally.
 ## Publishing
 
 Version bumps will automatically update RubyGems.org.
+
+## Licence
+
+[MIT License](LICENCE)
+
