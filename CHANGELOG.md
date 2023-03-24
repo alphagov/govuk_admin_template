@@ -1,3 +1,7 @@
+## Unreleased
+
+* Drop support for Ruby 2.7.
+
 # 6.10.0
 
 * Remove Priority list from govspeak help example
