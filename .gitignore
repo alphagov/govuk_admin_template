@@ -22,3 +22,11 @@ spec/dummy/public/assets
 node_modules
 Gemfile.lock
 gemfiles/*.lock
+
+# https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
