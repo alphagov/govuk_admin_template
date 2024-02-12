@@ -422,7 +422,7 @@ __metadata:
   resolution: "govuk_admin_template@workspace:."
   dependencies:
     jasmine-browser-runner: "npm:^2.3.0"
-    jasmine-core: "npm:^5.1.1"
+    jasmine-core: "npm:^5.1.2"
   languageName: unknown
   linkType: soft
 
@@ -550,10 +550,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jasmine-core@npm:^5.1.1":
-  version: 5.1.1
-  resolution: "jasmine-core@npm:5.1.1"
-  checksum: 2958bebf45e2ae2c9ecc876f2afa16d96fd9974fba15235747adc7447d49c8133d0b5f3358ab9f5087e2b2d80aa3a6b52bc918acbab5a54d6a7261664c8d742e
+"jasmine-core@npm:^5.1.2":
+  version: 5.1.2
+  resolution: "jasmine-core@npm:5.1.2"
+  checksum: bca92fd9c69eb3ed6e11d9de2e06939ba2c4157acaf15f9a19efc87a10af6a6937acbc424726e34ea8b2cc06b3d6fe733fbd2cfd3c9a258b3528567f89d8a578
   languageName: node
   linkType: hard
 
