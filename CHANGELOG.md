@@ -1,6 +1,8 @@
 ## Unreleased
 
 * Drop support for Ruby 2.7.
+* Drop support for Ruby 3.0. The minimum required Ruby version is now 3.1.4.
+* Add support for Ruby 3.3.
 
 # 6.10.0
 
