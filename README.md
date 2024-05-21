@@ -16,18 +16,17 @@ This gem provides (via a Rails engine):
 * GOV.UK user friendly date formats
 * Google Analytics tracking code (Universal Analytics), using the "GOV.UK apps" profile
 
-[Apps using this gem](https://github.com/search?q=govuk_admin_template+user%3Aalphagov+filename%3AGemfile) include:
-* [Collections publisher](https://github.com/alphagov/collections-publisher)
-* [Imminence](https://github.com/alphagov/imminence)
+[Apps using this gem](https://github.com/search?q=govuk_admin_template+user%3Aalphagov+path%3AGemfile.lock) include:
+* [Contacts admin](https://github.com/alphagov/contacts-admin)
+* [Content tagger](https://github.com/alphagov/content-tagger)
 * [Maslow](https://github.com/alphagov/maslow)
 * [Publisher](https://github.com/alphagov/publisher)
 * [Search admin](https://github.com/alphagov/search-admin)
-* [Sign on](https://github.com/alphagov/signonotron2)
 * [Service manual publisher](https://github.com/alphagov/service-manual-publisher)
+* [Short URL manager](https://github.com/alphagov/short-url-manager)
 * [Specialist publisher](https://github.com/alphagov/specialist-publisher)
 * [Support](https://github.com/alphagov/support)
 * [Transition](https://github.com/alphagov/transition)
-* [Travel advice publisher](https://github.com/alphagov/travel-advice-publisher)
 
 ## Usage
 
