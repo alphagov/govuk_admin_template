@@ -1,6 +1,6 @@
-## Unreleased
+# 6.11.0
 
-* Drop support for Ruby 2.7.
+* Drop support for Ruby 3.0
 
 # 6.10.0
 
