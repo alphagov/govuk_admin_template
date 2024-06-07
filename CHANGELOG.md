@@ -1,3 +1,7 @@
+# 7.0.0
+
+* Default styling behaviour determined by GOVUK_ENVIRONMENT env var
+
 # 6.11.0
 
 * Drop support for Ruby 3.0
