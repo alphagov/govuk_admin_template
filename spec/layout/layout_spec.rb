@@ -1,7 +1,14 @@
+require "climate_control"
 require "spec_helper"
 
 describe "Layout" do
   subject(:body) { page.body }
+
+  before do
+    # Reset the class instance variables before each test
+    GovukAdminTemplate.instance_variable_set(:@environment_style, nil)
+    GovukAdminTemplate.instance_variable_set(:@environment_label, nil)
+  end
 
   it "yields the specified content" do
     visit "/"
@@ -16,31 +23,37 @@ describe "Layout" do
     expect(page).to have_title "page_title"
   end
 
-  context "when no environment set" do
-    it "defaults to not showing any environment details" do
-      GovukAdminTemplate.environment_style = nil
-      visit "/"
-      expect(page).not_to have_selector(".environment-label")
-      expect(page).not_to have_selector(".environment-message")
-      expect(page.body).to match(/favicon-.*.png/)
+  context "when GOVUK_ENVIRONMENT not set" do
+    it "defaults to development environment details" do
+      ClimateControl.modify GOVUK_ENVIRONMENT: nil do
+        visit "/"
+        expect(page).to have_selector(".environment-label", text: "Development")
+        expect(page).to have_selector(".environment-preview")
+        expect(page.body).to match(/favicon-preview.*.png/)
+      end
     end
   end
 
-  context "when in a development environment" do
+  context "when GOVUK_ENVIRONMENT is set to production" do
     it "includes details about the current environment" do
-      GovukAdminTemplate.environment_style = "development"
-      visit "/"
-      expect(page).to have_selector(".environment-label", text: "Development")
-      expect(page).to have_selector(".environment-development")
-      expect(page.body).to match(/favicon-development-.*.png/)
+      ClimateControl.modify GOVUK_ENVIRONMENT: "production" do
+        visit "/"
+        expect(page).to have_selector(".environment-label", text: "Production")
+        expect(page).to have_selector(".environment-production")
+        expect(page.body).to match(/favicon-production-.*.png/)
+      end
     end
   end
 
-  context "when in a test environment" do
+  context "when GOVUK_ENVIRONMENT is set to integration" do
     it "includes details about the current environment" do
-      GovukAdminTemplate.environment_style = "test"
-      visit "/"
-      expect(page.body).to match(/favicon-test-.*.png/)
+      ClimateControl.modify GOVUK_ENVIRONMENT: "integration" do
+        visit "/"
+        p body
+        expect(page).to have_selector(".environment-label", text: "Integration")
+        expect(page).to have_selector(".environment-preview")
+        expect(page.body).to match(/favicon-preview-.*.png/)
+      end
     end
   end
 

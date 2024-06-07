@@ -8,18 +8,10 @@ module GovukAdminTemplate
   mattr_accessor :environment_style, :environment_label
 
   def self.environment_style
-    @@environment_style || default_environment_style
+    @environment_style ||= ENV["GOVUK_ENVIRONMENT"] == "production" ? "production" : "preview"
   end
 
   def self.environment_label
-    @@environment_label || environment_style.try(:titleize)
-  end
-
-  # In development we can't consistently set an environment
-  # variable, so use a default based on Rails.env
-  def self.default_environment_style
-    if Rails.env.development?
-      "development"
-    end
+    @environment_label ||= ENV.fetch("GOVUK_ENVIRONMENT", "development").titleize
   end
 end
