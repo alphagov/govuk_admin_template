@@ -3,7 +3,7 @@
   "name": "govuk_admin_template",
   "license": "MIT",
   "devDependencies": {
-    "jasmine-browser-runner": "^2.4.0",
+    "jasmine-browser-runner": "^2.5.0",
     "jasmine-core": "^5.1.2"
   },
   "scripts": {
