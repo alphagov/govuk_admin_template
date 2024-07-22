@@ -4,7 +4,7 @@
   "license": "MIT",
   "devDependencies": {
     "jasmine-browser-runner": "^2.5.0",
-    "jasmine-core": "^5.1.2"
+    "jasmine-core": "^5.2.0"
   },
   "scripts": {
     "jasmine:prepare": "RAILS_ENV=test bundle exec rake app:assets:clobber app:assets:precompile",
