@@ -1,6 +1,10 @@
 name: Continuous integration
 on: [push, pull_request]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.repository }}-${{ github.ref_name }}
+  cancel-in-progress: false
+
 jobs:
   codeql-sast:
     name: CodeQL SAST scan
