@@ -1,4 +1,5 @@
 require File.expand_path("boot", __dir__)
+require "logger"
 
 # Pick the frameworks you want:
 require "action_controller/railtie"

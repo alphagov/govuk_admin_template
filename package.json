@@ -3,8 +3,8 @@
   "name": "govuk_admin_template",
   "license": "MIT",
   "devDependencies": {
-    "jasmine-browser-runner": "^2.5.0",
-    "jasmine-core": "^5.4.0"
+    "jasmine-browser-runner": "^3.0.0",
+    "jasmine-core": "^5.13.0"
   },
   "scripts": {
     "jasmine:prepare": "RAILS_ENV=test bundle exec rake app:assets:clobber app:assets:precompile",
