@@ -1,5 +1,4 @@
-//= require jquery
-//= require jquery_ujs
+//= require jquery3
 //= require bootstrap
 //= require govuk-admin-template/govuk-admin
 //= require_tree ./govuk-admin-template/modules
